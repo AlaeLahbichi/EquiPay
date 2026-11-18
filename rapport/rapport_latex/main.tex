@@ -1,0 +1,234 @@
+% =====================================================================
+%  Rapport de projet — EquiPay
+%  Compilation : latexmk -pdf main.tex
+%  (ou pdflatex → bibtex → pdflatex → pdflatex)
+% =====================================================================
+\documentclass[12pt,letterpaper]{article}
+
+% ---------- Langue et polices ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{microtype}
+
+% ---------- Mise en page ----------
+\usepackage[left=1in,right=1in,top=1in,bottom=1in,footskip=0.5in]{geometry}
+\usepackage{setspace}
+\setstretch{1.35}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0.35em}
+
+% ---------- Couleurs (reprises du rapport de référence et de l'app) ----------
+\usepackage[table]{xcolor}
+\definecolor{bleu}{HTML}{1A365D}      % titres
+\definecolor{vert}{HTML}{3A9D5D}      % bande EMSI, filets de chapitre
+\definecolor{bordeaux}{HTML}{990033}  % carré de la page de garde
+\definecolor{lagon}{HTML}{0D9488}     % couleur principale d'EquiPay
+\definecolor{lagonclair}{HTML}{CCFBF1}
+\definecolor{orange}{HTML}{F97316}    % accent d'EquiPay
+\definecolor{orangeclair}{HTML}{FFEDD5}
+\definecolor{gristexte}{HTML}{64748B}
+\definecolor{grisfond}{HTML}{F1F5F9}
+\definecolor{entete}{HTML}{E8EEF6}    % en-tête des tableaux
+\definecolor{recevoir}{HTML}{16A34A}
+\definecolor{rembourser}{HTML}{DC2626}
+\definecolor{violet}{HTML}{8B5CF6}
+\definecolor{bleuclair}{HTML}{3B82F6}
+\definecolor{ambre}{HTML}{F59E0B}
+\definecolor{codefond}{HTML}{1E1E2E}
+\definecolor{codetexte}{HTML}{E2E8F0}
+\definecolor{codemot}{HTML}{C792EA}
+\definecolor{codechaine}{HTML}{C3E88D}
+\definecolor{codecomm}{HTML}{7F8C98}
+
+% ---------- Figures, tableaux, listes ----------
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{enumitem}
+\setlist[itemize]{label=---, leftmargin=2.2em, itemsep=0.2em, topsep=0.4em}
+\setlist[enumerate]{leftmargin=2.2em, itemsep=0.2em, topsep=0.4em}
+\renewcommand{\arraystretch}{1.45}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% Légendes : « Figure 3 : ... », étiquette en petites capitales bleues
+\captionsetup{font=small, labelfont={sc,color=bleu}, labelsep=colon, justification=centering, skip=6pt}
+\captionsetup[sub]{font=footnotesize, labelfont={}, labelformat=parens, skip=3pt}
+\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+
+% ---------- Dessins ----------
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,shapes.multipart,calc,fit,backgrounds,shadows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{pgf-umlsd}
+
+% ---------- Code ----------
+\usepackage{listings}
+\lstset{
+  backgroundcolor=\color{codefond},
+  basicstyle=\ttfamily\scriptsize\color{codetexte},
+  keywordstyle=\color{codemot}\bfseries,
+  stringstyle=\color{codechaine},
+  commentstyle=\color{codecomm}\itshape,
+  numbers=none,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  frame=single, framerule=0pt, framesep=8pt,
+  xleftmargin=8pt, xrightmargin=8pt,
+  aboveskip=4pt, belowskip=4pt,
+  upquote=true,
+  literate=
+    {é}{{\'e}}1 {è}{{\`e}}1 {ê}{{\^e}}1 {ë}{{\"e}}1 {à}{{\`a}}1 {â}{{\^a}}1
+    {ç}{{\c{c}}}1 {ô}{{\^o}}1 {î}{{\^i}}1 {ï}{{\"i}}1 {ù}{{\`u}}1 {û}{{\^u}}1
+    {É}{{\'E}}1 {À}{{\`A}}1 {«}{{\guillemotleft}}1 {»}{{\guillemotright}}1
+    {’}{{'}}1 {→}{{$\rightarrow$}}2 {…}{{\ldots}}3 {−}{{-}}1
+}
+\lstdefinelanguage{Dart}{
+  morekeywords={class,final,const,var,for,if,while,return,List,double,int,void,new,in,true,false,null,this,import,as},
+  sensitive=true, morecomment=[l]{//}, morestring=[b]', morestring=[b]"
+}
+\lstdefinelanguage{SQL2}{
+  morekeywords={create,policy,on,for,select,insert,update,delete,to,using,with,check,and,or,exists,from,where,in,returns,language,stable,as,function,replace,alter,table,enable,row,level,security,authenticated,set},
+  sensitive=false, morecomment=[l]{--}, morestring=[b]'
+}
+
+% ---------- Titres ----------
+\usepackage{titlesec}
+% Chapitres (niveau \section) : « 1. Titre » en bleu, filet vert dessous
+\titleformat{\section}{\Large\color{bleu}}{\thesection.}{0.5em}{}[{\vspace{2pt}\color{vert}\titlerule[0.9pt]}]
+\titlespacing*{\section}{0pt}{0pt}{1.2em}
+\titleformat{\subsection}{\large\bfseries\color{bleu}}{\thesubsection}{0.8em}{}
+\titlespacing*{\subsection}{0pt}{1.4em}{0.6em}
+\titleformat{\subsubsection}{\normalsize\bfseries\itshape\color{bleu}}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\subsubsection}{0pt}{1.1em}{0.4em}
+% Chaque chapitre commence sur une nouvelle page
+\newcommand{\chapitre}[1]{\clearpage\section{#1}}
+
+% Titres des pages liminaires (REMERCIEMENTS, RÉSUMÉ...) : centrés, filet dessous, entrée dans la table
+\newcommand{\pagetitre}[1]{%
+  \clearpage
+  \phantomsection
+  \addcontentsline{toc}{liminaire}{#1}%
+  \begin{center}
+    {\Large\bfseries #1}\par\vspace{1.4em}
+    \rule{\textwidth}{0.6pt}
+  \end{center}
+  \vspace{1.2em}%
+}
+
+% ---------- Table des matières et listes ----------
+\usepackage{tocloft}
+\setcounter{tocdepth}{2}
+\addto\captionsfrench{%
+  \renewcommand{\contentsname}{TABLE DES MATIÈRES}%
+  \renewcommand{\listfigurename}{LISTE DES FIGURES}%
+  \renewcommand{\listtablename}{LISTE DES TABLEAUX}}
+% Même présentation que les autres pages liminaires : titre centré, filet dessous
+\newcommand{\filetliste}{\hfill\null\par\nobreak\vspace{1.1em}\noindent\rule{\textwidth}{0.6pt}\par\vspace{0.4em}}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\filetliste}
+\renewcommand{\cftloftitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterloftitle}{\filetliste}
+\renewcommand{\cftlottitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftafterlottitle}{\filetliste}
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftbeforelottitleskip}{0pt}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsecaftersnum}{.}
+\setlength{\cftbeforesecskip}{0.9em}
+\setlength{\cftbeforesubsecskip}{0.15em}
+\setlength{\cftsubsecindent}{0pt}
+\setlength{\cftsubsecnumwidth}{2.6em}
+\setlength{\cftfignumwidth}{2.4em}
+\setlength{\cfttabnumwidth}{2.4em}
+\renewcommand{\cftfigpresnum}{}
+\renewcommand{\cfttabpresnum}{}
+% Niveau « liminaire » : pages hors chapitres, en gras et sans numéro
+\makeatletter
+\newcommand*{\l@liminaire}[2]{\par\vspace{0.75em}\noindent{\bfseries #1}\hfill{\bfseries #2}\par}
+\makeatother
+\setlength{\cftaftertoctitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{0pt}
+
+% ---------- En-têtes et pieds de page ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% ---------- Encadrés ----------
+\usepackage[most]{tcolorbox}
+\newtcolorbox{encadre}[1][]{enhanced, colback=lagonclair!45, colframe=lagon, boxrule=0pt,
+  leftrule=3pt, arc=2pt, left=10pt, right=10pt, top=6pt, bottom=6pt, fontupper=\small, #1}
+
+% ---------- Divers ----------
+\usepackage{csquotes}
+\usepackage{url}
+% Bibliographie (BibTeX, style unsrt-fr) : numérotée dans l'ordre des citations,
+% seules les sources citées apparaissent
+\usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{0.55em}
+\renewcommand{\bibfont}{\small}
+\renewcommand{\bibsection}{\pagetitre{RÉFÉRENCES}}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={EquiPay - Rapport de projet}, pdfauthor={Alae Lahbichi, Haytham Benladoul}}
+\usepackage{xspace}
+\newcommand{\equipay}{EquiPay\xspace}
+\newcommand{\code}[1]{\texttt{\small #1}}
+\newcommand{\ecran}[2]{\includegraphics[width=#1\textwidth]{#2}}
+% Capture de téléphone : bordure fine et coins nets
+\newcommand{\capture}[2][0.3]{\fcolorbox{gristexte!40}{white}{\includegraphics[width=#1\textwidth]{#2}}}
+
+\begin{document}
+
+% =====================================================================
+%  Page de garde (sans numéro, non comptée)
+% =====================================================================
+\input{chapitres/00_page_de_garde}
+
+% =====================================================================
+%  Pages liminaires : numérotation en chiffres romains
+% =====================================================================
+\pagenumbering{roman}
+\setcounter{page}{1}
+\input{chapitres/01_liminaires}
+
+% =====================================================================
+%  Corps du rapport : numérotation en chiffres arabes à partir de 1
+% =====================================================================
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{chapitres/02_introduction}
+\input{chapitres/03_contexte}
+\input{chapitres/04_etude_prealable}
+\input{chapitres/05_conception}
+\input{chapitres/06_realisation}
+\input{chapitres/07_presentation}
+\input{chapitres/08_conclusion}
+
+% =====================================================================
+%  Références : seules les sources citées dans le texte apparaissent
+% =====================================================================
+\bibliographystyle{unsrt-fr}
+\bibliography{references}
+
+\end{document}

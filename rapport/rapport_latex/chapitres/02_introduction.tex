@@ -1,0 +1,35 @@
+% ---------------------------------------------------------------------
+%  Introduction générale (première page en chiffres arabes)
+% ---------------------------------------------------------------------
+\pagetitre{INTRODUCTION GÉNÉRALE}
+
+Partir en voyage entre amis, organiser une sortie ou partager un appartement amène
+toujours la même question : qui a payé quoi, et qui doit combien à qui ? Les dépenses sont
+avancées par des personnes différentes, parfois dans plusieurs devises, et rarement
+réparties à parts égales. Après quelques jours, les comptes deviennent flous, et le calcul
+final finit souvent sur un coin de feuille ou dans un tableur partagé. Des applications
+comme Tricount~\cite{tricount} ou Splitwise~\cite{splitwise} ont simplifié ce calcul, mais elles reposent toujours sur une
+saisie manuelle de chaque dépense, et n'aident en rien à préparer le voyage lui-même.
+
+Dans le même temps, les progrès des grands modèles de langage ouvrent de nouvelles
+possibilités. Un ticket de caisse, une phrase comme « J'ai payé 45 € de taxi pour Sara et
+moi » ou une liste de lieux à visiter contiennent déjà toute l'information utile : un
+modèle bien entraîné peut l'extraire et la transformer en données structurées, tout en
+restant assez compact pour être affiné sur un GPU grand public et exécuté sur un portable.
+
+C'est dans ce contexte que s'inscrit ce projet, réalisé dans le cadre du module de
+Génération Textuelle de la 5\textsuperscript{ème} année à l'EMSI. Il vise à concevoir et à
+développer \equipay, une application mobile de partage des dépenses de groupe qui utilise
+l'intelligence artificielle là où elle apporte un gain concret : un assistant
+conversationnel pour accompagner l'utilisateur, un scanner de tickets, la saisie d'une
+dépense en une phrase et l'organisation automatique du programme d'un voyage. L'application
+repose sur Flutter pour le mobile, sur Supabase pour les comptes et les données partagées,
+et sur un backend FastAPI qui sert les modèles en local. Ces modèles sont des versions
+affinées de Qwen3, suivies dans MLflow depuis la préparation des données jusqu'au choix de
+la version mise en production.
+
+Ce rapport est organisé en cinq chapitres. Le premier présente le cadre du projet et la
+démarche suivie, le deuxième l'étude préalable et la spécification des besoins, et le
+troisième la conception de l'application. Le quatrième détaille la réalisation, en
+particulier l'entraînement et l'évaluation des modèles, et le dernier présente
+l'application à travers ses principaux écrans.

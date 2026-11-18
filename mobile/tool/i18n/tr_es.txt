@@ -1,0 +1,833 @@
+0	1 gasto sin conexión enviado
+1	{0} gastos sin conexión enviados
+2	{0} · {1} rechazado(s) por el servidor, vuelve a introducirlos
+3	EquiPay
+4	Falta la configuración.\nInicia la app con:\nflutter run --dart-define-from-file=env.json
+5	Viaje
+6	Salida
+7	Día a día
+8	Crédito
+9	Vivienda
+10	Compras
+11	Transporte
+12	Facturas
+13	Suscripciones
+14	Salud
+15	Restaurantes
+16	Ocio
+17	Shopping
+18	Educación
+19	Familia
+20	Ahorro
+21	Otro
+22	Salario
+23	Prima
+24	Freelance
+25	Alquiler cobrado
+26	Ayudas
+27	Otro ingreso
+28	Actividades en curso ilimitadas
+29	Escaneos de tickets ilimitados
+30	Gastos en una frase ilimitados
+31	Trayectos organizados ilimitados
+32	{0} actividades en curso
+33	{0} escaneos de tickets al mes
+34	{0} gastos en una frase al mes
+35	{0} trayectos organizados al mes
+36	Tu plan {0} permite {1} actividades en curso.
+37	Has usado toda tu cuota del mes con el plan {0}: {1}.
+38	Pásate a {0} ({1}) o archiva una actividad terminada.
+39	Pásate a {0} ({1}) para continuar.
+40	Límite de tu plan alcanzado.
+41	Actividades en curso
+42	Escaneos de tickets
+43	Gastos descritos en una frase
+44	Trayectos organizados por la IA
+45	Gratis
+46	Para probar con algunos amigos
+47	Plus
+48	Para salidas y fines de semana
+49	Pro
+50	Para quienes viajan a menudo
+51	Premium
+52	Todo ilimitado, sin contar
+53	¿Eliminar «{0}»?
+54	¿Salir de «{0}»?
+55	Eliminar
+56	Salir
+57	¿Eliminar {0} actividades?
+58	La actividad, sus gastos y sus fotos se eliminarán para todos los participantes.
+59	{0} actividades que creaste {3} para todos los participantes, con gastos y fotos.
+60	se eliminarán
+61	se eliminará
+62	Ya no la verás y los demás participantes la conservarán. No es posible si tienes gastos en ella.
+63	Saldrás de {0} que no creaste (no es posible si tienes gastos en ellas).
+64	la actividad
+65	las {0} actividades
+66	Esta acción es irreversible.
+67	Cancelar
+68	Actividad eliminada
+69	{0} actividades eliminadas
+70	actividad abandonada
+71	{0} actividades abandonadas
+72	 · {0} con error: {1}
+73	Actividad archivada
+74	{0} actividades archivadas
+75	Actividad desarchivada
+76	{0} actividades desarchivadas
+77	Tú
+78	Gastos por participante
+79	Aún no hay gastos:\nlos gráficos aparecerán con el primero.
+80	pagado en total
+81	consumido en total
+82	Pagado y parte de cada uno
+83	Pagado
+84	Parte
+85	Quién adelantó el dinero
+86	Lo que consumió cada uno
+87	Saldo
+88	Pagado − parte: + se le debe, − debe
+89	Actividad actualizada
+90	Gráficos y estadísticas
+91	Los gráficos de gastos y las estadísticas están disponibles a partir del plan Plus.
+92	Límite de actividades en curso
+93	Editar la actividad
+94	Foto del ticket
+95	Fotos de la actividad
+96	Foto añadida
+97	{0} fotos añadidas
+98	{0} fotos añadidas, {1} no se pudieron enviar
+99	Añadida por {0}
+100	un antiguo miembro
+101	Foto eliminada
+102	Añadir un gasto
+103	Gasto
+104	Cargando gastos…
+105	Gastos ({0})
+106	Miembros ({0})
+107	Fotos ({0})
+108	Más acciones
+109	Editar
+110	Desarchivar
+111	Archivar
+112	Resumen
+113	Gráfico de gastos
+114	Insights
+115	Salir de la actividad
+116	Aún no hay gastos.
+117	Pendiente de envío · se enviará cuando vuelva la red
+118	Pagado por {0} · {1}
+119	Toca a un participante para cambiar su rol o quitarlo
+120	Añadir
+121	Comparte las fotos del viaje, los presupuestos o los recuerdos con el grupo.
+122	Código copiado: compártelo para invitar a alguien
+123	Código no disponible · reintentar
+124	Ocultar el código
+125	Mostrar el código
+126	Copiar el código
+127	Programa
+128	Cosas que hacer, votos y mapa
+129	Nada previsto: añade la primera actividad
+130	{0} prevista(s) · votos y mapa
+131	Total de gastos
+132	Aún no hay gastos
+133	{0} gasto{1}
+134	Creador
+135	Miembro
+136	Espectador
+137	pagado
+138	Reintentar
+139	Por defecto
+140	A → Z
+141	Saldo ↑
+142	Saldo ↓
+143	Aún no hay insights: añade un primer gasto para ver las tendencias de la actividad.
+144	Total
+145	Gastos
+146	Media por gasto
+147	En 1 día
+148	Por día ({0} días)
+149	Por participante
+150	Día de más gasto
+151	Tu situación
+152	Has pagado
+153	Tu parte
+154	Te deben
+155	Debes
+156	Estás al día
+157	Has adelantado el {0} % de los gastos y tu parte representa el {1} % del total.
+158	Para equilibrar las cuentas
+159	Todos están al día, no hay que reembolsar nada.
+160	 das a
+161	 da a
+162	Bastan {0} transferencia(s) para dejar todos los saldos a cero.
+163	Datos destacados
+164	Mayor gasto
+165	{0} · {1}\nPagado por {2}, {3}
+166	Mayor pagador
+167	Divisas usadas
+168	{0} · {1} gasto(s) convertidos a {2}
+169	Gastos por mes
+170	Por día de la semana
+171	Resumen «{0}»
+172	Total de gastos: {0}
+173	Todos están al día.
+174	• {0} debe {1} a {2}
+175	Copiar el resumen
+176	Resumen copiado
+177	Aún no hay gastos:\nel resumen aparecerá con el primero.
+178	Todos están al día
+179	1 reembolso para equilibrar todo
+180	{0} reembolsos para equilibrar todo
+181	{0} · {1} gasto{2}
+182	Debe recibir {0}
+183	Debe reembolsar {0}
+184	Al día
+185	Pagó {0} · Su parte {1}
+186	Reembolsas {0}
+187	Reembolsa {0}
+188	Recibes de {0}
+189	Recibe de {0}
+190	Elegir de la galería
+191	Hacer una foto
+192	Usar el logo por defecto
+193	No se puede acceder a las fotos. Revisa los permisos.
+194	Ponle un nombre a tu actividad
+195	Cambiar la foto de la actividad
+196	Cambiar la foto
+197	Título
+198	La actividad ya tiene gastos: su divisa ya no se puede cambiar.
+199	Todos los gastos de la actividad se calculan en esta divisa.
+200	Guardar
+201	{0} ahora es {1}
+202	¿Quitar a {0}?
+203	Esta persona ya no tendrá acceso a la actividad. Podrá volver a pedir unirse con el código.
+204	Quitar
+205	{0} ha sido quitado de la actividad
+206	Rol
+207	Miembro (participante)
+208	Añade gastos y participa en el reparto
+209	Consulta la actividad sin modificar nada
+210	Quitar de la actividad
+211	1 lugar en el mapa
+212	{0} lugares en el mapa
+213	Guardado. Lugar no encontrado: no aparecerá en el mapa.
+214	Añadido al programa
+215	Modificado
+216	Programa actualizado
+217	El elemento y sus votos se eliminarán para todos.
+218	Programa · {0}
+219	Lista
+220	Calendario
+221	Mapa
+222	Organizar el trayecto
+223	Cargando el programa…
+224	Nada previsto por ahora.\n¡Añadid visitas y salidas y votad juntos!
+225	Nada previsto por ahora.
+226	Sin fecha
+227	Editar o eliminar
+228	A favor
+229	En contra
+230	Todos
+231	No hay lugares que mostrar.\nAñade una dirección a los elementos del programa para verlos en el mapa.
+232	No hay lugares que mostrar para este día.
+233	OpenStreetMap
+234	1 elemento sin lugar encontrado no se muestra
+235	{0} elementos sin lugar encontrado no se muestran
+236	Día previsto
+237	Hora prevista
+238	Editar el elemento
+239	Añadir al programa
+240	Nombre
+241	Ej. Visita al Jardín Majorelle
+242	Ponle un nombre a esta actividad
+243	Lugar
+244	Ej. Jardín Majorelle
+245	Lugar encontrado: se mostrará en el mapa
+246	Dirección
+247	Ej. Rue Yves Saint Laurent, Marrakech
+248	El lugar y la dirección sirven para situarlo en el mapa
+249	Fecha
+250	Quitar la fecha
+251	Hora
+252	Quitar la hora
+253	Por fecha
+254	Las más votadas
+255	Busco el orden de visita que os haga perder menos tiempo, día a día, respetando las horas que habéis fijado.
+256	Desplazamientos
+257	Visitas por día
+258	Sin límite
+259	¿Alguna indicación? (opcional)
+260	Ej. nos gusta caminar tranquilos, no muy temprano por la mañana
+261	Organizar
+262	Por encajar
+263	La organización del trayecto ha fallado.
+264	No se puede abrir Mapas.
+265	¿Aplicar este programa?
+266	Los días y horas propuestos se guardarán en el programa para todo el grupo.
+267	Aplicar
+268	Trayecto propuesto
+269	Aplicar este programa
+270	Solo el creador de la actividad puede aplicar este programa.
+271	Pasar a un plan superior
+272	Calculando itinerarios y redactando el programa…
+273	Abrir el itinerario en Mapas
+274	La palabra de la IA
+275	Apartado (más votos en contra que a favor)
+276	{0} ganados
+277	Vuestro orden ya es el mejor
+278	{0} de trayecto {1} en lugar de {2}
+279	{0} de trayecto {1} en total
+280	⚠︎ Tiempos estimados en línea recta: el servicio de itinerarios no responde.
+281	Hora fijada por el grupo
+282	Día propuesto
+283	Historial del presupuesto
+284	El plan Gratis guarda los últimos {0} meses. Pásate a un plan superior para ver todo tu historial.
+285	Movimiento eliminado
+286	Presupuesto por categoría
+287	Fija un presupuesto máximo por categoría y recibe un aviso antes de superarlo, a partir del plan Plus.
+288	Objetivos de ahorro
+289	Crea objetivos de ahorro y sigue tu progreso, a partir del plan Plus.
+290	Presupuesto
+291	Gastos fijos e ingresos
+292	Ajustes
+293	Inicia sesión para gestionar tu presupuesto
+294	Iniciar sesión
+295	Cargando el presupuesto…
+296	Este mes
+297	Gestionar
+298	Añade tu salario y tus gastos fijos (alquiler, facturas, suscripciones): volverán cada mes.
+299	Por categoría
+300	Tus gastos del mes aparecerán aquí, ordenados por categoría.
+301	Vacaciones, fondo de emergencia, móvil nuevo… ponte un objetivo y sigue tu progreso.
+302	Movimientos
+303	No hay movimientos este mes. Toca «Añadir» para anotar un gasto o un ingreso.
+304	Salario, alquiler cobrado, pensión…
+305	Alquiler, luz, internet, suscripciones, crédito…
+306	El día {0} de cada mes
+307	Desactivada
+308	Lo que vuelve cada mes. Recibirás un aviso 2 días antes de cada pago.
+309	Ingresos
+310	Gastos fijos
+311	Disponible para vivir
+312	≈ {0} al día durante {1} días
+313	+{0} por llegar
+314	+{0} por pagar
+315	Recibido el {0}
+316	Pagado el {0}
+317	Previsto el {0}
+318	A pagar el {0}
+319	Marcar como recibido
+320	Marcar como pagado
+321	Toca para fijar un presupuesto
+322	{0} de {1}
+323	Objetivo alcanzado 🎉
+324	{0} al mes
+325	para el {0}
+326	Importe
+327	Importe no válido
+328	Gestiona tu salario cada mes
+329	Anota tu salario y tus gastos fijos: EquiPay calcula lo que te queda para vivir y te recuerda lo que hay que pagar.
+330	Salario neto mensual
+331	Día de cobro
+332	El día {0} del mes
+333	Crear mi presupuesto
+334	Nuevo gasto
+335	Nuevo ingreso
+336	Ingreso
+337	Concepto (opcional)
+338	Ej. Compra en Marjane
+339	Ej. Paga extra de fin de año
+340	Cambiar
+341	Ponle un nombre
+342	Ingreso mensual
+343	Gasto fijo mensual
+344	Ej. Salario
+345	Ej. Alquiler, Internet, Netflix
+346	Recibido el
+347	A pagar el
+348	Activa
+349	Desactívala si ya no se repite (se conserva el historial).
+350	Presupuesto {0}
+351	Importe máximo a gastar cada mes en esta categoría. Recibirás un aviso al 80 % y al superarlo.
+352	Quitar el presupuesto
+353	Indica un nombre y un importe válido
+354	Nuevo objetivo de ahorro
+355	{0} ahorrados de {1}
+356	Añadir al ahorro
+357	Objetivo
+358	Ej. Vacaciones de verano
+359	Importe a alcanzar
+360	Sin fecha límite
+361	Para el {0}
+362	Elegir
+363	Ajustes del presupuesto
+364	Recordatorios
+365	Pagos 2 días antes, y día de cobro
+366	Introducción manual
+367	Indica el importe, quién pagó y el reparto
+368	Escanear un ticket
+369	Haz una foto o importa tu ticket, el asistente rellena el gasto
+370	Describir el gasto
+371	Escribe «60 € de restaurante con Sara», el asistente se encarga del resto
+372	Sara
+373	Restaurante con {0}, pagué {1} ayer, 60/40
+374	Compras {0} para todos menos {1}
+375	{0} pagó el taxi {1} para los dos
+376	El asistente no está disponible. Inténtalo de nuevo.
+377	Cuenta el gasto como a un amigo: qué, cuánto, quién pagó, para quién y cómo repartir. El asistente rellena el formulario y tú lo revisas antes de añadirlo.
+378	Un solo gasto por frase
+379	Miembros: {0} · divisa {1}
+380	Ejemplos
+381	Rellenar el gasto
+382	El asistente lee tu frase…
+383	Importe, fecha, pagador, participantes y reparto
+384	Antiguo miembro
+385	Se recalcularán los saldos de todos los miembros. Esta acción es definitiva.
+386	Gasto eliminado
+387	Editar el gasto
+388	Eliminar el gasto
+389	es decir {0} (1 {1} = {2} {3})
+390	Pagado por
+391	Descripción
+392	Añadido por
+393	Reparto ({0})
+394	Foto del ticket
+395	Sin foto. Añádela con el lápiz de arriba.
+396	No hay foto para este gasto.
+397	Fecha del gasto
+398	Tipo de cambio no disponible. Introdúcelo a mano.
+399	es decir {0} en los totales
+400	Buscando el tipo del día…
+401	Tipo introducido a mano
+402	Tipo automático del {0}
+403	Para convertir el gasto a la divisa de la actividad
+404	Justificante
+405	Ponle un nombre al gasto
+406	Indica un importe positivo
+407	2 decimales como máximo
+408	Importe demasiado alto
+409	Espera, se está buscando el tipo de cambio
+410	Indica el tipo de cambio
+411	6 decimales como máximo
+412	Elige al menos un participante
+413	Cada participante debe tener un porcentaje mayor que 0
+414	La suma de los porcentajes debe ser 100 %
+415	Elige quién pagó
+416	Sin conexión: gasto guardado en el teléfono, se enviará cuando vuelva la red (añade la foto después)
+417	Sin conexión: gasto guardado en el teléfono, se enviará cuando vuelva la red
+418	Gasto modificado
+419	Gasto añadido
+420	{0}, pero no se pudo guardar la foto
+421	Ej. Cena en el riad
+422	Comercio leído en el ticket
+423	No encontrado en el ticket: por completar
+424	Leído en el ticket: «{0}»
+425	Leído en el ticket
+426	Divisa leída: {0} (no disponible) — elige la correcta
+427	Leída en el ticket
+428	Entendida en tu frase
+429	Sin divisa en tu frase: divisa de la actividad
+430	Divisa de la actividad
+431	Tipo de cambio
+432	Tipo automático
+433	Fecha no encontrada en el ticket: hoy por defecto
+434	Sin fecha en tu frase: hoy por defecto
+435	Entendido en tu frase
+436	Sin pagador en tu frase: tú por defecto
+437	Reparto
+438	Partes iguales
+439	Participantes no indicados: todos
+440	Participantes entendidos en tu frase
+441	reparto en porcentajes
+442	reparto en partes
+443	importes por persona convertidos en %
+444	partes iguales
+445	Foto del ticket (1 como máximo)
+446	Más detalles
+447	Descripción y lugar (opcionales)
+448	País
+449	Ciudad
+450	Añadir el gasto
+451	No está en tu frase: por completar
+452	No participa
+453	Total: 100 %
+454	Total: {0} % (faltan {1} %)
+455	Total: {0} % ({1} % de más)
+456	Añadir una foto del ticket
+457	Reemplazar
+458	Falta el importe en tu frase: introdúcelo.
+459	La divisa {0} no está disponible en la app.
+460	Rellenado a partir de tu frase
+461	Revisa cada campo, corrige si hace falta y completa lo que falte antes de validar.
+462	El importe no coincide exactamente con el total impreso: revísalo.
+463	Total no encontrado: introdúcelo.
+464	Fecha no encontrada en el ticket.
+465	Rellenado a partir del ticket
+466	{0} ×
+467	No se ha encontrado información en esta foto. ¿Es realmente un ticket de compra?
+468	No se pudo leer el ticket. Inténtalo de nuevo.
+469	Leyendo el ticket…
+470	El asistente localiza el total, la fecha, el comercio y los artículos.
+471	Introducir a mano con esta foto
+472	Crear una actividad
+473	Viaje, salida, gastos del día a día…
+474	Unirse a una actividad
+475	Con el código enviado por su creador
+476	Está tardando un poco más de lo previsto…
+477	Elige la divisa de los gastos
+478	Nueva actividad
+479	Ej. Marrakech 2026
+480	Todos los gastos de la actividad se calcularán en esta divisa.
+481	Crear
+482	Elegir el logo de la actividad
+483	Añadir un logo (opcional)
+484	Cambiar el logo
+485	El código tiene 8 caracteres
+486	Código de la actividad
+487	ABCD-EFGH
+488	El creador de la actividad recibirá tu solicitud y podrá aceptarla.
+489	Enviar la solicitud
+490	Crear o unirse a una actividad
+491	Actividad creada, pero no se pudo enviar el logo.
+492	¡Solicitud enviada! Te avisaremos en cuanto el creador responda.
+493	{0} · encuéntralas en Perfil > Actividades archivadas
+494	{0}/{1} en curso
+495	Inicia sesión para empezar
+496	Crea tus actividades y comparte tus gastos con tus amigos.
+497	No se pudieron cargar tus actividades
+498	Cargando tus actividades…
+499	Ninguna actividad
+500	Crea tu primera actividad o únete a la de un amigo con su código.
+501	by Alae Lahbichi
+502	Cancelar la selección
+503	Mis actividades
+504	Mis actividades · {0}
+505	Selecciona actividades
+506	{0} seleccionada(s)
+507	Deseleccionar todo
+508	Seleccionar todo
+509	Seleccionar
+510	Pasar a Plus
+511	Límite alcanzado: {0}/{1} actividades en curso
+512	Pásate a EquiPay {0}
+513	{0}, más escaneos y estadísticas · {1} DH/mes
+514	Ver
+515	Solicitudes
+516	Perfil
+517	Marruecos
+518	Indica tu nombre
+519	De 3 a 30 caracteres: minúsculas, números o _
+520	Atrás
+521	Continuar
+522	Terminar
+523	Bienvenido a EquiPay
+524	Unas preguntas para preparar tu cuenta. Lleva menos de un minuto.
+525	Tu nombre
+526	Visible para los miembros de tus actividades
+527	Usuario
+528	Tus amigos te encuentran con @usuario
+529	Tu divisa y tu país
+530	Tu divisa se propondrá por defecto al crear una actividad.
+531	Vives en
+532	Tu país
+533	Usarás EquiPay para…
+534	Elige tantas respuestas como quieras.
+535	¿Cómo conociste EquiPay?
+536	Viajes
+537	Salidas con amigos
+538	Piso compartido
+539	En pareja
+540	Préstamos y créditos
+541	Eventos
+542	Un amigo
+543	Redes sociales
+544	App Store / Google Play
+545	Colegio o universidad
+546	Inicia sesión para elegir un plan.
+547	{0} DH / año
+548	{0} DH / mes
+549	Pasar a {0}
+550	{0}, sin permanencia: puedes cancelar en cualquier momento desde Perfil > Mi plan.\n\nModo demostración: no se pide ningún pago. El pago por App Store o Google Play se añadirá al publicar la app.
+551	Confirmar
+552	¡Bienvenido al plan {0}!
+553	{0} en lugar de {1}
+554	Sin gráficos ni estadísticas
+555	¿Cancelar el plan {0}?
+556	Vuelves al plan Gratis. Tus actividades y tus gastos se conservan.
+557	Mantener {0}
+558	Cancelar el plan
+559	Suscripción cancelada. Has vuelto al plan Gratis.
+560	Límite de tu plan alcanzado
+561	Pasar a {0} · {1} DH/mes
+562	Comparar todos los planes
+563	Más tarde
+564	Sin gráficos
+565	0 DH
+566	Elige tu plan
+567	Nuestros planes
+568	Mensual
+569	Anual · 2 meses gratis
+570	Empezar gratis
+571	Precios en dírhams, sin permanencia: cancelable en cualquier momento desde Perfil > Mi plan. El asistente de ayuda sigue siendo ilimitado en todos los planes.
+572	¡Bienvenido! Elige tu plan
+573	Desbloquea todo EquiPay
+574	Empieza gratis y pásate a un plan superior cuando lo necesites.
+575	Más actividades en curso, más escaneos y trayectos organizados por la IA, y estadísticas detalladas.
+576	Mi suscripción {0}
+577	activa desde el {0}
+578	sin permanencia
+579	Cancelar la suscripción
+580	Tu plan
+581	★ El más popular
+582	Programa de viaje, votos y mapa
+583	Plan actual
+584	Elegir {0}
+585	Tu consumo
+586	Actividades en curso y usos de la IA este mes
+587	{0} · ilimitado
+588	Acerca de
+589	Versión 1.0.0 · by Alae Lahbichi
+590	EquiPay simplifica el reparto de gastos entre amigos, en familia o entre compañeros. Se acabaron los cálculos complicados después de un viaje o una noche: cada uno añade lo que ha pagado y la app reparte los importes de forma justa y transparente.
+591	Funciones
+592	© 2026 Alae Lahbichi
+593	Actividades
+594	Crea un viaje, una salida, gastos del día a día o un crédito, e invita a tus amigos con un código único o por email.
+595	Añade cada gasto con su importe, su divisa, su fecha, un lugar y hasta dos fotos del ticket. Solo su autor puede modificarlo.
+596	Reparto justo
+597	Reparte cada gasto a partes iguales o en porcentajes: EquiPay calcula quién debe cuánto a quién.
+598	Saldos en tiempo real
+599	Los totales y los saldos de cada miembro se actualizan al instante en todos los teléfonos.
+600	Espectadores
+601	Invita a alguien en modo solo lectura: sigue la actividad sin poder modificarla.
+602	Asistente inteligente
+603	Un asistente entrenado especialmente para EquiPay responde a tus preguntas sobre la app, incluso sin cuenta.
+604	{0}: ha vuelto a tus actividades
+605	Actividades archivadas
+606	Cargando el archivo…
+607	Ninguna actividad archivada
+608	Archiva una actividad terminada desde su menú ⋮ o seleccionando varias actividades en el inicio: se guardará aquí.
+609	Archivadas solo para ti: los demás participantes las siguen viendo.
+610	Foto de perfil
+611	Enviando la foto…
+612	Foto de perfil actualizada.
+613	Datos guardados. Confirma tu nuevo email con el enlace enviado a {0}.
+614	Datos guardados.
+615	Editar mis datos
+616	Obligatorio
+617	Minúsculas, números y _ (de 3 a 30)
+618	Usuario no válido
+619	Email
+620	Email no válido
+621	Mi plan
+622	Preferencias
+623	Extra
+624	Cerrar sesión
+625	Eliminar mi cuenta
+626	EquiPay · versión 1.0.0\nby Alae Lahbichi
+627	¿Cerrar sesión?
+628	Podrás volver a iniciar sesión en cualquier momento.
+629	Has cerrado sesión.
+630	¿Eliminar tu cuenta?
+631	Tu perfil, las actividades que creaste y tus gastos se eliminarán definitivamente. Esta acción es irreversible.
+632	Tu cuenta ha sido eliminada.
+633	Error: {0}
+634	No se pudo iniciar sesión con Google.
+635	Inicia sesión para crear tus actividades\ny compartir tus gastos.
+636	Continuar con Google
+637	Continuar con un email
+638	Ver la foto de perfil
+639	Cambiar la foto de perfil
+640	Modo oscuro
+641	Permite las notificaciones de EquiPay en los ajustes del teléfono.
+642	Notificaciones
+643	Solicitudes, gastos añadidos, recordatorios del presupuesto
+644	Idioma
+645	Plan {0}
+646	Gestionar o cancelar mi suscripción
+647	Pásate a {0} desde {1} DH/mes: más IA y estadísticas
+648	Soporte
+649	G
+650	Email o contraseña incorrectos.
+651	Confirma primero tu email (enlace recibido por correo).
+652	Ya existe una cuenta con este email.
+653	Contraseña demasiado débil (mínimo 6 caracteres).
+654	Revisa tu correo
+655	Se ha enviado un enlace de confirmación a {0}.\nÁbrelo desde este teléfono para activar tu cuenta.
+656	Entendido
+657	Crear una cuenta
+658	Iniciar sesión
+659	Registro
+660	Nombre
+661	Mínimo 6 caracteres
+662	Contraseña
+663	Mostrar
+664	Ocultar
+665	Crear mi cuenta
+666	Inicia sesión para ver tus solicitudes
+667	Las solicitudes para unirse a tus actividades aparecerán aquí.
+668	Recibidas
+669	Enviadas
+670	Ninguna solicitud recibida
+671	Comparte el código de tu actividad: cada solicitud para unirse llegará aquí.
+672	Ninguna solicitud enviada
+673	Únete a una actividad con su código desde el inicio: seguirás la respuesta aquí.
+674	{0} se ha unido a «{1}»
+675	Solicitud de {0} rechazada
+676	 quiere unirse a
+677	Rechazar
+678	Aceptar
+679	Solicitud cancelada
+680	Enviada {0}
+681	Pendiente
+682	Aceptada
+683	Rechazada
+684	Cancelada
+685	¡Bienvenido!
+686	Lo volveremos a intentar automáticamente en cuanto vuelva la conexión.
+687	Asistente EquiPay
+688	escribiendo…
+689	Soporte · en línea
+690	Inicia sesión para conservar el historial de tus conversaciones.
+691	Hola 👋
+692	Hola {0} 👋
+693	Soy el asistente de EquiPay. Hazme una pregunta sobre el uso de la app.
+694	Escribe tu pregunta…
+695	Enviar
+696	¿Cómo creo una actividad?
+697	¿Cómo me uno a una actividad con un código?
+698	¿Quién puede modificar un gasto?
+699	¿Cómo invito a un espectador?
+700	Inicia sesión para acceder a tus actividades.
+701	Tienes gastos en «{0}»: no puedes salir. Archívala mejor.
+702	Solo el creador puede eliminar la actividad
+703	Solo el creador puede modificar la actividad
+704	Solo el creador puede cambiar los roles
+705	Solo el creador puede quitar a un participante
+706	El servidor tarda demasiado en responder. Inténtalo de nuevo en un momento.
+707	Sin conexión a internet.
+708	No se pudo iniciar sesión: {0}
+709	Se ha producido un error. Inténtalo de nuevo.
+710	Asistente no configurado (falta API_URL en env.json).
+711	Authorization
+712	Bearer {0}
+713	El asistente tarda demasiado en responder. Inténtalo de nuevo.
+714	No se puede contactar con el asistente. Revisa tu conexión.
+715	Tu sesión ha caducado. Vuelve a iniciar sesión e inténtalo de nuevo.
+716	El asistente no está disponible.
+717	Este nombre de usuario ya está en uso.
+718	El inicio de sesión con Google aún no está activado.
+719	Tipo {0} → {1} no encontrado.
+720	Tipo de cambio no disponible (¿sin conexión?). Introdúcelo a mano.
+721	Inicia sesión para describir un gasto.
+722	Respuesta inesperada del asistente.
+723	No he entendido esta frase. Reformúlala o añade detalles.
+724	Eso no parece un gasto. Indica al menos qué se pagó, por ejemplo «taxi 20 €».
+725	Solo el creador del gasto puede eliminarlo
+726	No puedes eliminar esta foto
+727	Nueva solicitud
+728	{0} quiere unirse a «{1}»
+729	Solicitudes para unirse
+730	Recordatorios del presupuesto
+731	Actividades y gastos
+732	Solicitud aceptada: la persona se ha unido a tu actividad.
+733	Solicitud rechazada.
+734	No se pudo enviar la respuesta. Abre la app para volver a intentarlo.
+735	Solicitud aceptada 🎉
+736	Te has unido a «{0}».
+737	Solicitud rechazada
+738	Tu solicitud para «{0}» ha sido rechazada.
+739	Nuevo gasto en «{0}»
+740	{0} ha añadido «{1}»: {2}
+741	Un miembro
+742	Día de cobro 💰
+743	¿Ha llegado tu salario? Márcalo como recibido y prepara tu presupuesto del mes.
+744	A pagar pronto: {0}
+745	{0} a pagar el día {1} de este mes.
+746	Presupuesto {0} superado
+747	Presupuesto {0} casi alcanzado
+748	{0} gastados de {1} este mes.
+749	Escáner no configurado (falta API_URL en env.json).
+750	Inicia sesión para escanear un ticket.
+751	POST
+752	La lectura del ticket tarda demasiado. Inténtalo de nuevo.
+753	No se puede contactar con el escáner. Revisa tu conexión.
+754	Respuesta inesperada del escáner.
+755	No se pudo leer el ticket. Prueba con una foto más nítida.
+756	El escáner no está disponible.
+757	No se pudieron cargar las solicitudes.
+758	{0} ha cancelado su solicitud para «{1}»
+759	Tu solicitud para «{0}» ha sido aceptada 🎉
+760	Tu solicitud para «{0}» ha sido rechazada
+761	Servidor no configurado (falta API_URL en env.json).
+762	Inicia sesión para organizar el trayecto.
+763	La organización tarda demasiado. Inténtalo de nuevo en un momento.
+764	No se puede contactar con el servidor. Revisa tu conexión.
+765	Respuesta inesperada del servidor.
+766	La organización del trayecto no está disponible.
+767	A pie
+768	a pie
+769	Bici
+770	en bici
+771	Coche
+772	en coche
+773	Inicia sesión para ver el programa.
+774	Solo el autor o el creador puede modificar este elemento
+775	Solo el autor o el creador puede eliminar este elemento
+776	Solo el autor o el creador puede marcar este elemento
+777	Solo el creador puede aplicar este programa
+778	hoy
+779	ayer
+780	Euro
+781	Dírham marroquí
+782	Dólar estadounidense
+783	Libra esterlina
+784	Franco suizo
+785	Dólar canadiense
+786	Lira turca
+787	Dírham de los Emiratos
+788	Riyal saudí
+789	Dinar tunecino
+790	Dinar argelino
+791	Yen japonés
+792	Elegir de la galería (varias posibles)
+793	ahora mismo
+794	hace {0} min
+795	hace {0} h
+796	hace {0} d
+797	el {0}/{1}/{2}
+798	Sin conexión · tus últimos datos siguen disponibles
+799	Conexión restablecida
+800	Divisa
+801	Elige la divisa
+802	Cargando…
+803	Conexión lenta. Revisa tu red, seguimos intentándolo.
+804	¿Eliminar esta foto?
+805	Se quitará para todos los miembros de la actividad.
+806	Cerrar
+807	Eliminar la foto
+808	Foto no disponible
+809	Usuario no conectado
+810	Código no válido
+811	Solo el creador puede cambiar el código
+812	Esta persona ya es miembro de la actividad
+813	Invitación no encontrada
+814	El creador y el pagador deben ser miembros (no espectadores) de la actividad
+815	El participante debe ser miembro (no espectador) de la actividad
+816	Este miembro tiene gastos: hazlo espectador en lugar de quitarlo
+817	La foto debe pertenecer a la actividad del gasto
+818	Un gasto puede tener como máximo 2 fotos
+819	Inicio de sesión requerido
+820	Solicitud no encontrada
+821	Solo el creador de la actividad puede responder
+822	Esta solicitud ya ha sido tratada
+823	Esta solicitud ya no se puede cancelar
+824	La divisa ya no se puede cambiar: la actividad ya tiene gastos
+825	Solo el creador del gasto puede modificarlo
+826	Un gasto puede tener como máximo 1 foto
+827	El plan se cambia desde la página de planes
+828	Francia
+829	Bélgica
+830	Suiza
+831	Canadá
+832	España

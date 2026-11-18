@@ -1,0 +1,64 @@
+{
+  "dataset_version": 2,
+  "source_sha256": "753f2597d0c7",
+  "seed": 42,
+  "topics": 196,
+  "questions_source": 2423,
+  "sizes": {
+    "train": 10921,
+    "valid": 438,
+    "test": 727,
+    "eval": 727
+  },
+  "test_by_behaviour": {
+    "in_scope": 588,
+    "support": 61,
+    "off_topic": 78
+  },
+  "topics_by_category": {
+    "activites": 25,
+    "app": 16,
+    "assistant": 11,
+    "compte": 20,
+    "concurrents": 15,
+    "depenses": 14,
+    "environnement": 11,
+    "fiabilite": 9,
+    "rejoindre": 18,
+    "situations": 20,
+    "soldes": 10,
+    "theme": 27
+  },
+  "questions_by_category": {
+    "activites": 278,
+    "app": 223,
+    "assistant": 131,
+    "compte": 245,
+    "concurrents": 141,
+    "depenses": 152,
+    "environnement": 105,
+    "fiabilite": 88,
+    "off_topic": 206,
+    "rejoindre": 196,
+    "situations": 163,
+    "soldes": 103,
+    "support": 161,
+    "theme": 231
+  },
+  "test_by_category": {
+    "activites": 75,
+    "app": 48,
+    "assistant": 33,
+    "compte": 60,
+    "concurrents": 45,
+    "depenses": 42,
+    "environnement": 33,
+    "fiabilite": 27,
+    "off_topic": 78,
+    "rejoindre": 54,
+    "situations": 60,
+    "soldes": 30,
+    "support": 61,
+    "theme": 81
+  }
+}

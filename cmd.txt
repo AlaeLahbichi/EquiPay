@@ -1,0 +1,6 @@
+cd ~/Desktop/EMSI_5/Projets/Generation_Textuelle_Mardi
+
+./start.sh            
+./start.sh serveurs   
+./stop.sh  
+

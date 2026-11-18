@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Flutter (iPhone)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "cwd": "mobile",
+      "args": [
+        "--dart-define-from-file=env.json"
+      ]
+    },
+    {
+      "name": "Backend (FastAPI)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--reload",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "jinja": true
+    }
+  ],
+  "compounds": [
+    {
+      "name": "App + Backend",
+      "configurations": [
+        "Flutter (iPhone)",
+        "Backend (FastAPI)"
+      ]
+    }
+  ]
+}

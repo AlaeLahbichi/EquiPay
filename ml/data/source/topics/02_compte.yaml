@@ -1,0 +1,397 @@
+# Compte, connexion et profil.
+category: compte
+
+topics:
+  - id: connexion
+    answer: >-
+      Va dans l'onglet Profile : appuie sur « Continuer avec un email » pour te connecter avec
+      ton email et ton mot de passe, ou sur « Continuer avec Google » pour utiliser ton compte
+      Google (Gmail).
+    keywords: [Profile, Continuer avec un email, Continuer avec Google]
+    questions:
+      - Comment je me connecte ?
+      - Comment se connecter à EquiPay ?
+      - Je peux me connecter avec Gmail ?
+      - Quelles sont les méthodes de connexion ?
+      - On peut se connecter avec Google ?
+      - Je veux me connecter, je fais comment ?
+      - Comment accéder à mon compte ?
+      - Connexion avec mon compte Google possible ?
+      - Comment ouvrir une session ?
+      - Quels identifiants utiliser pour entrer dans l'app ?
+      - Où est le bouton pour se connecter ?
+      - How do I log in?
+      - Can I sign in with Google?
+      - Kifach ndir connexion ?
+      - Fin kayn bouton dyal login ?
+      - J'ai déjà un compte, comment je rentre ?
+
+  - id: inscription
+    answer: >-
+      Dans l'onglet Profile, appuie sur « Continuer avec un email », choisis « Inscription »,
+      puis remplis ton prénom, ton nom, ton email et un mot de passe et appuie sur « Créer mon
+      compte ». Tu peux aussi t'inscrire directement avec « Continuer avec Google ».
+    keywords: [Profile, Inscription, email, mot de passe, Créer mon compte]
+    questions:
+      - Comment créer un compte ?
+      - Comment je m'inscris ?
+      - Je n'ai pas de compte, que faire ?
+      - Comment ouvrir un compte EquiPay ?
+      - L'inscription se fait comment ?
+      - Comment m'enregistrer ?
+      - C'est quoi les étapes pour s'inscrire ?
+      - Créer un compte avec Gmail c'est possible ?
+      - Quelles infos faut-il pour s'inscrire ?
+      - How do I create an account?
+      - How can I sign up?
+      - Kifach n7el compte jdid ?
+      - Bghit ndir inscription
+      - Où est le formulaire d'inscription ?
+      - Il faut quoi pour créer un compte EquiPay ?
+      - L'inscription est longue ?
+
+  - id: compte_cree
+    answer: >-
+      Après « Créer mon compte », ton compte est créé et tu es connecté directement : ton
+      profil est créé automatiquement et tu peux commencer à créer ou rejoindre des
+      activités.
+    keywords: [compte, connecté, profil, automatiquement]
+    questions:
+      - J'ai créé mon compte, et maintenant ?
+      - Il faut confirmer mon email après l'inscription ?
+      - Mon compte est actif tout de suite ?
+      - Je dois attendre un email pour utiliser l'app ?
+      - Après l'inscription je suis connecté ?
+      - Est-ce qu'il y a une validation du compte ?
+      - Mon profil est créé automatiquement ?
+      - Is my account active right away?
+      - Do I need to confirm my email?
+      - Wach khass nconfirmi l'email ?
+      - L'inscription est immédiate ?
+      - Combien de temps pour que mon compte soit validé ?
+
+  - id: mot_de_passe_regles
+    answer: >-
+      Ton mot de passe doit contenir au moins 6 caractères. Si l'app affiche « Mot de passe
+      trop faible », choisis-en un plus long.
+    keywords: [6 caractères, Mot de passe trop faible]
+    questions:
+      - Combien de caractères pour le mot de passe ?
+      - Pourquoi mon mot de passe est refusé ?
+      - Mot de passe trop faible, ça veut dire quoi ?
+      - Quelles sont les règles du mot de passe ?
+      - Le mot de passe doit faire combien de caractères ?
+      - Quelle longueur minimum pour le mot de passe ?
+      - What are the password requirements?
+      - Password chhal khass ykon ?
+      - Mon mot de passe de 4 lettres ne passe pas
+      - Il faut un mot de passe compliqué ?
+      - Erreur sur le mot de passe à l'inscription
+
+  - id: identifiants_incorrects
+    answer: >-
+      « Email ou mot de passe incorrect » veut dire que l'email ou le mot de passe saisi ne
+      correspond à aucun compte : vérifie l'adresse, les majuscules du mot de passe, ou crée
+      un compte si tu n'en as pas encore.
+    keywords: [Email ou mot de passe incorrect, vérifie, compte]
+    questions:
+      - Pourquoi il me dit email ou mot de passe incorrect ?
+      - Je n'arrive pas à me connecter avec mon email
+      - Mes identifiants ne marchent pas
+      - L'app refuse mon mot de passe à la connexion
+      - Erreur de connexion, que faire ?
+      - Je suis sûr de mon mot de passe mais ça ne marche pas
+      - It says wrong email or password
+      - Ma kaydkhlnich, kaygoul mot de passe ghalat
+      - Message identifiants incorrects
+      - Pourquoi la connexion échoue ?
+      - Connexion refusée avec mon email
+
+  - id: compte_existe
+    answer: >-
+      « Un compte existe déjà avec cet email » signifie que cette adresse est déjà inscrite :
+      choisis « Connexion » au lieu d'« Inscription » et connecte-toi avec ton mot de passe.
+    keywords: [Un compte existe déjà, Connexion]
+    questions:
+      - Pourquoi il dit qu'un compte existe déjà ?
+      - Je ne peux pas m'inscrire avec mon email
+      - Mon email est déjà utilisé, pourquoi ?
+      - Erreur compte déjà existant
+      - J'ai oublié que j'avais un compte
+      - L'inscription échoue car l'email est pris
+      - It says an account already exists
+      - Kaygoul compte deja kayn
+      - Je veux recréer un compte avec la même adresse
+      - Message un compte existe déjà avec cet email
+
+  - id: apple
+    answer: >-
+      Non, la connexion avec Apple n'est pas proposée. Tu peux te connecter avec ton email et
+      un mot de passe, ou avec ton compte Google.
+    keywords: [Apple, email, Google]
+    questions:
+      - Je peux me connecter avec mon compte Apple ?
+      - Est-ce qu'il y a la connexion Apple ?
+      - Sign in with Apple est disponible ?
+      - Pourquoi je ne trouve pas le bouton Apple ?
+      - Connexion avec mon identifiant Apple possible ?
+      - Je peux utiliser Apple ID pour me connecter ?
+      - Se connecter avec iCloud c'est possible ?
+      - Il n'y a pas Apple dans les options de connexion ?
+      - Je n'ai pas Gmail, je peux utiliser Apple ?
+      - Pourquoi pas de connexion Apple ?
+      - Can I log in with Apple?
+      - Wach kayn login b Apple ?
+      - Je peux me connecter avec Facebook ?
+      - Connexion avec Microsoft ou Outlook ?
+
+  - id: deconnexion
+    answer: >-
+      Va dans l'onglet Profile, appuie sur « Se déconnecter » puis confirme. Tu pourras te
+      reconnecter à tout moment avec ton email ou ton compte Google.
+    keywords: [Profile, Se déconnecter, confirme]
+    questions:
+      - Comment me déconnecter ?
+      - Où est le bouton de déconnexion ?
+      - Comment quitter mon compte ?
+      - Je veux me déconnecter de l'app
+      - Comment fermer ma session ?
+      - Comment changer de compte ?
+      - Se déconnecter, c'est où ?
+      - Comment sortir de mon compte EquiPay ?
+      - Je veux me connecter avec un autre compte
+      - Logout, comment faire ?
+      - How do I log out?
+      - Kifach nkhrej mn compte ?
+      - Si je me déconnecte, je perds mes données ?
+      - Comment passer sur le compte de ma femme ?
+
+  - id: supprimer_compte
+    answer: >-
+      Dans l'onglet Profile, appuie sur « Supprimer mon compte » puis confirme. Attention :
+      ton profil, les activités que tu as créées et tes dépenses sont supprimés
+      définitivement, l'action est irréversible.
+    keywords: [Profile, Supprimer mon compte, définitivement, irréversible]
+    questions:
+      - Comment supprimer mon compte ?
+      - Je veux effacer mon compte EquiPay
+      - Comment fermer définitivement mon compte ?
+      - Où est l'option pour supprimer le compte ?
+      - Je ne veux plus utiliser EquiPay, comment supprimer mes données ?
+      - Comment désactiver mon compte ?
+      - Que se passe-t-il si je supprime mon compte ?
+      - Supprimer mon compte efface mes activités ?
+      - On peut récupérer un compte supprimé ?
+      - How do I delete my account?
+      - Kifach nms7 compte dyali ?
+      - Supprimer le compte, c'est définitif ?
+      - Mes amis perdent les activités que j'ai créées si je supprime mon compte ?
+      - Comment résilier mon compte ?
+
+  - id: changer_email
+    answer: >-
+      Dans l'onglet Profile, appuie sur « Modifier mes informations », remplace ton email puis
+      appuie sur « Enregistrer ». Si un email de confirmation t'est envoyé, ouvre le lien pour
+      valider ta nouvelle adresse.
+    keywords: [Profile, Modifier mes informations, email, Enregistrer]
+    questions:
+      - Je veux changer l'adresse email de mon compte
+      - Comment modifier mon email ?
+      - Je peux mettre une autre adresse mail ?
+      - J'ai changé d'adresse email, comment la mettre à jour ?
+      - Comment remplacer mon email ?
+      - Mon email a changé, que faire ?
+      - Où modifier mon adresse électronique ?
+      - How do I change my email?
+      - Kifach nbdel l'email ?
+      - Mon ancienne adresse ne marche plus, comment la changer ?
+      - Je me suis trompé d'email à l'inscription
+
+  - id: username_auto
+    answer: >-
+      À l'inscription, ton pseudo (username) est créé automatiquement à partir du début de ton
+      email ; s'il est déjà pris, des chiffres sont ajoutés. Tu peux le changer avec
+      « Modifier mes informations » dans l'onglet Profile.
+    keywords: [pseudo, email, chiffres, Modifier mes informations]
+    questions:
+      - Comment est choisi mon username ?
+      - D'où vient mon nom d'utilisateur ?
+      - Pourquoi mon username a des chiffres ?
+      - Comment est créé mon pseudo ?
+      - Mon nom d'utilisateur a été généré comment ?
+      - Pourquoi j'ai un username bizarre ?
+      - Qui a choisi mon pseudo ?
+      - Mon username vient de mon email ?
+      - Pourquoi mon pseudo finit par des nombres ?
+      - How is my username chosen?
+      - Mnin ja had pseudo dyali ?
+      - Je n'ai jamais choisi de pseudo, d'où il vient ?
+
+  - id: changer_username
+    answer: >-
+      Dans l'onglet Profile, appuie sur « Modifier mes informations » et change ton pseudo. Il
+      doit être unique et faire 3 à 30 caractères : lettres minuscules, chiffres et « _ ».
+    keywords: [Modifier mes informations, pseudo, unique, 3, 30]
+    questions:
+      - Comment changer mon username ?
+      - Je peux modifier mon pseudo ?
+      - Quelles sont les règles pour le nom d'utilisateur ?
+      - Je peux mettre des majuscules dans mon username ?
+      - Combien de caractères pour un pseudo ?
+      - Comment renommer mon nom d'utilisateur ?
+      - Les espaces sont autorisés dans le username ?
+      - Je veux un autre pseudo
+      - Pseudo invalide, pourquoi ?
+      - Je peux mettre un point ou un tiret dans mon pseudo ?
+      - How do I change my username?
+      - Kifach nbdel pseudo ?
+      - Mon pseudo peut contenir des accents ?
+      - Quels caractères sont autorisés dans le pseudo ?
+
+  - id: username_pris
+    answer: >-
+      Chaque pseudo est unique : si celui que tu veux est déjà utilisé par quelqu'un d'autre,
+      l'app le refuse. Choisis-en un autre, par exemple en ajoutant des chiffres ou un « _ ».
+    keywords: [unique, déjà utilisé, chiffres]
+    questions:
+      - Mon nouveau username est refusé, pourquoi ?
+      - Pourquoi ce username n'est pas disponible ?
+      - Le pseudo que je veux est déjà pris
+      - Ce nom d'utilisateur est utilisé par quelqu'un d'autre ?
+      - Pseudo déjà pris, que faire ?
+      - Deux personnes peuvent avoir le même pseudo ?
+      - Username already taken, what can I do?
+      - Pseudo deja khdah chi wa7ed
+      - Pourquoi je ne peux pas prendre ce pseudo ?
+      - L'app me dit que le pseudo existe déjà
+
+  - id: profil
+    answer: >-
+      L'onglet Profile, en bas à droite, affiche ta photo, ton nom, ton pseudo et ton email.
+      Appuie sur « Modifier mes informations » pour les changer.
+    keywords: [Profile, photo, nom, pseudo, Modifier mes informations]
+    questions:
+      - Comment modifier mon profil ?
+      - Où sont mes informations personnelles ?
+      - Comment modifier mes infos ?
+      - Comment je mets à jour mon profil ?
+      - Où je vois mon profil ?
+      - Comment gérer mes informations personnelles ?
+      - Comment accéder à mon compte et mes infos ?
+      - Où modifier mes données personnelles ?
+      - Comment éditer mon profil ?
+      - Where is my profile?
+      - Fin kayn profil dyali ?
+      - Que montre l'onglet Profile quand je suis connecté ?
+      - Où voir l'email de mon compte ?
+
+  - id: changer_nom
+    answer: >-
+      Dans l'onglet Profile, appuie sur « Modifier mes informations », change ton nom puis
+      appuie sur « Enregistrer ». C'est ce nom que les autres membres voient dans tes
+      activités.
+    keywords: [Modifier mes informations, nom, Enregistrer, membres]
+    questions:
+      - Comment changer mon nom ?
+      - Je veux changer mon nom affiché
+      - Mon nom est mal écrit, comment le corriger ?
+      - Comment modifier mon prénom ?
+      - Je peux changer le nom qui apparaît aux autres ?
+      - Comment mettre mon vrai nom ?
+      - How do I change my name?
+      - Kifach nbdel smiti ?
+      - Mon nom de famille est faux dans l'app
+      - Je veux afficher un surnom à la place de mon nom
+
+  - id: photo_profil
+    answer: >-
+      Dans l'onglet Profile, appuie sur ta photo (le petit appareil photo) : choisis une image
+      dans ta galerie ou prends une photo. Accepte l'accès aux photos si ton téléphone le
+      demande.
+    keywords: [Profile, galerie, photo]
+    questions:
+      - Où je change ma photo de profil ?
+      - Je veux mettre une photo de profil
+      - Je peux changer mon avatar ?
+      - Comment ajouter une photo à mon profil ?
+      - Comment mettre un selfie en photo de profil ?
+      - Ma photo de profil, je la change où ?
+      - Comment remplacer ma photo ?
+      - L'app n'accède pas à mes photos, pourquoi ?
+      - Comment mettre une image de profil ?
+      - Comment modifier mon avatar ?
+      - How do I change my profile picture?
+      - Kifach nbdel tswira dyali ?
+      - À quoi sert l'icône appareil photo sur ma photo ?
+      - Ma photo de profil ne s'enregistre pas
+
+  - id: photo_par_defaut
+    answer: >-
+      Tant que tu n'as pas choisi de photo, EquiPay affiche une silhouette grise par défaut.
+      Appuie dessus dans l'onglet Profile pour ajouter ta propre photo.
+    keywords: [silhouette, défaut, Profile]
+    questions:
+      - Pourquoi j'ai une silhouette grise à la place de ma photo ?
+      - C'est quoi l'image grise sur mon profil ?
+      - Je n'ai pas de photo, c'est normal ?
+      - Pourquoi mon avatar est vide ?
+      - Ma photo par défaut est un bonhomme gris
+      - Why is my profile picture grey?
+      - Pourquoi les autres membres ont une image grise ?
+      - L'avatar par défaut, je peux le changer ?
+      - Tswira dyali ghir khal, 3lach ?
+      - Pas de photo de profil, qu'est-ce qui s'affiche ?
+
+  - id: visibilite_profil
+    answer: >-
+      Les autres membres de tes activités voient ton nom, ta photo de profil et ton pseudo,
+      pour pouvoir t'identifier dans l'activité.
+    keywords: [nom, photo, pseudo, membres]
+    questions:
+      - Qui voit mon profil ?
+      - Les autres voient ma photo ?
+      - Mon nom est visible par qui ?
+      - Qu'est-ce que les autres membres voient de moi ?
+      - Mon username est public ?
+      - Mes amis voient mon nom dans le voyage ?
+      - Quelles infos de mon profil sont visibles ?
+      - Est-ce que ma photo est visible par tout le monde ?
+      - Les participants voient quoi de mon compte ?
+      - Who can see my profile?
+      - Chkoun li kaychof profil dyali ?
+      - Le créateur d'une activité voit mon pseudo ?
+
+  - id: compte_plusieurs_appareils
+    answer: >-
+      Oui : tes données sont enregistrées en ligne avec ton compte. Connecte-toi avec le même
+      compte sur un autre téléphone pour retrouver tes activités.
+    keywords: [compte, en ligne, autre téléphone]
+    questions:
+      - Je peux utiliser mon compte sur deux téléphones ?
+      - J'ai changé de téléphone, je retrouve mes activités ?
+      - Mes données sont sauvegardées si je perds mon téléphone ?
+      - Comment récupérer mes activités sur un nouveau téléphone ?
+      - Si je réinstalle l'app, je perds tout ?
+      - Mon compte est lié à mon téléphone ?
+      - Can I use my account on another phone?
+      - Bdelt telephone, wach ghadi nlqa les activités dyali ?
+      - Je passe d'Android à iPhone, je garde mes données ?
+      - Mes dépenses sont stockées sur mon téléphone ou en ligne ?
+      - J'ai supprimé l'application par erreur
+
+  - id: pourquoi_connexion
+    answer: >-
+      Un compte est nécessaire pour que tes activités soient enregistrées et partagées avec tes
+      amis : chacun retrouve les mêmes dépenses et les mêmes soldes sur son téléphone.
+    keywords: [compte, enregistrées, partagées]
+    questions:
+      - Pourquoi faut-il un compte ?
+      - Pourquoi je dois créer un compte pour utiliser l'app ?
+      - À quoi sert le compte ?
+      - Pourquoi l'inscription est obligatoire ?
+      - Je ne veux pas créer de compte, pourquoi c'est obligatoire ?
+      - Why do I need an account?
+      - 3lach khass compte ?
+      - Le compte sert à quoi exactement ?
+      - On ne peut pas utiliser EquiPay en invité ?
+      - Pourquoi l'app ne marche pas sans connexion à un compte ?

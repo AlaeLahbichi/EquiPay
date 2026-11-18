@@ -1,0 +1,194 @@
+# L'environnement d'EquiPay : technologies, données, assistant et projet.
+category: environnement
+
+topics:
+  - id: technologies
+    answer: >-
+      EquiPay est développée avec Flutter pour l'application mobile, Supabase pour la base de
+      données, la connexion et le stockage des photos, et un serveur Python (FastAPI) pour
+      l'assistant.
+    keywords: [Flutter, Supabase, Python, FastAPI]
+    questions:
+      - Avec quelles technologies EquiPay a été développée ?
+      - Quel langage utilise EquiPay ?
+      - C'est quoi la stack technique de l'app ?
+      - EquiPay est codée en quoi ?
+      - Quels outils ont servi à créer l'application ?
+      - Quelle est l'architecture d'EquiPay ?
+      - What tech stack does EquiPay use?
+      - Which framework was used to build the app?
+      - B ach tkhdmat EquiPay ?
+      - Quelles technologies se cachent derrière l'app ?
+      - EquiPay utilise quel framework mobile ?
+
+  - id: flutter
+    answer: >-
+      L'application mobile est écrite en Dart avec Flutter : un seul code fonctionne à la fois
+      sur iPhone et sur Android, avec la même interface.
+    keywords: [Dart, Flutter, iPhone, Android]
+    questions:
+      - Pourquoi Flutter pour EquiPay ?
+      - EquiPay utilise Flutter ?
+      - L'app est native ou cross-platform ?
+      - C'est le même code sur iPhone et Android ?
+      - En quel langage est écrite l'application mobile ?
+      - Is EquiPay built with Flutter?
+      - Wach EquiPay mkteba b Flutter ?
+      - Pourquoi l'app est identique sur Android et iOS ?
+      - EquiPay est faite en Swift ou en Kotlin ?
+
+  - id: supabase
+    answer: >-
+      Les données d'EquiPay sont stockées dans une base de données PostgreSQL hébergée par
+      Supabase, qui gère aussi les comptes, les photos et les mises à jour en temps réel.
+    keywords: [PostgreSQL, Supabase, comptes, temps réel]
+    questions:
+      - Où sont stockées mes données ?
+      - Quelle base de données utilise EquiPay ?
+      - EquiPay utilise Supabase ?
+      - Mes dépenses sont enregistrées où ?
+      - Qui héberge les données de l'application ?
+      - C'est quoi le backend d'EquiPay ?
+      - Where is my data stored?
+      - Which database does EquiPay use?
+      - Fin kaytsajlo les données ?
+      - Les données sont dans le cloud ?
+      - EquiPay a un serveur ?
+
+  - id: securite_technique
+    answer: >-
+      La sécurité repose sur des règles d'accès dans la base de données (Row Level Security) :
+      chaque requête vérifie que tu es bien membre de l'activité, et seul l'owner peut faire
+      les actions de gestion. Les mots de passe sont gérés par le service d'authentification
+      et ne sont jamais stockés en clair.
+    keywords: [Row Level Security, membre, owner, mots de passe]
+    questions:
+      - Comment EquiPay sécurise les accès techniquement ?
+      - Comment l'app empêche un inconnu de lire mes dépenses ?
+      - Mon mot de passe est stocké en clair ?
+      - Comment sont protégés les mots de passe ?
+      - C'est quoi Row Level Security ?
+      - La sécurité est gérée côté serveur ?
+      - How does EquiPay secure data access?
+      - Kifach kayt7ma l'accès techniquement ?
+      - Un pirate peut modifier mes dépenses ?
+      - Les règles d'accès sont vérifiées où ?
+
+  - id: temps_reel_technique
+    answer: >-
+      Le temps réel vient de Supabase : l'application est abonnée aux changements de la base
+      de données, et dès qu'une dépense, un membre ou une demande change, ton téléphone reçoit
+      la mise à jour sans recharger.
+    keywords: [Supabase, abonnée, changements, sans recharger]
+    questions:
+      - Comment marche le temps réel techniquement ?
+      - Comment les autres reçoivent mes dépenses instantanément ?
+      - Par quel mécanisme les soldes se mettent à jour tout seuls ?
+      - Comment fonctionne la synchronisation ?
+      - How does real-time sync work?
+      - Kifach kaykhdem temps réel ?
+      - Comment je reçois les demandes sans rafraîchir ?
+      - La mise à jour automatique utilise quoi ?
+
+  - id: assistant_modele
+    answer: >-
+      L'assistant est un modèle de langage open source, Qwen3-4B, affiné avec la méthode LoRA
+      sur des milliers de questions et réponses sur EquiPay. Il tourne sur un serveur EquiPay
+      et ne sert qu'à répondre aux questions sur l'application.
+    keywords: [Qwen3-4B, LoRA, questions, serveur]
+    questions:
+      - Quel modèle d'IA utilise l'assistant ?
+      - Tu es basé sur quel modèle ?
+      - Comment fonctionne l'assistant techniquement ?
+      - Tu tournes sur quel modèle ?
+      - Quel LLM est derrière l'assistant ?
+      - Tu es un modèle Qwen ?
+      - Which AI model powers the assistant?
+      - Chno howa lmodel li khdam b ih l'assistant ?
+      - L'assistant utilise une API externe ?
+      - Tu es un modèle open source ?
+
+  - id: assistant_entrainement
+    answer: >-
+      J'ai été entraîné sur un jeu de questions et réponses sur EquiPay, le partage des
+      dépenses et les applications similaires. Chaque version est évaluée et suivie avec
+      MLflow, puis la meilleure est choisie pour répondre dans l'application.
+    keywords: [questions et réponses, évaluée, MLflow, meilleure]
+    questions:
+      - Comment as-tu été entraîné ?
+      - Sur quelles données es-tu entraîné ?
+      - Comment l'assistant a été créé ?
+      - Qui t'a appris à répondre ?
+      - Comment on choisit la version de l'assistant ?
+      - C'est quoi MLflow ?
+      - How were you trained?
+      - Kifach t3allemti ?
+      - Quelles données ont servi à t'entraîner ?
+      - Comment on améliore l'assistant ?
+
+  - id: projet_emsi
+    answer: >-
+      EquiPay est un projet réalisé par Alae Lahbichi à l'EMSI. Il réunit une application
+      mobile, une base de données en ligne et un assistant basé sur un modèle de langage
+      affiné, suivi avec des outils MLOps comme MLflow.
+    keywords: [Alae Lahbichi, EMSI, modèle de langage, MLflow]
+    questions:
+      - EquiPay c'est un projet d'école ?
+      - Dans quel contexte EquiPay a été créée ?
+      - C'est un projet de l'EMSI ?
+      - EquiPay est un projet étudiant ?
+      - Pourquoi EquiPay a été développée ?
+      - Le projet EquiPay comporte quoi ?
+      - Is EquiPay a school project?
+      - Wach EquiPay projet dyal l9raya ?
+      - Explique le projet derrière l'application
+      - Que contient le projet EquiPay en dehors de l'app ?
+
+  - id: nom_equipay
+    answer: >-
+      Le nom EquiPay associe « équi », pour le partage équitable, et « pay », pour les
+      paiements : l'idée est que chacun paie sa juste part.
+    keywords: [équi, équitable, pay, juste part]
+    questions:
+      - Pourquoi l'application s'appelle EquiPay ?
+      - Que veut dire EquiPay ?
+      - D'où vient le nom EquiPay ?
+      - Signification du nom EquiPay ?
+      - EquiPay ça veut dire quoi ?
+      - What does the name EquiPay mean?
+      - Chno ma3na smiya EquiPay ?
+      - Comment est venu le nom de l'app ?
+
+  - id: notifications
+    answer: >-
+      Quand l'application est ouverte, EquiPay te prévient par une bannière en bas de l'écran
+      et un compteur sur l'onglet Requests. Les notifications quand l'application est fermée
+      ne sont pas encore disponibles.
+    keywords: [ouverte, bannière, Requests, fermée]
+    questions:
+      - Est-ce que l'app envoie des notifications ?
+      - Je reçois des notifications quand l'app est fermée ?
+      - Il y a des notifications push ?
+      - Comment être prévenu d'une nouvelle demande ?
+      - L'app me notifie quand quelqu'un ajoute une dépense ?
+      - Pourquoi je n'ai pas reçu de notification sur mon téléphone ?
+      - Does the app send push notifications?
+      - Wach kaywslo notifications ?
+      - Comment activer les notifications ?
+      - Je ne suis pas averti quand l'application est fermée
+
+  - id: interface
+    answer: >-
+      EquiPay a une interface simple aux couleurs turquoise (lagon) et orange : une barre de 4
+      onglets en bas, le bouton rond orange « + » pour créer ou rejoindre une activité, un
+      mode clair et un mode sombre.
+    keywords: [4 onglets, +, mode sombre]
+    questions:
+      - Comment est conçue l'interface d'EquiPay ?
+      - Quelles sont les couleurs de l'application ?
+      - Pourquoi le bouton + est orange ?
+      - Décris le design de l'app
+      - L'interface est simple à utiliser ?
+      - What does the app look like?
+      - Kifach dayra l'interface ?
+      - Pourquoi l'app est turquoise et orange ?

@@ -1,0 +1,177 @@
+# Questions sur EquiPay dont l'assistant n'a pas la réponse (fonctions qui n'existent pas
+# encore, incidents de compte, tarifs, données précises…) : rediriger vers le support.
+# Objectif : que le modèle n'invente jamais de fonctionnalité.
+
+support_questions:
+  # Mot de passe et accès au compte
+  - J'ai oublié mon mot de passe
+  - Comment réinitialiser mon mot de passe ?
+  - Mot de passe perdu, que faire ?
+  - Comment changer mon mot de passe ?
+  - Je veux un nouveau mot de passe
+  - Comment modifier mon mot de passe ?
+  - Reset du mot de passe, comment faire ?
+  - I forgot my password
+  - Nsit mot de passe dyali
+  - Je n'ai pas reçu l'email de réinitialisation
+  - Je n'ai pas reçu le code de vérification
+  - Mon compte a été piraté
+  - Quelqu'un s'est connecté à mon compte sans moi
+  - Mon compte est bloqué
+  - Je n'arrive pas à me connecter avec Google
+  - La connexion Google affiche une erreur
+  - J'ai deux comptes, comment les fusionner ?
+  - Mon username a été pris par quelqu'un d'autre
+  - Je n'ai plus accès à mon adresse email
+  - Comment activer la double authentification ?
+  - Je peux verrouiller l'app avec Face ID ?
+  - Je peux protéger l'app avec un code PIN ?
+  - Comment récupérer un compte supprimé par erreur ?
+  - Je veux récupérer mes données personnelles
+  - Comment obtenir une copie de toutes mes données ?
+
+  # Tarifs et commerce
+  - EquiPay est gratuit ?
+  - Combien coûte l'abonnement ?
+  - Il y a une version premium ?
+  - Is EquiPay free?
+  - Wach EquiPay b flouss ?
+  - Je veux un remboursement de mon abonnement
+  - Comment obtenir une facture pour mon entreprise ?
+  - Il y a de la publicité dans l'application ?
+  - Est-ce que EquiPay utilise mes données pour la publicité ?
+  - Il y a un programme de parrainage ?
+  - Comment devenir partenaire d'EquiPay ?
+  - EquiPay propose des offres pour les entreprises ?
+  - Je peux utiliser EquiPay pour mon association gratuitement ?
+  - Y a-t-il des frais cachés ?
+
+  # Fonctions qui n'existent pas encore
+  - Je peux exporter mes dépenses en PDF ?
+  - Comment exporter mes dépenses vers Excel ?
+  - Je peux exporter en CSV ?
+  - Comment imprimer le récapitulatif du voyage ?
+  - Comment synchroniser avec Google Sheets ?
+  - Il existe une version web d'EquiPay ?
+  - Je peux utiliser EquiPay sur mon ordinateur ?
+  - Puis-je utiliser EquiPay sur ma tablette ?
+  - L'app est compatible avec l'Apple Watch ?
+  - Il y a un widget EquiPay pour l'écran d'accueil ?
+  - Peut-on lier EquiPay à mon compte bancaire ?
+  - EquiPay accepte les cryptomonnaies ?
+  - Peut-on scanner automatiquement les tickets de caisse ?
+  - Comment importer mes données Tricount dans EquiPay ?
+  - Je peux importer mes groupes Splitwise ?
+  - Comment inviter quelqu'un par email ?
+  - Je peux inviter avec une adresse mail ?
+  - Comment ajouter quelqu'un par son pseudo ?
+  - Comment quitter une activité ?
+  - Je veux sortir d'un voyage
+  - Comment je quitte un groupe ?
+  - Comment ne plus faire partie d'une activité ?
+  - Comment supprimer une activité ?
+  - Comment effacer un voyage terminé ?
+  - On peut récupérer une activité supprimée ?
+  - Comment archiver une activité terminée ?
+  - Comment générer un nouveau code pour mon activité ?
+  - Je peux régénérer le code ?
+  - Comment invalider l'ancien code ?
+  - Comment rechercher une activité ?
+  - Il y a une barre de recherche pour les voyages ?
+  - Comment filtrer mes activités ?
+  - Comment filtrer les dépenses ?
+  - Je peux trier les dépenses par montant ?
+  - Comment chercher une dépense par son nom ?
+  - Comment indiquer les dates du voyage ?
+  - Je peux ajouter une description à mon activité ?
+  - Comment préciser la ville de la sortie ?
+  - Je peux ajouter des photos de groupe au voyage ?
+  - Comment stocker les documents du voyage dans l'app ?
+  - Il y a des statistiques sur mes dépenses ?
+  - L'app fait des graphiques par catégorie ?
+  - Je peux classer mes dépenses par catégorie ?
+  - Comment fixer un budget maximum pour l'activité ?
+  - L'app m'alerte si on dépasse le budget ?
+  - Comment créer une dépense récurrente ?
+  - Je peux programmer le loyer chaque mois ?
+  - L'app envoie des rappels de paiement ?
+  - Comment relancer automatiquement quelqu'un qui me doit de l'argent ?
+  - Il y a un chat entre les membres d'une activité ?
+  - Je peux commenter une dépense ?
+  - Je peux ajouter une dépense sans internet ?
+  - Les taux de change sont mis à jour automatiquement ?
+  - Les taux de change sont mis à jour à quelle fréquence ?
+  - D'où viennent les taux de change ?
+  - Comment fusionner deux activités ?
+  - Je peux transférer une dépense vers une autre activité ?
+  - Je peux dupliquer une activité ?
+  - Comment récupérer une dépense supprimée ?
+  - Il y a un historique des modifications des dépenses ?
+  - Je peux voir qui a modifié une dépense ?
+  - Je peux partager une dépense en montants fixes au lieu de pourcentages ?
+  - Je peux changer la police de caractères ?
+  - Comment agrandir le texte dans l'app ?
+  - L'app est accessible aux personnes malvoyantes ?
+  - Je peux changer la couleur de l'application ?
+  - Comment changer l'icône de l'app ?
+  - Comment envoyer une capture du solde à mes amis depuis l'app ?
+
+  # Limites et données précises
+  - Y a-t-il une limite au nombre d'activités ?
+  - Combien de membres maximum dans un voyage ?
+  - Combien de dépenses maximum par activité ?
+  - Quelle est la taille maximum d'une photo ?
+  - Mes données sont stockées dans quel pays ?
+  - Les serveurs d'EquiPay sont en Europe ?
+  - EquiPay respecte le RGPD ?
+  - Combien de temps mes données sont-elles gardées ?
+  - Qui a accès aux données côté EquiPay ?
+  - Mes conversations avec l'assistant sont enregistrées ?
+  - Combien d'utilisateurs a EquiPay ?
+  - EquiPay est disponible dans quels pays ?
+  - Quelle version d'Android minimum faut-il ?
+  - Quelle version d'iOS est nécessaire ?
+  - L'application pèse combien ?
+
+  # Bugs et incidents
+  - J'ai trouvé un bug dans l'application
+  - L'application plante quand j'ouvre un voyage
+  - L'app se ferme toute seule
+  - L'application ne s'installe pas sur mon téléphone
+  - Mes photos ne s'affichent plus
+  - Mon solde est faux, il y a une erreur de calcul
+  - Une dépense a disparu
+  - Les montants sont incorrects dans mon activité
+  - J'ai un écran blanc au démarrage
+  - L'app consomme beaucoup de batterie
+  - L'app demande trop d'autorisations
+  - Le bouton Créer ne réagit pas
+  - Ma demande pour rejoindre a disparu
+  - Le code de mon activité a changé tout seul
+  - Je vois l'activité de quelqu'un que je ne connais pas
+  - The app keeps crashing
+  - L'application kat plantè
+  - Mon activité affiche des membres en double
+  - Je ne reçois plus les mises à jour en temps réel
+
+  # Contact, évolution, avis
+  - Comment contacter l'équipe EquiPay ?
+  - Il y a un numéro de téléphone pour le support ?
+  - Je veux faire une suggestion d'amélioration
+  - Je veux signaler un utilisateur
+  - Quelqu'un m'envoie des demandes abusives
+  - Quand sort la prochaine mise à jour ?
+  - Quelles sont les nouveautés de la prochaine version ?
+  - Quand Free Card sera disponible exactement ?
+  - Quand la traduction en anglais sera disponible ?
+  - EquiPay recrute ?
+  - Je veux travailler sur EquiPay
+  - EquiPay est open source ?
+  - Où télécharger EquiPay sur le Play Store ?
+  - EquiPay est sur l'App Store ?
+  - Comment laisser un avis sur l'application ?
+  - Je veux un rendez-vous avec le créateur de l'app
+  - How can I contact the EquiPay team?
+  - Kifach ntwasel m3a l'équipe ?
+  - Je veux devenir bêta-testeur
+  - Il y a une page Instagram EquiPay ?

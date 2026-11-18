@@ -1,0 +1,246 @@
+% =====================================================================
+\chapitre{Étude préalable et état de l'art}
+% =====================================================================
+
+Avant de concevoir l'application, il fallait comprendre comment les groupes gèrent
+aujourd'hui leurs dépenses et ce que proposent les outils existants. Ce chapitre présente
+cette analyse, les concepts d'intelligence artificielle mobilisés, l'étude de faisabilité,
+puis les besoins fonctionnels et non fonctionnels qui ont guidé nos choix.
+
+\subsection{Analyse de l'existant}
+
+Avant de concevoir l'application, nous avons observé comment les groupes autour de nous
+gèrent aujourd'hui leurs dépenses communes. Dans la plupart des cas, la gestion reste
+artisanale : chacun note ce qu'il a payé dans son téléphone ou dans la conversation du
+groupe, puis une personne fait le calcul à la fin, souvent dans un tableur. Quand une
+application est utilisée, elle ne l'est généralement que par un ou deux membres du groupe,
+qui saisissent tout pour les autres. Cette façon de faire présente plusieurs limites :
+
+\begin{itemize}
+  \item les dépenses oubliées ou saisies deux fois faussent le résultat final ;
+  \item la répartition inégale (une personne qui ne boit pas, une chambre plus chère) est
+        difficile à suivre sans erreur ;
+  \item personne ne sait, pendant le voyage, où il en est réellement ;
+  \item les tickets de caisse sont rarement conservés, alors qu'ils contiennent le montant
+        exact, la date et l'enseigne ;
+  \item le programme du voyage vit à part, dans une conversation où les propositions se
+        perdent et où personne ne sait ce que les autres préfèrent.
+\end{itemize}
+
+\subsection{Recueil des besoins}
+
+Ces observations, complétées par les échanges avec notre encadrante et par les retours
+d'amis qui ont testé les premières versions, nous ont permis d'identifier les besoins
+suivants :
+
+\begin{itemize}
+  \item partager une activité avec un groupe et voir les soldes de chacun en temps réel ;
+  \item ajouter une dépense en quelques secondes, sans remplir un long formulaire ;
+  \item savoir précisément qui doit rembourser qui, avec le moins de virements possible ;
+  \item préparer le programme d'un voyage à plusieurs, en votant pour les propositions ;
+  \item visualiser ce programme sur une carte et l'organiser pour perdre le moins de temps
+        possible en déplacement ;
+  \item obtenir de l'aide sur l'application sans quitter l'écran en cours.
+\end{itemize}
+
+\subsection{Étude des solutions concurrentes}
+
+Nous avons étudié les applications les plus utilisées pour le partage des dépenses et pour
+la préparation des voyages (tableau~\ref{tab:concurrents}).
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{3.4cm}|Y|}
+\hline
+\rowcolor{entete}\textbf{Application} & \textbf{Constat} \\ \hline
+Tricount~\cite{tricount} & Partage des dépenses simple et gratuit, groupes sans création de compte
+obligatoire. La saisie reste entièrement manuelle et l'application ne propose aucune aide
+à l'organisation du voyage. \\ \hline
+Splitwise~\cite{splitwise} & Référence du partage de dépenses, avec simplification des dettes. Les
+fonctions avancées, dont la lecture des tickets, sont réservées à l'abonnement payant ; aucune
+saisie en langage naturel. \\ \hline
+Settle Up~\cite{settleup} & Partage des dépenses multi-devises, plutôt orienté vers les groupes
+réguliers (colocation, couple). Même logique de formulaire à remplir pour chaque dépense. \\ \hline
+Wanderlog~\cite{wanderlog} & Planification de voyage sur carte avec liste des lieux et itinéraire.
+Le suivi des dépenses y est secondaire et le choix collectif des lieux n'est pas au cœur de
+l'outil. \\ \hline
+\end{tabularx}
+\caption{Panorama des solutions concurrentes étudiées}
+\label{tab:concurrents}
+\end{table}
+
+Aucune de ces solutions ne réunit, dans un même outil, le partage des dépenses, une saisie
+assistée par l'IA et l'organisation collective du voyage. C'est ce positionnement que
+vise \equipay : une seule application pour payer, équilibrer les comptes et décider
+ensemble de ce que l'on fait.
+
+\subsection{Concepts clés}
+
+Le tableau~\ref{tab:concepts} définit les principaux concepts mobilisés dans ce projet et
+précise leur rôle dans l'application.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{3.4cm}|Y|}
+\hline
+\rowcolor{entete}\textbf{Concept} & \textbf{Définition et rôle dans le projet} \\ \hline
+Grand modèle de langage (LLM) & Réseau de neurones de type \textit{Transformer} entraîné sur de vastes
+corpus pour prédire le mot suivant, capable de comprendre et de produire du texte. Nous utilisons
+Qwen3-4B-Instruct-2507~\cite{qwen3,qwen3_4b} pour l'assistant, la saisie par phrase et la rédaction
+du programme de voyage. \\ \hline
+Modèle vision-langage (VLM) & Modèle qui reçoit une image et du texte et répond en texte. Qwen3-VL-4B~\cite{qwen3vl}
+lit directement la photo d'un ticket, sans étape d'OCR séparée, et renvoie ses champs au format JSON. \\ \hline
+Affinage LoRA & Plutôt que de réentraîner tous les poids, LoRA~\cite{lora} ajoute à certaines couches
+deux petites matrices de faible rang, seules apprises. Moins de 1 \% des paramètres sont entraînés,
+ce qui rend l'affinage d'un modèle de 4 milliards de paramètres possible sur un seul GPU. \\ \hline
+Quantification & Représentation des poids sur moins de bits (ici 4 bits au lieu de 16). La mémoire
+nécessaire est divisée par trois à quatre, pour une perte de qualité mesurée et limitée. Elle est
+réalisée avec MLX~\cite{mlx}, la bibliothèque d'Apple pour les puces Apple Silicon. \\ \hline
+MLOps & Ensemble des pratiques qui rendent un modèle traçable et reproductible : données versionnées,
+expériences enregistrées, comparaison des versions et mise en service contrôlée. Nous utilisons
+MLflow~\cite{mlflow,mlflow_docs} et son registre de modèles. \\ \hline
+Sécurité au niveau des lignes (RLS) & Règles écrites dans PostgreSQL~\cite{postgres_rls} qui filtrent
+chaque requête selon l'utilisateur connecté. Un membre ne peut lire que les activités dont il fait
+partie, même si l'application était détournée. \\ \hline
+\end{tabularx}
+\caption{Concepts clés mobilisés dans le projet}
+\label{tab:concepts}
+\end{table}
+
+\subsection{Étude de faisabilité}
+
+Le tableau~\ref{tab:faisabilite} résume les quatre volets de l'étude de faisabilité menée
+avant le développement.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{3.0cm}|Y|}
+\hline
+\rowcolor{entete}\textbf{Volet} & \textbf{Constat} \\ \hline
+Technique & Flutter, Supabase et FastAPI sont des technologies matures et bien documentées. Flutter
+permet de viser iOS et Android avec un seul code, et Supabase fournit d'emblée l'authentification,
+le stockage des fichiers et le temps réel. \\ \hline
+Données & Des jeux publics de tickets annotés existent (CORD, SROIE, WildReceipt), mais aucun ne
+couvre les devises qui nous intéressent (dirham, euro). Pour l'assistant et la saisie par phrase,
+aucun jeu n'existe : il faut les construire nous-mêmes. \\ \hline
+Matériel & Un modèle de 4 milliards de paramètres s'affine en LoRA sur une carte de 16 Go (RTX 5080).
+En 4 bits, les trois modèles servis tiennent ensemble dans la mémoire d'un Mac de 18 Go. \\ \hline
+Coûts & Aucun coût d'API : les modèles sont ouverts et exécutés en local, Supabase est utilisé dans
+son offre gratuite, et les cartes et itinéraires reposent sur des services gratuits (Apple Plans,
+OSRM). \\ \hline
+\end{tabularx}
+\caption{Synthèse de l'étude de faisabilité}
+\label{tab:faisabilite}
+\end{table}
+
+\subsection{Spécification des besoins fonctionnels}
+
+Les besoins fonctionnels retenus sont regroupés par domaine :
+
+\begin{itemize}
+  \item \textbf{Comptes et profil} : inscription par e-mail ou avec Google, profil avec photo,
+        thème clair ou sombre, suppression du compte.
+  \item \textbf{Activités} : créer une activité (voyage, sortie, quotidien, crédit) avec sa
+        devise, rejoindre une activité par code avec validation du créateur, gérer les rôles
+        (membre ou spectateur), archiver ou supprimer.
+  \item \textbf{Dépenses} : ajouter une dépense avec montant, devise, date, payeur et photo du
+        reçu ; la répartir à parts égales, en pourcentages, en montants ou en parts.
+  \item \textbf{Soldes} : calculer le solde de chacun en temps réel, proposer le minimum de
+        remboursements, afficher graphiques et statistiques.
+  \item \textbf{Programme} : pour les voyages et les sorties, lister les lieux à visiter avec
+        adresse, date et heure, voter pour ou contre, afficher le programme en liste, en
+        calendrier et sur une carte.
+  \item \textbf{Intelligence artificielle} : scanner un ticket, décrire une dépense en une
+        phrase, organiser le trajet du programme, poser une question à l'assistant.
+\end{itemize}
+
+\subsection{Spécification des besoins non fonctionnels}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  num/.style={circle, fill=white, draw=black!10, minimum size=0.9cm, font=\bfseries, drop shadow={opacity=0.2}},
+  titre/.style={font=\large\bfseries, anchor=south},
+  texte/.style={font=\scriptsize, align=center, text width=3.9cm, anchor=north},
+  lien/.style={draw=#1, line width=0.8pt},
+  ]
+  % Demi-couronne en six secteurs
+  \foreach \i/\c in {0/lagon, 1/violet, 2/bleuclair, 3/orange, 4/recevoir, 5/ambre} {
+    \pgfmathsetmacro{\a}{180-\i*30-1.5}
+    \pgfmathsetmacro{\b}{180-(\i+1)*30+1.5}
+    \fill[\c!85] (\a:1.4) arc[start angle=\a, end angle=\b, radius=1.4] -- (\b:2.9)
+                 arc[start angle=\b, end angle=\a, radius=2.9] -- cycle;
+    \pgfmathsetmacro{\m}{180-\i*30-15}
+    \pgfmathtruncatemacro{\n}{\i+1}
+    \node[num] (n\n) at (\m:2.9) {0\n};
+  }
+  % Libellés : trois à gauche, trois à droite
+  \foreach \k/\x/\y/\c/\t/\d in {
+      1/-6.1/0.15/lagon/Performance/{Réponse de l'IA en quelques secondes : modèles MLX 4 bits chargés au premier usage.},
+      2/-6.1/2.35/violet/Fiabilité/{Repli sur PyTorch, temps estimés si OSRM ne répond pas, bandeau hors ligne.},
+      3/-6.1/4.55/bleuclair/Sécurité/{Règles RLS sur toutes les tables, jeton JWT vérifié, reçus privés.},
+      4/6.1/4.55/orange/Sobriété/{Aucun service payant ; backend limité à environ 5,8 Go de mémoire.},
+      5/6.1/2.35/recevoir/Ergonomie/{Material 3, mode sombre ; l'IA pré-remplit, l'utilisateur valide.},
+      6/6.1/0.15/ambre/Maintenabilité/{Migrations versionnées, 89 tests automatiques, modèles tracés dans MLflow.}}
+  {
+    \node[titre, text=\c!80!black] (t\k) at (\x,\y) {\t};
+    \node[texte] at (t\k.south) {\d};
+    \ifnum\k<4
+      \draw[lien=\c] (t\k.east) ++(0.1,-0.05) -- (n\k);
+    \else
+      \draw[lien=\c] (t\k.west) ++(-0.1,-0.05) -- (n\k);
+    \fi
+  }
+\end{tikzpicture}
+\caption{Synthèse des exigences non fonctionnelles retenues pour l'application}
+\label{fig:non_fonctionnels}
+\end{figure}
+
+La figure~\ref{fig:non_fonctionnels} synthétise les six exigences non fonctionnelles
+retenues : la performance (réponse rapide des modèles malgré une exécution locale), la
+fiabilité (l'application continue de fonctionner quand un service externe ne répond pas),
+la sécurité (chaque utilisateur ne voit que ses propres activités), la sobriété (aucun coût
+et une empreinte mémoire maîtrisée), l'ergonomie (prise en main immédiate) et la
+maintenabilité (code testé et modèles traçables).
+
+\subsection{Synthèse et choix retenus}
+
+L'étude de l'existant a montré qu'aucun outil ne combine partage des dépenses, saisie
+assistée par l'IA et organisation collective du voyage. Sur cette base, nous avons retenu
+les choix résumés dans la figure~\ref{fig:choix}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  centre/.style={circle, fill=lagon, text=white, minimum size=2.5cm, font=\bfseries\large, drop shadow={opacity=0.2}},
+  choix/.style={rectangle, rounded corners=5pt, draw=#1, line width=0.8pt, fill=white,
+                text width=4.1cm, align=center, font=\small, inner sep=6pt, minimum height=1.55cm},
+  lien/.style={draw=#1, line width=1pt, -{Latex[length=2.2mm]}},
+  ]
+  \node[centre] (e) at (0,0) {EquiPay};
+  \node[choix=lagon]     (a) at (-5.3, 2.15) {\textbf{Mobile}\\ Flutter, Material 3,\\ carte native Apple Plans};
+  \node[choix=violet]    (b) at ( 0.0, 3.25) {\textbf{Données}\\ Supabase : PostgreSQL,\\ RLS, stockage, temps réel};
+  \node[choix=orange]    (c) at ( 5.3, 2.15) {\textbf{Service d'IA}\\ FastAPI en local,\\ inférence MLX 4 bits};
+  \node[choix=bleuclair] (d) at (-5.3,-2.15) {\textbf{Modèles}\\ Qwen3-4B et Qwen3-VL-4B\\ affinés par LoRA};
+  \node[choix=recevoir]  (f) at ( 0.0,-3.25) {\textbf{MLOps}\\ MLflow : suivi des essais,\\ registre et « champion »};
+  \node[choix=ambre]     (g) at ( 5.3,-2.15) {\textbf{Itinéraires}\\ OSRM, algorithme d'ordre\\ et MapKit};
+  \foreach \n/\c in {a/lagon, b/violet, c/orange, d/bleuclair, f/recevoir, g/ambre}
+    \draw[lien=\c] (e) -- (\n);
+\end{tikzpicture}
+\caption{Synthèse des choix technologiques et fonctionnels retenus}
+\label{fig:choix}
+\end{figure}
+
+Ces choix constituent le socle technique et fonctionnel détaillé dans le chapitre suivant,
+consacré à la conception de l'application.
+
+\subsection{Conclusion du chapitre}
+
+Ce chapitre a posé le cadre du projet à travers l'analyse de l'existant, l'étude des
+solutions concurrentes et la définition des concepts clés (modèles de langage et
+vision-langage, LoRA, quantification, MLOps). L'étude de faisabilité et la spécification
+des besoins fonctionnels et non fonctionnels ont guidé les choix retenus, qui servent de
+base à la conception présentée dans le chapitre suivant.

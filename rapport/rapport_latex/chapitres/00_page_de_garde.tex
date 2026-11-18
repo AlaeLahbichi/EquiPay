@@ -1,0 +1,45 @@
+% ---------------------------------------------------------------------
+%  Page de garde : aucun numéro affiché, page non comptée
+% ---------------------------------------------------------------------
+\begin{titlepage}
+\thispagestyle{empty}
+\setstretch{1}
+\begin{tikzpicture}[remember picture, overlay]
+  % Bande verte à gauche et carré bordeaux en bas
+  \fill[vert] ([xshift=0.58in, yshift=-0.58in]current page.north west) rectangle ([xshift=0.9in, yshift=0.82in]current page.south west);
+  \fill[bordeaux] ([xshift=0.58in, yshift=0.62in]current page.south west) rectangle ([xshift=0.9in, yshift=0.3in]current page.south west);
+  % Logos : école à gauche, application à droite
+  \node[anchor=north west, inner sep=0] at ([xshift=1.17in, yshift=-1.12in]current page.north west)
+    {\includegraphics[width=2.75in]{logo_emsi.png}};
+  \node[anchor=north east, inner sep=0] at ([xshift=-0.85in, yshift=-0.9in]current page.north east)
+    {\includegraphics[width=1.05in]{logo_equipay.png}};
+\end{tikzpicture}
+
+\begin{center}
+  \vspace*{1.55in}
+  {\Large\color{bleu} Rapport de Projet}\\[1.1em]
+  {\large\bfseries\color{bleu} 5\textsuperscript{ème} année}\\[0.15em]
+  {\large\bfseries\color{bleu} IASDR -- Intelligence Artificielle}\\[2.2em]
+  {\normalsize\bfseries Sous le thème}\\[1.4em]
+  \rule{0.62\textwidth}{0.6pt}\\[1.4em]
+  {\fontsize{21}{27}\selectfont EquiPay : application intelligente avec\\ un assistant conversationnel et une\\ automatisation basées sur l'IA\par}
+  \vspace{1.3em}
+  \rule{0.62\textwidth}{0.6pt}
+\end{center}
+
+\vspace{3em}
+\noindent
+\begin{minipage}[t]{0.6\textwidth}
+  {\bfseries\color{bleu} Réalisé par :}\\
+  Alae Lahbichi\\
+  Haytham Benladoul\\[0.9em]
+  {\bfseries\color{bleu} Encadré par :}\\
+  Hasnââ CHAABI
+\end{minipage}
+
+\vfill
+\begin{center}
+  {\bfseries\color{bleu} Année Universitaire : 2026-2027}
+\end{center}
+\vspace*{0.1in}
+\end{titlepage}

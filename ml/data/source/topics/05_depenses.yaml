@@ -1,0 +1,257 @@
+# Dépenses : ajout, répartition, payeur, devises, photos.
+# Les règles décrites ici sont celles imposées par la base de données d'EquiPay.
+category: depenses
+
+topics:
+  - id: ajouter_depense
+    answer: >-
+      Ouvre l'activité et ajoute une dépense : indique son nom, le montant, la devise, la date,
+      qui a payé et les participants avec leur pourcentage. Il faut être owner ou membre (pas
+      spectateur).
+    keywords: [montant, devise, date, participants, pourcentage]
+    questions:
+      - Comment ajouter une dépense ?
+      - Comment je note ce que j'ai payé ?
+      - Comment enregistrer une dépense ?
+      - J'ai payé le resto, comment je l'ajoute ?
+      - Comment saisir une nouvelle dépense ?
+      - Comment ajouter un achat dans le voyage ?
+      - Comment déclarer une dépense commune ?
+      - Comment je rentre une dépense ?
+      - J'ai payé l'essence, comment je le mets ?
+      - Comment ajouter le prix de l'hôtel ?
+      - Où j'ajoute une dépense ?
+      - Comment noter les courses de la coloc ?
+      - How do I add an expense?
+      - Kifach nzid dépense ?
+      - Khlesst l'hôtel, kifach nsejjlo ?
+      - Comment ajouter le billet de train ?
+
+  - id: qui_peut_ajouter
+    answer: >-
+      L'owner et les membres peuvent ajouter des dépenses. Un spectateur ne peut pas : il
+      voit l'activité en lecture seule.
+    keywords: [owner, membres, spectateur, lecture seule]
+    questions:
+      - Qui peut ajouter une dépense ?
+      - Pourquoi je ne peux pas ajouter de dépense ?
+      - Le bouton pour ajouter une dépense ne marche pas pour moi
+      - Tout le monde peut ajouter des dépenses ?
+      - Je suis spectateur, je peux noter une dépense ?
+      - Who can add expenses?
+      - Chkoun li y9der yzid dépense ?
+      - Seul le créateur ajoute les dépenses ?
+      - Pourquoi l'ajout de dépense m'est refusé ?
+
+  - id: infos_depense
+    answer: >-
+      Une dépense contient : un nom, une description optionnelle, un montant, une devise, une
+      date, la personne qui a payé et les participants. Le lieu (pays, ville, adresse) est
+      optionnel.
+    keywords: [nom, montant, devise, date, participants, lieu]
+    questions:
+      - Quelles informations mettre dans une dépense ?
+      - Le lieu est obligatoire pour une dépense ?
+      - Quels champs faut-il remplir ?
+      - Je dois indiquer l'adresse de la dépense ?
+      - Que contient une dépense ?
+      - Est-ce que la ville est obligatoire ?
+      - La description est obligatoire ?
+      - Je peux mettre le pays de la dépense ?
+      - Quels détails ajouter à une dépense ?
+      - Il faut préciser où j'ai payé ?
+      - What fields does an expense have?
+      - Chno khass n3ammar f dépense ?
+
+  - id: montant_depense
+    answer: >-
+      Le montant d'une dépense doit être positif, avec au maximum deux décimales (les
+      centimes), par exemple 12,50. Un montant nul ou négatif est refusé.
+    keywords: [positif, deux décimales, centimes]
+    questions:
+      - Je peux mettre un montant négatif ?
+      - Combien de décimales pour le montant ?
+      - Pourquoi mon montant est refusé ?
+      - Je peux ajouter une dépense à zéro ?
+      - Comment saisir les centimes ?
+      - Le montant accepte les virgules ?
+      - Can the amount be negative?
+      - Wach nqder ndir montant b centimes ?
+      - Comment noter un remboursement négatif ?
+      - Montant invalide, pourquoi ?
+
+  - id: date_depense
+    answer: >-
+      Chaque dépense a une date : par défaut celle du jour, mais tu peux choisir une autre
+      date, par exemple pour une dépense faite la veille.
+    keywords: [date, jour]
+    questions:
+      - Je peux ajouter une dépense d'hier ?
+      - Comment changer la date d'une dépense ?
+      - La date est automatique ?
+      - J'ai oublié une dépense de la semaine dernière
+      - Comment antidater une dépense ?
+      - Quelle date est mise par défaut ?
+      - Je peux mettre une dépense à une date passée ?
+      - Comment corriger la date d'un achat ?
+      - Can I add an expense from yesterday?
+      - Nqder nzid dépense dyal lbare7 ?
+      - Comment ajouter une ancienne dépense ?
+
+  - id: modifier_depense
+    answer: >-
+      Seul le créateur d'une dépense peut la modifier ou la supprimer. Tu ne peux donc pas
+      modifier la dépense d'un autre participant : demande-lui de le faire.
+    keywords: [créateur, modifier, supprimer]
+    questions:
+      - Comment modifier une dépense ?
+      - Pourquoi je ne peux pas modifier cette dépense ?
+      - Je peux supprimer la dépense de mon ami ?
+      - Comment supprimer une dépense ?
+      - Qui peut modifier une dépense ?
+      - J'ai fait une erreur dans une dépense d'un autre, je peux corriger ?
+      - Comment corriger une dépense ?
+      - Je me suis trompé de montant
+      - Comment effacer une dépense en double ?
+      - L'owner peut modifier mes dépenses ?
+      - Pourquoi la dépense de Sara est bloquée pour moi ?
+      - Who can edit an expense?
+      - Kifach nbdel dépense ?
+
+  - id: pourcentages
+    answer: >-
+      Pour chaque dépense, tu indiques le pourcentage de chaque participant. La somme doit
+      faire exactement 100 %, par exemple 50 % / 50 %, ou 70 % / 30 %.
+    keywords: [pourcentage, 100]
+    questions:
+      - Comment répartir une dépense ?
+      - Comment partager une dépense entre plusieurs personnes ?
+      - Pourquoi ma dépense est refusée à cause des pourcentages ?
+      - Comment fonctionne la répartition ?
+      - Je veux payer 70% et mon ami 30%, c'est possible ?
+      - La somme des pourcentages doit faire combien ?
+      - Comment diviser une dépense inégalement ?
+      - Erreur sur les pourcentages, que faire ?
+      - Comment chacun paie sa part ?
+      - How do I split an expense?
+      - Kifach n9essem dépense ?
+      - Les pourcentages ne font pas 100, pourquoi c'est bloqué ?
+
+  - id: parts_egales
+    answer: >-
+      Pour un partage égal, donne le même pourcentage à chacun : 50 % chacun à deux, environ
+      33,33 % à trois, 25 % chacun à quatre. La somme doit toujours faire 100 %.
+    keywords: [égal, 50, 25, 100]
+    questions:
+      - Comment partager équitablement entre 4 ?
+      - Comment séparer une note à trois ?
+      - Comment faire des parts égales ?
+      - Comment diviser une addition en parts égales ?
+      - Partager 50-50, comment faire ?
+      - Comment je partage l'addition ?
+      - On est 3, quel pourcentage pour chacun ?
+      - How do I split equally?
+      - Kifach n9essem b nefs l9edd ?
+      - Partage égal entre 5 personnes ?
+
+  - id: payeur
+    answer: >-
+      Dans chaque dépense, tu indiques qui a payé. Ce n'est pas forcément toi : tu peux noter
+      qu'un autre membre a payé. Un spectateur ne peut pas être payeur.
+    keywords: [payé, membre, spectateur]
+    questions:
+      - Comment indiquer qu'un ami a payé ?
+      - Je peux ajouter une dépense payée par quelqu'un d'autre ?
+      - Comment dire qui a payé ?
+      - C'est Sara qui a payé, comment je le note ?
+      - Le payeur doit être moi ?
+      - Comment saisir une dépense avancée par un autre ?
+      - Qui peut être payeur ?
+      - Comment changer la personne qui a payé ?
+      - J'enregistre un paiement fait par mon frère
+      - Can I add an expense paid by someone else?
+      - Sa7bi li khelles, kifach nktbha ?
+
+  - id: participer_sans_payer
+    answer: >-
+      Oui : le payeur n'est pas obligé de participer. Par exemple, si tu paies un cadeau pour
+      les autres, mets-toi comme payeur et répartis 100 % entre les autres participants.
+    keywords: [payeur, participer, 100]
+    questions:
+      - J'ai payé pour les autres sans participer, comment faire ?
+      - Le payeur doit forcément participer ?
+      - J'ai avancé de l'argent pour un ami seulement
+      - Comment payer pour quelqu'un d'autre ?
+      - Je ne fais pas partie de la dépense mais je l'ai payée
+      - J'ai payé le billet d'un ami
+      - Dépense payée par moi mais pour Omar uniquement
+      - Comment exclure le payeur de la répartition ?
+      - I paid but I'm not part of the expense
+      - Khlesst 3la sa7bi bou7do
+
+  - id: depense_autre_devise
+    answer: >-
+      Une dépense peut être dans une autre devise que celle de l'activité, avec un taux de
+      change. Par exemple, 100 MAD dans un voyage en euros avec un taux de 0,092 comptent pour
+      9,20 € dans les totaux et les soldes.
+    keywords: [autre devise, taux de change, 100 MAD, 9,20]
+    questions:
+      - Je peux ajouter une dépense en dirhams ?
+      - J'ai payé en MAD, comment je fais ?
+      - Comment gérer plusieurs devises ?
+      - Mon voyage est en euros mais j'ai payé en dollars
+      - Comment sont converties les devises ?
+      - Comment fonctionne le taux de change ?
+      - Une dépense dans une autre monnaie, c'est possible ?
+      - Can I add an expense in another currency?
+      - Khlesst b dollar w l'activité b euro
+      - Comment sont convertis les montants étrangers ?
+      - Ça marche avec d'autres monnaies que l'euro ?
+
+  - id: photos_depense
+    answer: >-
+      Tu peux joindre 0, 1 ou 2 photos maximum à une dépense, par exemple un reçu ou un devis.
+      Seul le créateur de la dépense peut en ajouter.
+    keywords: [2, reçu, créateur]
+    questions:
+      - Comment ajouter un reçu ?
+      - Combien de photos par dépense ?
+      - Je peux mettre la photo du ticket ?
+      - Pourquoi je ne peux pas ajouter une troisième photo ?
+      - Comment joindre un devis à une dépense ?
+      - La photo du reçu est obligatoire ?
+      - Je peux ajouter une photo à la dépense de mon ami ?
+      - Où je mets la photo de l'addition ?
+      - Combien de justificatifs maximum ?
+      - How many photos per expense?
+      - Nqder n7et tswira dyal l'facture ?
+
+  - id: recus_prives
+    answer: >-
+      Les photos de reçus et de devis sont privées : seuls les membres de l'activité peuvent
+      les voir.
+    keywords: [privées, membres]
+    questions:
+      - Mes reçus sont privés ?
+      - Qui voit les photos de mes tickets ?
+      - Les justificatifs sont publics ?
+      - Un inconnu peut voir mes factures ?
+      - Les photos des dépenses sont visibles par qui ?
+      - Are receipts private?
+      - Chkoun kaychof tsawer dyal l'factures ?
+      - Mon reçu contient mon adresse, qui peut le voir ?
+
+  - id: depense_spectateur
+    answer: >-
+      Un spectateur ne participe à aucune dépense : il ne peut être ni payeur ni participant.
+      Pour l'inclure dans le partage, l'owner doit d'abord le passer en membre.
+    keywords: [spectateur, payeur, participant, membre]
+    questions:
+      - Je peux mettre un spectateur dans une dépense ?
+      - Pourquoi je ne trouve pas Omar dans les participants ?
+      - Un spectateur peut participer à une dépense ?
+      - Comment inclure un spectateur dans le partage ?
+      - Pourquoi ce membre n'apparaît pas dans la répartition ?
+      - Can a viewer be part of an expense?
+      - 3lach ma kaybanch f la répartition ?
+      - Un spectateur peut avoir payé quelque chose ?

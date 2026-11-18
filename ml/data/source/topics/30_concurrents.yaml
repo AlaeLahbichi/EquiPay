@@ -1,0 +1,265 @@
+# Applications similaires et comparaisons. Faits volontairement stables (pas de prix ni de
+# limites qui changent souvent) ; pour le détail à jour, renvoyer vers le site de l'app.
+category: concurrents
+
+topics:
+  - id: apps_similaires
+    answer: >-
+      Les applications les plus connues pour partager des dépenses sont Tricount, Splitwise
+      et Settle Up, ainsi que des sites comme Spliit ou Kittysplit. EquiPay fait la même chose
+      avec des rôles (owner, membre, spectateur) et un assistant intégré.
+    keywords: [Tricount, Splitwise, Settle Up, rôles]
+    questions:
+      - Quelles applications ressemblent à EquiPay ?
+      - Il existe d'autres apps pour partager les dépenses ?
+      - Quels sont les concurrents d'EquiPay ?
+      - Quelles alternatives à EquiPay ?
+      - Quelles sont les meilleures apps de partage de frais ?
+      - Apps similaires pour gérer les dépenses entre amis ?
+      - What are the alternatives to EquiPay?
+      - Which apps are similar to EquiPay?
+      - Chno homa les applications bhal EquiPay ?
+      - Quelles applis pour partager les frais de voyage ?
+      - Il y a des concurrents sur le marché ?
+
+  - id: tricount
+    answer: >-
+      Tricount est une application belge de partage de dépenses entre amis, lancée en 2010 et
+      rachetée par la banque en ligne bunq en 2022. Comme EquiPay, elle sert à noter les
+      dépenses d'un groupe et à voir qui doit combien.
+    keywords: [Tricount, belge, bunq, dépenses]
+    questions:
+      - C'est quoi Tricount ?
+      - Tu connais Tricount ?
+      - Tricount appartient à qui ?
+      - Tricount ça marche comment ?
+      - Tricount est une application de quel pays ?
+      - Présente-moi Tricount
+      - What is Tricount?
+      - Who owns Tricount?
+      - Chno hiya Tricount ?
+      - Tricount a été racheté par une banque ?
+      - Depuis quand existe Tricount ?
+
+  - id: equipay_vs_tricount
+    answer: >-
+      Tricount et EquiPay servent tous les deux à partager les dépenses d'un groupe. EquiPay
+      ajoute des rôles avec un spectateur en lecture seule, une validation par le créateur de
+      chaque demande pour rejoindre, et un assistant qui répond en français.
+    keywords: [Tricount, spectateur, validation, assistant]
+    questions:
+      - Quelle différence entre EquiPay et Tricount ?
+      - Pourquoi utiliser EquiPay plutôt que Tricount ?
+      - EquiPay ou Tricount, lequel choisir ?
+      - EquiPay est mieux que Tricount ?
+      - Qu'est-ce qu'EquiPay a de plus que Tricount ?
+      - Compare EquiPay et Tricount
+      - EquiPay vs Tricount?
+      - Why EquiPay instead of Tricount?
+      - Chno lfar9 bin EquiPay w Tricount ?
+      - J'utilise Tricount, pourquoi passer à EquiPay ?
+      - EquiPay copie Tricount ?
+
+  - id: splitwise
+    answer: >-
+      Splitwise est une application américaine lancée en 2011, très utilisée par les
+      colocataires et les voyageurs pour suivre les dettes d'un groupe. Elle propose une
+      version gratuite et un abonnement payant, Splitwise Pro, avec des fonctions en plus.
+    keywords: [Splitwise, américaine, gratuite, Splitwise Pro]
+    questions:
+      - C'est quoi Splitwise ?
+      - Tu connais Splitwise ?
+      - Splitwise est gratuit ?
+      - Splitwise ça vient d'où ?
+      - Présente-moi Splitwise
+      - Splitwise Pro, c'est quoi ?
+      - What is Splitwise?
+      - Is Splitwise free?
+      - Chno hiya Splitwise ?
+      - Splitwise est payant ?
+      - Depuis quand existe Splitwise ?
+
+  - id: equipay_vs_splitwise
+    answer: >-
+      Splitwise et EquiPay suivent tous les deux les dépenses et les soldes d'un groupe.
+      EquiPay se distingue par ses 4 types d'activité (Voyage, Sortie, Quotidien, Crédit), ses
+      rôles avec spectateurs et son assistant intégré en français.
+    keywords: [Splitwise, 4 types, spectateurs, assistant]
+    questions:
+      - Quelle différence entre EquiPay et Splitwise ?
+      - Pourquoi choisir EquiPay plutôt que Splitwise ?
+      - EquiPay ou Splitwise ?
+      - EquiPay est mieux que Splitwise ?
+      - Compare EquiPay avec Splitwise
+      - EquiPay vs Splitwise?
+      - Is EquiPay better than Splitwise?
+      - Chno lfar9 bin EquiPay w Splitwise ?
+      - J'ai Splitwise, EquiPay apporte quoi de plus ?
+      - Splitwise fait la même chose qu'EquiPay ?
+
+  - id: settle_up
+    answer: >-
+      Settle Up est une application de partage de dépenses disponible sur Android, iPhone et
+      sur le web. Elle gère plusieurs devises et propose une version gratuite et une version
+      Premium.
+    keywords: [Settle Up, web, devises, Premium]
+    questions:
+      - C'est quoi Settle Up ?
+      - Tu connais Settle Up ?
+      - Settle Up marche sur ordinateur ?
+      - Présente-moi l'application Settle Up
+      - Settle Up est gratuit ?
+      - What is Settle Up?
+      - Chno hiya Settle Up ?
+      - Settle Up gère plusieurs devises ?
+      - Settle Up existe sur iPhone ?
+
+  - id: spliit
+    answer: >-
+      Spliit est une alternative gratuite et open source à Splitwise, utilisable dans le
+      navigateur, sans créer de compte. EquiPay, lui, est une application mobile avec un compte
+      pour retrouver tes activités sur tous tes téléphones.
+    keywords: [Spliit, open source, navigateur, compte]
+    questions:
+      - C'est quoi Spliit ?
+      - Tu connais Spliit ?
+      - Spliit est gratuit ?
+      - Spliit ou EquiPay ?
+      - Il existe une alternative open source à Splitwise ?
+      - What is Spliit?
+      - Chno hiya Spliit ?
+      - Une app de partage de frais sans compte ?
+      - Spliit marche sans inscription ?
+
+  - id: kittysplit
+    answer: >-
+      Kittysplit est un site web pour partager les dépenses d'un événement sans créer de
+      compte : on partage un lien avec le groupe. EquiPay est une application mobile, avec des
+      comptes, des rôles et des soldes mis à jour en temps réel.
+    keywords: [Kittysplit, site web, lien, temps réel]
+    questions:
+      - C'est quoi Kittysplit ?
+      - Tu connais Kittysplit ?
+      - Kittysplit ou EquiPay ?
+      - Kittysplit marche comment ?
+      - What is Kittysplit?
+      - Chno howa Kittysplit ?
+      - Différence entre Kittysplit et EquiPay ?
+      - Kittysplit nécessite un compte ?
+
+  - id: apps_paiement
+    answer: >-
+      Lydia, PayPal ou Wise sont des services pour envoyer de l'argent. EquiPay ne fait pas de
+      paiement : il calcule qui doit combien, puis le remboursement peut se faire avec l'outil
+      de paiement de ton choix.
+    keywords: [Lydia, PayPal, paiement, remboursement]
+    questions:
+      - EquiPay c'est comme Lydia ?
+      - Quelle différence entre EquiPay et PayPal ?
+      - EquiPay remplace Lydia ?
+      - Je peux rembourser avec PayPal ?
+      - EquiPay est une app de paiement comme Wise ?
+      - Is EquiPay like PayPal?
+      - EquiPay bhal CashPlus ?
+      - Je peux utiliser Lydia avec EquiPay ?
+      - Faut-il une app de paiement en plus d'EquiPay ?
+
+  - id: vs_excel
+    answer: >-
+      Un tableur comme Excel ou Google Sheets peut suivre des dépenses, mais il faut faire les
+      calculs et le partager à la main. EquiPay calcule les soldes automatiquement et chaque
+      membre voit les mêmes chiffres en temps réel sur son téléphone.
+    keywords: [Excel, calculs, soldes, temps réel]
+    questions:
+      - Pourquoi ne pas utiliser un fichier Excel ?
+      - EquiPay ou un tableau Google Sheets ?
+      - Un tableur suffit pour partager les dépenses ?
+      - Quel avantage par rapport à un fichier Excel ?
+      - On faisait nos comptes sur Excel, pourquoi changer ?
+      - Why not just use a spreadsheet?
+      - 3lach mandirch Excel ?
+      - EquiPay vs Google Sheets pour la coloc ?
+
+  - id: vs_whatsapp_notes
+    answer: >-
+      Noter les dépenses dans un groupe WhatsApp ou sur un carnet devient vite confus : on
+      perd des messages et il faut tout recalculer. Dans EquiPay, chaque dépense est
+      enregistrée au même endroit et les soldes se calculent tout seuls.
+    keywords: [WhatsApp, carnet, soldes]
+    questions:
+      - Pourquoi ne pas juste noter dans le groupe WhatsApp ?
+      - On note nos dépenses sur un papier, c'est suffisant ?
+      - EquiPay vs les notes du téléphone ?
+      - Quel intérêt par rapport à un groupe WhatsApp ?
+      - Why not just keep track in a group chat?
+      - Kanktbo f WhatsApp, 3lach EquiPay ?
+      - Un carnet suffit pour les comptes entre amis ?
+      - Calculer à la main ou utiliser une app ?
+
+  - id: avantages_equipay
+    answer: >-
+      Les points forts d'EquiPay : 4 types d'activité, des rôles avec spectateurs en lecture
+      seule, une validation de chaque demande pour rejoindre, 12 devises, des soldes en temps
+      réel et un assistant intégré qui répond en français.
+    keywords: [4 types, spectateurs, 12 devises, temps réel, assistant]
+    questions:
+      - Quels sont les avantages d'EquiPay ?
+      - Qu'est-ce qui rend EquiPay unique ?
+      - Pourquoi choisir EquiPay ?
+      - Les points forts de l'application ?
+      - Qu'est-ce qu'EquiPay fait de mieux que les autres ?
+      - Convaincs-moi d'utiliser EquiPay
+      - What makes EquiPay different?
+      - Why should I choose EquiPay?
+      - Chno mzyan f EquiPay ?
+      - En quoi EquiPay est différente des autres apps ?
+      - Pourquoi mes amis devraient installer EquiPay ?
+
+  - id: meilleure_app
+    answer: >-
+      Il n'y a pas d'application parfaite pour tout le monde : Tricount, Splitwise et EquiPay
+      suivent bien les dépenses d'un groupe. EquiPay convient si tu veux contrôler qui
+      rejoint ton activité, ajouter des spectateurs et avoir un assistant en français.
+    keywords: [Tricount, Splitwise, contrôler, spectateurs, assistant]
+    questions:
+      - Quelle est la meilleure application pour partager les dépenses ?
+      - Quelle app de partage de frais me conseilles-tu ?
+      - Quelle est la meilleure alternative à Tricount ?
+      - Quelle est la meilleure app pour un voyage entre amis ?
+      - Quelle application choisir pour ma coloc ?
+      - Which is the best expense sharing app?
+      - Achmen application a7ssen ?
+      - Tu me conseilles quoi entre toutes ces apps ?
+      - Top des applications pour diviser les frais ?
+
+  - id: limites_vs_concurrents
+    answer: >-
+      Par rapport à des applications plus anciennes, EquiPay ne propose pas encore certaines
+      fonctions comme l'export des dépenses ou une version web. C'est une application récente,
+      en version 1.0.0, qui va continuer à évoluer.
+    keywords: [export, version web, 1.0.0]
+    questions:
+      - Qu'est-ce qu'EquiPay ne fait pas par rapport à Tricount ?
+      - Quels sont les points faibles d'EquiPay ?
+      - Il manque quoi à EquiPay par rapport à Splitwise ?
+      - EquiPay a des défauts ?
+      - Quelles fonctions les autres apps ont et pas EquiPay ?
+      - What are EquiPay's weaknesses?
+      - Chno na9es f EquiPay ?
+      - Sois honnête, EquiPay est moins complète que Splitwise ?
+
+  - id: equipay_maroc
+    answer: >-
+      EquiPay a été créée dans le cadre d'un projet à l'EMSI, une école d'ingénieurs au
+      Maroc. Elle gère le dirham marocain (MAD) parmi ses 12 devises et convient aussi bien
+      aux voyages au Maroc qu'à l'étranger.
+    keywords: [Maroc, EMSI, dirham, MAD]
+    questions:
+      - EquiPay est une application marocaine ?
+      - Il existe une app de partage de frais marocaine ?
+      - EquiPay est adaptée au Maroc ?
+      - Une app pour partager les dépenses en dirhams ?
+      - EquiPay a été faite où ?
+      - Is EquiPay a Moroccan app?
+      - Wach EquiPay maghribiya ?
+      - Quelle app utiliser pour un voyage au Maroc entre amis ?

@@ -1,0 +1,635 @@
+% =====================================================================
+\chapitre{Conception de l'application}
+% =====================================================================
+
+Ce chapitre traduit les besoins identifiés en une conception concrète. Il décrit
+l'architecture globale de l'application, le modèle de données et ses règles d'accès, les
+diagrammes UML des principaux scénarios, le cycle de vie commun à tous les modèles d'IA et,
+pour finir, les choix d'interface.
+
+\subsection{Architecture globale}
+
+\equipay repose sur une architecture découplée en trois blocs : l'application mobile, la
+plateforme Supabase qui détient les données partagées, et un backend d'IA qui sert les
+modèles. Un quatrième bloc, MLflow, ne participe pas au fonctionnement quotidien mais
+conserve l'historique des entraînements et désigne la version de chaque modèle que le
+backend doit charger.
+
+\subsubsection{Application mobile --- Flutter}
+
+L'application est développée avec Flutter~\cite{flutter} et suit les principes de Material 3.
+Elle regroupe les écrans, la logique de présentation et une couche de services (activités,
+dépenses, programme, géocodage, IA). Chaque service est défini par une interface, avec une
+implémentation réelle (Supabase ou HTTP) et une implémentation en mémoire utilisée par les
+tests. Sur iPhone, la carte et la recherche de lieux s'appuient directement sur MapKit~\cite{mapkit}
+grâce à une vue native écrite en Swift.
+
+\subsubsection{Données --- Supabase}
+
+Supabase~\cite{supabase} fournit quatre services utilisés par l'application :
+l'authentification (e-mail et Google), une base PostgreSQL protégée par des règles RLS, le
+stockage des photos et des reçus, et la diffusion en temps réel des modifications. L'application
+lit et écrit directement dans la base : aucune donnée ne transite par le backend d'IA.
+
+\subsubsection{Service d'IA --- FastAPI}
+
+Le backend, écrit en Python avec FastAPI~\cite{fastapi}, expose quatre routes, une par
+fonction d'IA. Il s'exécute sur un Mac Apple Silicon et fait tourner les modèles avec
+MLX~\cite{mlx}. Chaque requête doit porter le jeton JWT de l'utilisateur, que le backend
+vérifie avec la clé publique de Supabase. Les modèles sont chargés à la première
+utilisation, puis gardés en mémoire.
+
+\subsubsection{Entraînement et suivi --- MLflow}
+
+Les modèles sont entraînés sur un PC équipé d'une RTX 5080, puis importés sur le Mac.
+Le serveur MLflow~\cite{mlflow_docs}, installé sur le Mac et accessible sur le réseau local,
+reçoit les paramètres, les métriques et les adaptateurs de chaque entraînement. Son registre
+attribue l'alias « champion » à la meilleure version, que le backend charge au démarrage.
+
+\subsubsection{Flux global}
+
+La figure~\ref{fig:architecture} montre comment ces blocs communiquent.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  bloc/.style={rectangle, rounded corners=5pt, draw=#1, line width=1pt, fill=#1!7, align=center,
+               text width=4.0cm, inner sep=7pt, font=\small},
+  ext/.style={rectangle, rounded corners=5pt, draw=gristexte, dashed, fill=grisfond, align=center,
+              text width=3.3cm, inner sep=6pt, font=\small},
+  fl/.style={-{Latex[length=2.4mm]}, line width=0.9pt, draw=#1},
+  et/.style={font=\scriptsize, fill=white, inner sep=1.5pt, align=center},
+  ]
+  \node[bloc=lagon] (app) at (0,-2.1) {\textbf{Application mobile}\\[2pt] Flutter (iPhone)\\[4pt]
+     \scriptsize Écrans · services\\ \scriptsize carte native MapKit};
+  \node[ext] (plans) at (0,-5.4) {\textbf{Apple Plans}\\ \scriptsize recherche de lieux, carte,\\ \scriptsize itinéraires};
+  \node[bloc=violet] (sb) at (6.6,1.6) {\textbf{Supabase}\\[2pt] \scriptsize Auth · PostgreSQL + RLS\\
+     \scriptsize Storage · Realtime};
+  \node[bloc=orange] (api) at (6.6,-2.1) {\textbf{Backend d'IA}\\[2pt] FastAPI sur Mac M3 Pro\\[4pt]
+     \scriptsize /chat · /receipts/scan\\ \scriptsize /expenses/describe · /trips/optimize\\[2pt]
+     \scriptsize modèles MLX 4 bits};
+  \node[ext] (osrm) at (12.6,-1.2) {\textbf{OSRM}\\ \scriptsize temps et distances\\ \scriptsize entre les lieux};
+  \node[bloc=recevoir] (mlf) at (12.6,-3.4) {\textbf{MLflow}\\[2pt] \scriptsize essais, métriques,\\ \scriptsize registre « champion »};
+  \node[bloc=bleuclair] (pc) at (12.6,-6.2) {\textbf{PC RTX 5080}\\[2pt] \scriptsize entraînement LoRA,\\ \scriptsize évaluation};
+
+  \draw[fl=violet] (app.north) |- node[et, pos=0.75, above=1pt] {données, fichiers, temps réel} (sb.west);
+  \draw[fl=orange] (app.east |- api.west) -- node[et, above=2pt] {HTTP + JWT} (api.west);
+  \draw[fl=gristexte] (app.south) -- node[et, right=2pt] {MapKit} (plans.north);
+  \draw[fl=violet, dashed] (api.north) -- node[et, right=2pt] {clé JWT, historique du chat} (sb.south);
+  \draw[fl=gristexte] (api.east |- osrm.west) -- node[et, above=2pt] {temps de trajet} (osrm.west);
+  \draw[fl=recevoir] (mlf.west) -- node[et, below=2pt] {version champion} (api.east |- mlf.west);
+  \draw[fl=bleuclair] (pc.north) -- node[et, right=2pt] {runs, adaptateurs} (mlf.south);
+\end{tikzpicture}}
+\caption{Architecture globale et flux de données d'EquiPay}
+\label{fig:architecture}
+\end{figure}
+
+Le parcours d'une donnée suit toujours la même logique : l'application envoie au backend
+une photo, une phrase ou une liste de lieux ; le backend renvoie une proposition structurée
+sans rien enregistrer ; l'utilisateur la vérifie, la corrige si besoin, et c'est
+l'application qui l'enregistre dans Supabase. Les autres membres du groupe la reçoivent
+alors en temps réel.
+
+\begin{encadre}
+\textbf{Règle de conception.} L'IA ne crée jamais rien à la place de l'utilisateur : le scanner
+et la saisie par phrase pré-remplissent un formulaire, et le trajet proposé n'est enregistré
+qu'après un appui sur « Appliquer ». La décision finale reste toujours humaine.
+\end{encadre}
+
+% ---------------------------------------------------------------------
+\subsection{Conception de la base de données}
+
+Le schéma a été conçu autour de l'activité, à laquelle se rattachent les membres, les
+dépenses, les photos et le programme. Il est entièrement décrit par des fichiers de
+migration SQL versionnés, appliqués dans l'ordre, ce qui permet de recréer la base à
+l'identique. Le tableau~\ref{tab:tables} présente les tables principales.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{4.6cm}|Y|}
+\hline
+\rowcolor{entete}\textbf{Table} & \textbf{Contenu} \\ \hline
+\code{profiles} & Profil de chaque utilisateur : nom d'utilisateur, nom complet, photo. \\ \hline
+\code{activities} & Activité : type (voyage, sortie, quotidien, crédit), nom, devise, logo, dates. \\ \hline
+\code{activity\_members} & Participants, rôle (créateur, membre, spectateur), date d'archivage personnelle. \\ \hline
+\code{activity\_join\_codes}, \code{join\_requests} & Code d'accès à huit caractères et demandes pour rejoindre. \\ \hline
+\code{expenses}, \code{expense\_shares} & Dépenses et part de chaque participant, exprimée en pourcentage. \\ \hline
+\code{attachments} & Reçus et photos de l'activité ; les fichiers eux-mêmes sont dans le stockage. \\ \hline
+\code{trip\_items}, \code{trip\_votes} & Programme du voyage et votes pour ou contre. \\ \hline
+\code{chat\_messages} & Historique des échanges avec l'assistant. \\ \hline
+\end{tabularx}
+\caption{Tables principales de la base de données}
+\label{tab:tables}
+\end{table}
+
+\subsubsection{Activités, membres et accès}
+
+Chaque activité a ses propres rôles : le créateur gère tout, le membre ajoute des dépenses
+et vote, le spectateur consulte. Une même personne peut être créatrice d'une activité et
+simple membre d'une autre. L'archivage est personnel : il est stocké dans
+\code{activity\_members} et ne masque l'activité que pour celui qui l'archive.
+
+\subsubsection{Dépenses et répartitions}
+
+Une dépense est enregistrée dans sa devise d'origine avec son taux de change vers la devise
+de l'activité. La part de chaque participant est stockée en pourcentage, ce qui couvre tous
+les modes de répartition (égale, montants, parts) avec une seule représentation. Une
+fonction SQL vérifie que les parts d'une dépense totalisent exactement 100 \%, et une
+fonction \code{save\_expense} enregistre la dépense et ses parts en une seule transaction.
+
+\subsubsection{Programme du voyage}
+
+La table \code{trip\_items} contient les lieux proposés, avec leur adresse, leur date,
+leur heure et leurs coordonnées, remplies automatiquement à partir de l'adresse. Les votes
+sont stockés dans \code{trip\_votes}, avec une seule ligne par personne et par lieu. Une
+fonction \code{has\_program} réserve le programme aux activités de type voyage ou sortie.
+
+\subsubsection{Sécurité au niveau des lignes}
+
+Toutes les tables sont protégées par des règles RLS. Elles reposent sur quelques fonctions
+réutilisées partout (\code{is\_member}, \code{is\_owner}, \code{can\_edit}) : un
+utilisateur ne lit que les activités dont il est membre, ne modifie que ce qu'il a créé
+(sauf le créateur de l'activité), et un spectateur ne peut rien modifier. Ces règles
+s'appliquent quelle que soit la façon dont la base est interrogée.
+
+% ---------------------------------------------------------------------
+\subsection{Diagrammes UML}
+
+Cette section présente les diagrammes UML qui modélisent l'application : le diagramme de
+cas d'utilisation décrit les interactions entre les acteurs et le système, le diagramme de
+classes représente la structure des données, et les diagrammes de séquence détaillent le
+déroulement des quatre fonctions d'IA.
+
+\subsubsection{Diagramme de cas d'utilisation}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.98\textwidth}{!}{%
+\begin{tikzpicture}[
+  uc/.style={ellipse, draw=lagon!80!black, fill=lagonclair!40, line width=0.7pt, minimum width=3.9cm,
+             minimum height=0.8cm, font=\scriptsize, align=center, inner sep=1pt},
+  ucx/.style={uc, draw=orange!80!black, fill=orangeclair!60},
+  as/.style={line width=0.6pt, draw=black!65},
+  dep/.style={dashed, -{Latex[length=2mm]}, draw=black!60, line width=0.6pt},
+  st/.style={font=\tiny\itshape, fill=white, inner sep=1pt},
+  ]
+  % Acteur : bonhomme
+  \newcommand{\acteur}[3]{%
+    \begin{scope}[shift={(#1)}]
+      \draw[line width=0.8pt] (0,0.55) circle (0.2);
+      \draw[line width=0.8pt] (0,0.35) -- (0,-0.25) (-0.32,0.15) -- (0.32,0.15) (0,-0.25) -- (-0.25,-0.65) (0,-0.25) -- (0.25,-0.65);
+      \node[font=\small\bfseries, align=center, anchor=north] at (0,-0.75) {#2};
+      \coordinate (#3) at (0,0);
+    \end{scope}}
+  % Limite du système
+  \draw[rounded corners=6pt, line width=0.9pt, draw=bleu, fill=grisfond!50] (1.25,0.35) rectangle (10.75,-10.55);
+  \node[font=\bfseries\color{bleu}, anchor=north west] at (1.4,0.3) {EquiPay};
+
+  % Cas du membre (colonne de gauche)
+  \foreach \n/\t [count=\i] in {
+      auth/{S'inscrire, se connecter},
+      creer/{Créer une activité},
+      rejoindre/{Rejoindre par code},
+      depense/{Ajouter une dépense},
+      soldes/{Consulter soldes et résumé},
+      lieu/{Ajouter un lieu au programme},
+      voter/{Voter pour ou contre},
+      trajet/{Organiser le trajet},
+      question/{Poser une question à l'assistant}}
+    \node[uc] (\n) at (3.6,-0.9*\i-0.1) {\t};
+  \node[uc] (accepter) at (3.6,-9.95) {Accepter une demande};
+
+  % Extensions et inclusions (colonne de droite)
+  \node[ucx] (scan) at (8.4,-2.75) {Scanner un ticket};
+  \node[ucx] (phrase) at (8.4,-3.85) {Décrire la dépense\\ en une phrase};
+  \node[ucx] (carte) at (8.4,-5.5) {Placer le lieu sur la carte};
+  \node[ucx] (appliquer) at (8.4,-8.95) {Appliquer le programme};
+
+  \draw[dep] (scan) -- node[st, above, sloped] {«extend»} (depense);
+  \draw[dep] (phrase) -- node[st, below, sloped] {«extend»} (depense);
+  \draw[dep] (lieu) -- node[st, above] {«include»} (carte);
+  \draw[dep] (appliquer) -- node[st, below, sloped] {«extend»} (trajet);
+
+  \acteur{-0.9,-3.9}{Membre}{membre}
+  \acteur{-0.9,-8.6}{Créateur}{createur}
+  \acteur{12.9,-5.0}{Modèles\\ d'IA}{ia}
+
+  \draw[-{Triangle[open, length=3mm]}, line width=0.7pt] ([yshift=0.9cm]createur) -- ([yshift=-1.75cm]membre);
+  \foreach \n in {auth, creer, rejoindre, depense, soldes, lieu, voter, trajet, question}
+    \draw[as] ([xshift=0.35cm]membre) -- (\n.west);
+  \draw[as] ([xshift=0.35cm]createur) -- (accepter.west);
+  \draw[as] ([xshift=0.35cm, yshift=-0.1cm]createur) -- (appliquer.west);
+  \foreach \n in {scan, phrase} \draw[as] ([xshift=-0.35cm]ia) -- (\n.east);
+  \draw[as] ([xshift=-0.35cm]ia) -- (trajet.east);
+  \draw[as] ([xshift=-0.35cm]ia) -- (question.east);
+\end{tikzpicture}}
+\caption{Diagramme de cas d'utilisation de l'application}
+\label{fig:cas_utilisation}
+\end{figure}
+
+La figure~\ref{fig:cas_utilisation} présente les interactions entre les acteurs et le
+système. Le membre gère son compte, crée ou rejoint des activités, ajoute des dépenses,
+consulte les soldes, propose des lieux, vote, demande l'organisation du trajet et
+interroge l'assistant. Le créateur est un membre qui dispose en plus de deux droits :
+accepter les demandes pour rejoindre et appliquer le programme proposé. Les modèles d'IA
+interviennent comme acteur secondaire ; la carte et le calcul des trajets s'appuient en
+plus sur Apple Plans et OSRM, qui ne sont pas représentés pour alléger le schéma.
+
+\subsubsection{Diagramme de classes}
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  classe/.style={rectangle split, rectangle split parts=2, draw=bleu, line width=0.7pt,
+                 rectangle split part fill={bleu!12, white}, text width=3.55cm, align=left,
+                 font=\scriptsize, inner sep=3.5pt},
+  as/.style={line width=0.7pt, draw=bleu!80},
+  comp/.style={as, {Diamond[length=3.2mm, width=2.2mm]}-},
+  mult/.style={font=\tiny, inner sep=1pt},
+  ]
+  \newcommand{\titre}[1]{\centering\textbf{\small #1}}
+  \node[classe] (jr) at (0,0) {\titre{JoinRequest}\nodepart{two}
+     id : uuid\\ activity\_name : text\\ status : pending | accepted\\ \hspace{2.6em}| declined\\ created\_at, decided\_at};
+  \node[classe] (pr) at (5.4,0) {\titre{Profile}\nodepart{two}
+     id : uuid\\ username : text\\ email : text\\ full\_name : text\\ avatar\_url : text};
+  \node[classe] (ch) at (10.8,0) {\titre{ChatMessage}\nodepart{two}
+     id : uuid\\ role : user | assistant\\ content : text\\ created\_at : timestamptz};
+
+  \node[classe] (ex) at (0,-4.7) {\titre{Expense}\nodepart{two}
+     id : uuid\\ name : text\\ amount : numeric\\ currency : char(3)\\ exchange\_rate : numeric\\ expense\_date : date\\ paid\_by : Profile};
+  \node[classe] (ac) at (5.4,-4.7) {\titre{Activity}\nodepart{two}
+     id : uuid\\ type : voyage | sortie |\\ \hspace{2.6em}quotidien | crédit\\ name : text\\ default\_currency : char(3)\\ start\_date, end\_date\\ cover\_url : text};
+  \node[classe] (am) at (10.8,-4.7) {\titre{ActivityMember}\nodepart{two}
+     role : owner | member\\ \hspace{2.6em}| viewer\\ joined\_at : timestamptz\\ archived\_at : timestamptz};
+
+  \node[classe] (es) at (-0.6,-9.6) {\titre{ExpenseShare}\nodepart{two}
+     user\_id : Profile\\ percentage : numeric};
+  \node[classe] (at) at (3.4,-9.6) {\titre{Attachment}\nodepart{two}
+     id : uuid\\ kind : receipt | photo\\ storage\_path : text};
+  \node[classe] (tv) at (7.4,-9.6) {\titre{TripVote}\nodepart{two}
+     user\_id : Profile\\ vote : -1 | 1};
+  \node[classe] (ti) at (11.4,-9.6) {\titre{TripItem}\nodepart{two}
+     id : uuid\\ name, place, address\\ planned\_on : date\\ planned\_at : time\\ latitude, longitude\\ done : boolean};
+
+  \draw[as] (jr) -- node[mult, pos=0.12, above] {*} node[mult, pos=0.88, above] {1} (pr);
+  \draw[as] (pr) -- node[mult, pos=0.12, above] {1} node[mult, pos=0.88, above] {*} (ch);
+  \draw[as] (pr) -- node[mult, pos=0.15, right] {1} node[mult, pos=0.5, right, font=\tiny\itshape] {crée} node[mult, pos=0.85, right] {*} (ac);
+  \draw[as] (jr.south east) -- node[mult, pos=0.1, right] {*} node[mult, pos=0.9, left] {1} (ac.north west);
+  \draw[as] (pr.south east) -- node[mult, pos=0.1, right] {1} node[mult, pos=0.9, above] {*} (am.north west);
+  \draw[comp] (ac) -- node[mult, pos=0.85, above] {*} (am);
+  \draw[comp] (ac) -- node[mult, pos=0.85, above] {*} (ex);
+  \draw[comp] (ex) -- node[mult, pos=0.85, left] {1..*} (es.north -| ex);
+  \draw[comp] (ac.south west) -- node[mult, pos=0.85, right] {*} (at.north);
+  \draw[as] (ex.south east) -- node[mult, pos=0.1, above] {0..1} node[mult, pos=0.85, left] {*} (at.north west);
+  \draw[comp] (ac.south east) -- node[mult, pos=0.88, above] {*} (ti.north west);
+  \draw[comp] (ti) -- node[mult, pos=0.8, above] {*} (tv);
+\end{tikzpicture}}
+\caption{Diagramme de classes du modèle de données}
+\label{fig:classes}
+\end{figure}
+
+La figure~\ref{fig:classes} modélise la structure des données, directement dérivée du
+schéma PostgreSQL. L'activité est au centre : elle se compose de ses membres, de ses
+dépenses, de ses photos et de son programme, qui disparaissent avec elle. Chaque dépense
+se décompose en parts, une par participant, et peut être liée à la photo de son reçu.
+Les demandes pour rejoindre et l'historique du chat sont rattachés au profil de
+l'utilisateur.
+
+\subsubsection{Diagrammes de séquence}
+
+Les diagrammes suivants détaillent le déroulement des quatre fonctions d'IA, de l'action
+de l'utilisateur jusqu'à l'enregistrement du résultat.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.97\textwidth}{!}{\footnotesize%
+\begin{sequencediagram}
+  \gdef\unitfactor{0.82}
+  \tikzstyle{inststyle}+=[fill=lagonclair!50, rounded corners=2pt]
+  \newthread[lagonclair]{u}{:Utilisateur}
+  \newinst[2.9]{app}{:Application}
+  \newinst[3.3]{api}{:Backend FastAPI}
+  \newinst[3.3]{vlm}{:Qwen3-VL-4B (MLX)}
+  \newinst[2.5]{sb}{:Supabase}
+  \begin{call}{u}{photographie le ticket}{app}{formulaire pré-rempli}
+    \begin{call}{app}{POST /receipts/scan}{api}{champs de la dépense}
+      \begin{callself}{api}{vérifie le jeton}{}
+      \end{callself}
+      \begin{call}{api}{lit l'image}{vlm}{JSON brut}
+      \end{call}
+      \begin{callself}{api}{normalise montant, devise, date}{}
+      \end{callself}
+    \end{call}
+  \end{call}
+  \begin{call}{u}{vérifie, corrige et valide}{app}{dépense ajoutée}
+    \begin{call}{app}{save\_expense}{sb}{ok}
+    \end{call}
+  \end{call}
+  \mess[1]{sb}{temps réel : nouvelle dépense}{app}
+\end{sequencediagram}}
+\caption{Diagramme de séquence --- Scanner un ticket de caisse}
+\label{fig:seq_scan}
+\end{figure}
+
+La figure~\ref{fig:seq_scan} illustre la lecture d'un ticket : l'application envoie la photo
+au backend, qui vérifie le jeton de l'utilisateur, fait lire l'image par le modèle
+vision-langage puis normalise sa réponse. Le formulaire est pré-rempli, et la dépense n'est
+enregistrée dans Supabase qu'après validation par l'utilisateur.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.97\textwidth}{!}{\footnotesize%
+\begin{sequencediagram}
+  \gdef\unitfactor{0.82}
+  \tikzstyle{inststyle}+=[fill=lagonclair!50, rounded corners=2pt]
+  \newthread[lagonclair]{u}{:Utilisateur}
+  \newinst[2.9]{app}{:Application}
+  \newinst[3.3]{api}{:Backend FastAPI}
+  \newinst[3.3]{llm}{:equipay-describe (MLX)}
+  \newinst[2.5]{sb}{:Supabase}
+  \begin{call}{u}{écrit sa phrase}{app}{formulaire pré-rempli}
+    \begin{call}{app}{POST /expenses/describe}{api}{dépense structurée}
+      \begin{call}{api}{phrase, membres, date}{llm}{JSON brut}
+      \end{call}
+      \begin{callself}{api}{relie les noms aux membres}{}
+      \end{callself}
+      \begin{callself}{api}{parts ramenées à 100 \%}{}
+      \end{callself}
+    \end{call}
+  \end{call}
+  \begin{call}{u}{vérifie et valide}{app}{dépense ajoutée}
+    \begin{call}{app}{save\_expense}{sb}{ok}
+    \end{call}
+  \end{call}
+\end{sequencediagram}}
+\caption{Diagramme de séquence --- Décrire une dépense en une phrase}
+\label{fig:seq_phrase}
+\end{figure}
+
+La figure~\ref{fig:seq_phrase} décrit la saisie par phrase. Le modèle reçoit la phrase, la
+liste des membres et la date du jour ; le backend relie ensuite chaque nom cité à un membre
+réel, même mal orthographié, et convertit la répartition en pourcentages dont la somme fait
+exactement 100.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.97\textwidth}{!}{\footnotesize%
+\begin{sequencediagram}
+  \gdef\unitfactor{0.82}
+  \tikzstyle{inststyle}+=[fill=lagonclair!50, rounded corners=2pt]
+  \newthread[lagonclair]{u}{:Utilisateur}
+  \newinst[2.7]{app}{:Application}
+  \newinst[3.1]{api}{:Backend FastAPI}
+  \newinst[2.7]{osrm}{:OSRM}
+  \newinst[2.7]{llm}{:Qwen3-4B (MLX)}
+  \newinst[2.0]{sb}{:Supabase}
+  \begin{call}{u}{choisit les options}{app}{trajet proposé}
+    \begin{call}{app}{POST /trips/optimize}{api}{ordre, heures, gain, texte}
+      \begin{call}{api}{matrice des temps entre lieux}{osrm}{durées, distances}
+      \end{call}
+      \begin{callself}{api}{répartit par jour, meilleur ordre}{}
+      \end{callself}
+      \begin{call}{api}{programme calculé à rédiger}{llm}{texte}
+      \end{call}
+    \end{call}
+  \end{call}
+  \begin{call}{u}{appliquer (créateur)}{app}{programme mis à jour}
+    \begin{call}{app}{date et heure de chaque lieu}{sb}{ok}
+    \end{call}
+  \end{call}
+\end{sequencediagram}}
+\caption{Diagramme de séquence --- Organiser le trajet d'une journée}
+\label{fig:seq_trajet}
+\end{figure}
+
+La figure~\ref{fig:seq_trajet} présente l'organisation du trajet. Les temps de parcours sont
+calculés par OSRM et l'ordre de visite par un algorithme ; le modèle de langage ne fait que
+rédiger le programme à partir de ces résultats, sans pouvoir modifier l'ordre ni les heures.
+Seul le créateur de l'activité peut appliquer le programme proposé.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.86\textwidth}{!}{\footnotesize%
+\begin{sequencediagram}
+  \gdef\unitfactor{0.82}
+  \tikzstyle{inststyle}+=[fill=lagonclair!50, rounded corners=2pt]
+  \newthread[lagonclair]{u}{:Utilisateur}
+  \newinst[2.9]{app}{:Application}
+  \newinst[3.3]{api}{:Backend FastAPI}
+  \newinst[3.3]{llm}{:equipay-assistant (MLX)}
+  \newinst[2.5]{sb}{:Supabase}
+  \begin{call}{u}{pose une question}{app}{réponse affichée}
+    \begin{call}{app}{POST /chat (question, JWT)}{api}{réponse}
+      \begin{call}{api}{question + prompt système}{llm}{réponse générée}
+      \end{call}
+      \begin{call}{api}{enregistre l'échange}{sb}{ok}
+      \end{call}
+    \end{call}
+  \end{call}
+\end{sequencediagram}}
+\caption{Diagramme de séquence --- Question à l'assistant}
+\label{fig:seq_chat}
+\end{figure}
+
+La figure~\ref{fig:seq_chat} montre l'échange avec l'assistant. Le backend génère la réponse
+avec le modèle champion puis enregistre la question et la réponse dans Supabase, au nom de
+l'utilisateur, afin de conserver l'historique de la conversation.
+
+% ---------------------------------------------------------------------
+\subsection{Architecture fonctionnelle des modules}
+
+L'application s'articule autour de quatre modules fonctionnels, chacun responsable d'une
+partie du parcours de l'utilisateur.
+
+\subsubsection{Module des dépenses et des soldes}
+
+Ce module gère les activités, les dépenses et leur répartition. Le solde de chaque
+participant est la différence entre ce qu'il a payé et la somme de ses parts, convertie
+dans la devise de l'activité. À partir de ces soldes, l'application calcule la liste des
+remboursements qui remettent tous les comptes à zéro avec le moins de virements possible,
+et propose des graphiques et des statistiques sur les dépenses du groupe.
+
+\subsubsection{Module de saisie assistée}
+
+Ce module regroupe les deux façons d'ajouter une dépense sans tout taper : le scanner de
+tickets et la description en une phrase. Les deux aboutissent au même formulaire, où chaque
+champ rempli par l'IA est signalé avec son origine (« Lu sur le ticket », « Compris dans ta
+phrase ») et où les champs manquants sont mis en évidence.
+
+\subsubsection{Module du programme et du trajet}
+
+Ce module couvre la liste des lieux à visiter, les votes, l'affichage en liste, en
+calendrier et sur une carte, ainsi que l'organisation du trajet. Les lieux sont placés
+automatiquement sur la carte à partir de leur nom ou de leur adresse grâce à la recherche
+d'Apple Plans.
+
+\subsubsection{Module d'assistance}
+
+L'assistant est accessible depuis une bulle « Support » présente sur les écrans principaux.
+Il répond aux questions sur le fonctionnement de l'application, oriente vers le support
+quand il ne sait pas, et refuse poliment les questions sans rapport avec \equipay.
+
+% ---------------------------------------------------------------------
+\subsection{Conception de la chaîne d'entraînement et de mise en service}
+
+Les trois modèles affinés suivent le même cycle de vie, représenté dans la
+figure~\ref{fig:mlops}. Ce cycle garantit qu'une nouvelle version n'est servie à
+l'application que si elle fait mieux que la précédente sur le même jeu de test.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  etape/.style={rectangle, rounded corners=6pt, fill=#1, text=white, align=center, font=\small\bfseries,
+                text width=3.3cm, minimum height=1.35cm, drop shadow={opacity=0.18}},
+  det/.style={font=\scriptsize, align=center, text width=3.5cm, text=black!75},
+  fl/.style={-{Latex[length=2.6mm]}, line width=1.1pt, draw=gristexte},
+  ]
+  \node[etape=lagon]     (d) at (0,2.2)     {1. Données\\ versionnées};
+  \node[etape=violet]    (t) at (5.1,2.2)   {2. Entraînement\\ LoRA sur GPU};
+  \node[etape=orange]    (e) at (10.2,2.2)  {3. Évaluation\\ comparative};
+  \node[etape=recevoir]  (r) at (10.2,-1.6) {4. Registre MLflow\\ alias « champion »};
+  \node[etape=bleuclair] (c) at (5.1,-1.6)  {5. Conversion\\ MLX 4 bits};
+  \node[etape=ambre]     (s) at (0,-1.6)    {6. Service\\ FastAPI};
+  \node[det, below=2pt of d] {génération, empreinte\\ du jeu enregistrée};
+  \node[det, below=2pt of t] {PC RTX 5080, arrêt\\ anticipé sur la validation};
+  \node[det, below=2pt of e] {base, ancienne et nouvelle\\ version sur le même test};
+  \node[det, below=2pt of r] {seulement si la nouvelle\\ version est meilleure};
+  \node[det, below=2pt of c] {fusion de l'adaptateur,\\ réévaluation sur le Mac};
+  \node[det, below=2pt of s] {chargement au premier\\ appel, PyTorch en secours};
+  \draw[fl] (d) -- (t);
+  \draw[fl] (t) -- (e);
+  \draw[fl] (e) -- (r);
+  \draw[fl] (r) -- (c);
+  \draw[fl] (c) -- (s);
+  \draw[fl, dashed] (s.north) -- node[font=\scriptsize\itshape, fill=white, inner sep=2pt, align=center] {limites\\ observées} (d.south);
+\end{tikzpicture}
+\caption{Cycle de vie d'un modèle, des données à la mise en service}
+\label{fig:mlops}
+\end{figure}
+
+\subsubsection{Construction des jeux de données}
+
+Aucun jeu public ne correspondait à nos besoins pour l'assistant et la saisie par phrase.
+Nous les avons donc construits à partir de sources écrites à la main (questions, réponses
+de référence, phrases types) puis enrichis par génération de variantes. Pour le scanner, les
+jeux publics de tickets ont été convertis dans notre format et complétés par des tickets
+synthétiques dans les devises qui nous intéressent. Chaque jeu est découpé en
+entraînement, validation et test, et son empreinte est enregistrée avec chaque essai.
+
+\subsubsection{Entraînement}
+
+Les modèles sont affinés par LoRA sur le PC, avec la bibliothèque PEFT~\cite{peft}. La
+perte sur le jeu de validation est mesurée régulièrement, et l'entraînement s'arrête
+lorsqu'elle cesse de s'améliorer. C'est l'adaptateur du meilleur point de validation qui est
+conservé, et non le dernier.
+
+\subsubsection{Évaluation et choix du champion}
+
+Chaque nouvelle version est comparée au modèle de base et à la version précédente, sur le
+même jeu de test et avec exactement le même code de calcul des métriques. Les métriques sont
+regroupées en un score global pondéré, propre à chaque tâche, qui sert à décider. Si la
+nouvelle version l'emporte, elle reçoit l'alias « champion » dans le registre MLflow.
+
+\subsubsection{Conversion et mise en service}
+
+L'adaptateur est fusionné avec le modèle de base, puis le modèle obtenu est converti en
+4 bits avec MLX et réévalué sur le Mac, pour mesurer précisément ce que coûte la
+quantification. Le backend charge ensuite la version champion. Pour le scanner, la version
+PyTorch en pleine précision est conservée et sert de secours automatique si le chargement
+MLX échoue.
+
+% ---------------------------------------------------------------------
+\subsection{Conception des interfaces utilisateur}
+
+\subsubsection{Charte graphique}
+
+L'identité visuelle, baptisée « Lagon », associe un sarcelle apaisant, qui évoque la
+confiance et le voyage, à un orange énergique réservé aux actions principales. Les couleurs
+des soldes sont les mêmes partout : vert pour ce que l'on doit recevoir, rouge pour ce que
+l'on doit rembourser, gris lorsque l'on est à jour. Chaque type d'activité a sa propre
+couleur (figure~\ref{fig:charte}). Le logo, un « e » sarcelle qui s'envole en avion au-dessus
+d'un porte-monnaie orange, réunit le voyage et le partage des dépenses.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  pastille/.style={rectangle, rounded corners=4pt, minimum width=1.75cm, minimum height=1.05cm, fill=#1},
+  nom/.style={font=\scriptsize\bfseries, align=center, text width=1.9cm},
+  hex/.style={font=\tiny\ttfamily, text=gristexte},
+  ]
+  \foreach \c/\n/\h [count=\i] in {lagon/Principale/0D9488, orange/Accent/F97316, recevoir/À recevoir/16A34A,
+                                  rembourser/À rembourser/DC2626, gristexte/À jour/64748B}
+  {
+    \node[pastille=\c] (p\i) at (2.15*\i,0) {};
+    \node[nom, below=3pt of p\i] (n\i) {\n};
+    \node[hex, below=-1pt of n\i] {\#\h};
+  }
+  \foreach \c/\n/\h [count=\i] in {lagon/Voyage/0D9488, violet/Sortie/8B5CF6, bleuclair/Quotidien/3B82F6, ambre/Crédit/F59E0B}
+  {
+    \node[pastille=\c, minimum width=1.5cm] (q\i) at (1.2+2.6*\i,-2.65) {};
+    \node[nom, below=3pt of q\i] (m\i) {\n};
+    \node[hex, below=-1pt of m\i] {\#\h};
+  }
+  \node[font=\small\bfseries\color{bleu}, anchor=east] at (1.0,0) {Couleurs};
+  \node[font=\small\bfseries\color{bleu}, anchor=east, align=right] at (1.0,-2.65) {Types\\ d'activité};
+\end{tikzpicture}
+\caption{Palette « Lagon » : couleurs principales et couleurs des types d'activité}
+\label{fig:charte}
+\end{figure}
+
+\subsubsection{Organisation des écrans}
+
+La navigation repose sur une barre d'onglets en bas de l'écran : les activités, les demandes
+pour rejoindre et le profil (un quatrième onglet est réservé à une évolution future). Depuis une activité, l'utilisateur accède à ses dépenses, à ses
+membres, à ses photos et à son programme ; le menu à trois points regroupe les actions moins
+fréquentes (modifier, archiver, résumé, graphiques, statistiques, supprimer). La
+figure~\ref{fig:navigation} résume ce parcours.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  ecr/.style={rectangle, rounded corners=4pt, draw=#1, line width=0.8pt, fill=#1!8, font=\scriptsize,
+              align=center, minimum height=0.75cm, text width=2.5cm},
+  fl/.style={-{Latex[length=2mm]}, draw=gristexte, line width=0.7pt},
+  ]
+  \node[ecr=bleu] (tab) at (0,0) {\textbf{Barre d'onglets}};
+  \node[ecr=lagon] (acc) at (-4.4,-1.5) {Accueil\\ (mes activités)};
+  \node[ecr=lagon] (dem) at (0,-1.5) {Demandes\\ reçues / envoyées};
+  \node[ecr=lagon] (pro) at (4.4,-1.5) {Profil\\ et préférences};
+  \node[ecr=violet] (act) at (-4.4,-3.2) {Page de l'activité};
+  \node[ecr=orange] (dep) at (-8.2,-4.9) {Dépenses\\ (ajout, détail)};
+  \node[ecr=orange] (mem) at (-5.4,-4.9) {Membres et photos};
+  \node[ecr=orange] (prg) at (-2.6,-4.9) {Programme};
+  \node[ecr=orange] (men) at (0.4,-4.9) {Menu à trois points\\ résumé, graphiques};
+  \node[ecr=ambre] (aj) at (-8.2,-6.6) {Saisie, scanner,\\ phrase};
+  \node[ecr=ambre] (vues) at (-4.0,-6.6) {Liste, calendrier,\\ carte};
+  \node[ecr=ambre] (traj) at (-1.2,-6.6) {Trajet proposé};
+  \node[ecr=recevoir] (sup) at (4.4,-3.2) {Assistant\\ (bulle Support)};
+  \foreach \a/\b in {tab/acc, tab/dem, tab/pro, acc/act, act/dep, act/mem, act/prg, act/men, dep/aj, prg/vues, prg/traj, pro/sup}
+    \draw[fl] (\a) -- (\b);
+\end{tikzpicture}}
+\caption{Organisation des principaux écrans de l'application}
+\label{fig:navigation}
+\end{figure}
+
+\subsubsection{Expérience utilisateur}
+
+L'expérience a été pensée pour un usage rapide, souvent debout ou en déplacement. Les
+actions principales sont toujours au même endroit (bouton orange en bas à droite), chaque
+action donne un retour immédiat (chargement, confirmation, erreur expliquée), et les écrans
+vides indiquent ce qu'il faut faire pour commencer. L'application propose un mode sombre,
+fonctionne hors ligne en affichant un bandeau, et se met à jour d'elle-même lorsqu'un autre
+membre ajoute une dépense ou vote.
+
+% ---------------------------------------------------------------------
+\subsection{Conclusion du chapitre}
+
+Ce chapitre a posé les bases de la conception d'\equipay : une architecture qui sépare
+clairement l'application, les données et l'IA, un modèle de données protégé par des règles
+d'accès strictes, des diagrammes UML qui formalisent les scénarios clés, et un cycle de vie
+commun à tous les modèles. Cette conception sert de fondation à la réalisation présentée
+dans le chapitre suivant.

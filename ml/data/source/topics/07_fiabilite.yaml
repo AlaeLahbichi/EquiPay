@@ -1,0 +1,159 @@
+# Connexion internet, chargement, confidentialité et sécurité.
+category: fiabilite
+
+topics:
+  - id: hors_ligne
+    answer: >-
+      Sans internet, un bandeau rouge « Pas de connexion internet » s'affiche. Tes activités
+      ne peuvent pas être chargées tant que la connexion n'est pas revenue.
+    keywords: [Pas de connexion internet, bandeau, connexion]
+    questions:
+      - L'app marche sans internet ?
+      - Pourquoi j'ai un bandeau rouge ?
+      - Que faire si je n'ai pas de connexion ?
+      - Pas de connexion internet, ça veut dire quoi ?
+      - L'application fonctionne hors ligne ?
+      - Je suis en avion, l'app marche ?
+      - Mode hors ligne disponible ?
+      - Does the app work offline?
+      - Wach khdama bla internet ?
+      - Le bandeau rouge en haut de l'écran, c'est quoi ?
+      - J'ai perdu le réseau, je perds mes données ?
+
+  - id: connexion_retablie
+    answer: >-
+      Le bandeau vert « Connexion rétablie » indique qu'internet est revenu : les données se
+      rechargent toutes seules, tu n'as rien à faire.
+    keywords: [Connexion rétablie, rechargent]
+    questions:
+      - C'est quoi le bandeau vert en haut ?
+      - Connexion rétablie, ça veut dire quoi ?
+      - Je dois relancer l'app quand internet revient ?
+      - Que se passe-t-il au retour du réseau ?
+      - Les données reviennent toutes seules après une coupure ?
+      - What does the green banner mean?
+      - Chno had la bande lkhedra ?
+      - Le message vert apparaît puis disparaît
+
+  - id: chargement_long
+    answer: >-
+      Si le chargement est long, un message te l'indique : vérifie ta connexion. Si l'écran
+      affiche une erreur, appuie sur « Réessayer », ou attends : l'app recharge toute seule
+      quand la connexion revient.
+    keywords: [connexion, Réessayer]
+    questions:
+      - Pourquoi l'app charge longtemps ?
+      - L'application est lente, que faire ?
+      - Ça reste bloqué sur le chargement
+      - Le chargement ne finit pas
+      - Il y a un bouton Réessayer, je fais quoi ?
+      - L'app tourne dans le vide
+      - Le logo bouge mais rien ne s'affiche
+      - Pourquoi c'est écrit connexion lente ?
+      - Ça prend plus de temps que prévu, normal ?
+      - The app is loading forever
+      - L'app kat7el bchwiya
+      - Impossible de charger tes activités, que faire ?
+      - Le serveur met trop de temps à répondre
+
+  - id: confidentialite
+    answer: >-
+      Seuls les membres d'une activité peuvent voir ses dépenses, ses soldes et ses photos.
+      Une personne extérieure à l'activité n'y a pas accès.
+    keywords: [membres, dépenses, accès]
+    questions:
+      - Qui peut voir mes dépenses ?
+      - Est-ce que tout le monde voit mes voyages ?
+      - Un inconnu peut voir mon activité ?
+      - Qui a accès à mes photos ?
+      - Mes dépenses sont publiques ?
+      - Les autres utilisateurs voient mes voyages ?
+      - Quelqu'un hors du groupe peut voir les montants ?
+      - Who can see my expenses?
+      - Chkoun li kaychof les dépenses dyali ?
+      - Mes activités sont visibles par d'autres utilisateurs d'EquiPay ?
+      - Les montants sont confidentiels ?
+
+  - id: securite_donnees
+    answer: >-
+      Tes données sont protégées par des règles de sécurité dans la base de données : chaque
+      utilisateur n'accède qu'à ses propres activités. Ton mot de passe n'est jamais visible,
+      même par les autres membres.
+    keywords: [sécurité, base de données, mot de passe]
+    questions:
+      - Mes données sont protégées ?
+      - Mes informations sont sécurisées ?
+      - EquiPay est sécurisée ?
+      - Quelqu'un peut voir mon mot de passe ?
+      - Comment EquiPay protège mes données ?
+      - L'app est fiable niveau sécurité ?
+      - Is my data safe?
+      - Wach les données dyali mahmiyin ?
+      - Le créateur de l'activité voit mon mot de passe ?
+      - Mes infos personnelles sont en sécurité ?
+
+  - id: code_secret
+    answer: >-
+      Le code d'une activité permet de demander à la rejoindre : partage-le seulement avec les
+      personnes que tu veux inviter. Même avec le code, personne n'entre sans ton accord, car
+      tu acceptes ou refuses chaque demande.
+    keywords: [code, partage, accord, demande]
+    questions:
+      - C'est grave si mon code circule ?
+      - Quelqu'un a eu mon code par erreur
+      - Un inconnu peut entrer dans mon activité avec le code ?
+      - Le code est dangereux à partager ?
+      - Comment éviter que des inconnus rejoignent ?
+      - What if a stranger gets my code?
+      - Ila chi wa7ed khda l code dyali ?
+      - Le code a fuité, que risque-t-on ?
+      - Comment sécuriser l'accès à mon activité ?
+
+  - id: permissions
+    answer: >-
+      EquiPay demande l'accès à tes photos ou à l'appareil photo seulement quand tu choisis une
+      photo de profil, un logo d'activité ou un reçu. Tu peux le refuser et le réactiver plus
+      tard dans les réglages du téléphone.
+    keywords: [photos, appareil photo, réglages]
+    questions:
+      - Pourquoi l'app demande l'accès à mes photos ?
+      - L'app veut accéder à la caméra, pourquoi ?
+      - Quelles autorisations demande EquiPay ?
+      - J'ai refusé l'accès aux photos, comment le réactiver ?
+      - Impossible d'accéder aux photos, que faire ?
+      - L'app peut voir toutes mes photos ?
+      - Why does the app need camera access?
+      - 3lach l'app bghat les photos ?
+      - Message vérifie les autorisations
+      - Comment autoriser la caméra pour EquiPay ?
+
+  - id: donnees_partagees_membres
+    answer: >-
+      Dans une activité, les membres voient les noms, les photos de profil, les dépenses, ce
+      que chacun a payé et les soldes. Ils ne voient pas tes autres activités ni ton mot de
+      passe.
+    keywords: [membres, dépenses, soldes, autres activités]
+    questions:
+      - Les membres voient mes autres activités ?
+      - Ce que je fais dans une activité est visible dans les autres ?
+      - Mes amis voient mes autres voyages ?
+      - Quelles infos sont partagées dans un groupe ?
+      - Un membre voit combien j'ai dépensé ailleurs ?
+      - Can members see my other activities?
+      - Wach s7abi kaychofo les activités lokhrin dyali ?
+      - Mes dépenses personnelles sont visibles par le groupe ?
+
+  - id: suppression_activite_donnees
+    answer: >-
+      Si tu supprimes ton compte, les activités que tu as créées sont supprimées avec leurs
+      dépenses, pour tous leurs membres. Préviens tes amis avant de le faire.
+    keywords: [supprimes ton compte, activités, dépenses, membres]
+    questions:
+      - Si je supprime mon compte, mes amis perdent nos voyages ?
+      - Que deviennent mes activités si je supprime mon compte ?
+      - Les membres gardent les dépenses si le créateur part ?
+      - Le créateur a supprimé son compte, où est passée l'activité ?
+      - What happens to my activities if I delete my account?
+      - Ila ms7t compte, les activités ghadi ytms7o ?
+      - Notre voyage a disparu, le créateur a supprimé son compte ?
+      - Mon ami a quitté EquiPay, que devient notre groupe ?

@@ -1,0 +1,33 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.env
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Flutter : configuration locale
+mobile/env.json
+
+# ML : environnement, modèles entraînés et suivi MLflow local
+ml/.venv/
+ml/models/
+ml/mlflow.db
+ml/mlartifacts/
+ml/logs/
+ml/receipts/raw/
+ml/receipts/pc/data/
+backend/logs/
+
+# Modèles exportés (plusieurs Go)
+model/
+
+# Copies en double créées par iCloud (fichiers générés)
+* 2
+* 2.*

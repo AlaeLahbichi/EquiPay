@@ -1,0 +1,15 @@
+# PyTorch avec CUDA 12.8+ (RTX 5080 / Blackwell) s'installe à part, AVANT ce fichier :
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+transformers>=4.57
+peft>=0.17
+accelerate>=1.10
+safetensors
+mlflow>=3.3
+matplotlib
+numpy
+pillow
+fastapi
+uvicorn
+python-multipart
+psutil
+nvidia-ml-py

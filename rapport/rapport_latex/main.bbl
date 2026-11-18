@@ -1,0 +1,254 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname fonteauteurs\endcsname\relax
+\def\fonteauteurs{\scshape}\fi
+\makeatother
+
+\bibitem{tricount}
+\bgroup\fonteauteurs\bgroup {Tricount}\egroup\egroup{} :
+\newblock {Tricount : partage des dépenses de groupe}.
+\newblock \url{https://tricount.com}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{splitwise}
+\bgroup\fonteauteurs\bgroup {Splitwise, Inc.}\egroup\egroup{} :
+\newblock {Splitwise : split expenses with friends}.
+\newblock \url{https://www.splitwise.com}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{settleup}
+\bgroup\fonteauteurs\bgroup {Settle Up}\egroup\egroup{} :
+\newblock {Settle Up : group expenses and IOUs}.
+\newblock \url{https://settleup.io}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{wanderlog}
+\bgroup\fonteauteurs\bgroup {Wanderlog}\egroup\egroup{} :
+\newblock {Wanderlog : travel planner and itinerary}.
+\newblock \url{https://wanderlog.com}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{qwen3}
+\bgroup\fonteauteurs\bgroup {Qwen Team}\egroup\egroup{} :
+\newblock {Qwen3 Technical Report}.
+\newblock Prépublication arXiv:2505.09388, 2025.
+
+\bibitem{qwen3_4b}
+\bgroup\fonteauteurs\bgroup {Qwen Team}\egroup\egroup{} :
+\newblock {Qwen3-4B-Instruct-2507 : fiche du modèle}.
+\newblock \url{https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507}, 2025.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{qwen3vl}
+\bgroup\fonteauteurs\bgroup {Qwen Team}\egroup\egroup{} :
+\newblock {Qwen3-VL-4B-Instruct : fiche du modèle}.
+\newblock \url{https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct}, 2025.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{lora}
+Edward~J. \bgroup\fonteauteurs\bgroup Hu\egroup\egroup{}, Yelong
+  \bgroup\fonteauteurs\bgroup Shen\egroup\egroup{}, Phillip
+  \bgroup\fonteauteurs\bgroup Wallis\egroup\egroup{}, Zeyuan
+  \bgroup\fonteauteurs\bgroup Allen-Zhu\egroup\egroup{}, Yuanzhi
+  \bgroup\fonteauteurs\bgroup Li\egroup\egroup{}, Shean
+  \bgroup\fonteauteurs\bgroup Wang\egroup\egroup{},
+  Lu~\bgroup\fonteauteurs\bgroup Wang\egroup\egroup{} et Weizhu
+  \bgroup\fonteauteurs\bgroup Chen\egroup\egroup{} :
+\newblock {{LoRA}: Low-Rank Adaptation of Large Language Models}.
+\newblock \emph{In} {\em International Conference on Learning Representations
+  (ICLR)}, 2022.
+
+\bibitem{mlx}
+Awni \bgroup\fonteauteurs\bgroup Hannun\egroup\egroup{}, Jagrit
+  \bgroup\fonteauteurs\bgroup Digani\egroup\egroup{}, Angelos
+  \bgroup\fonteauteurs\bgroup Katharopoulos\egroup\egroup{} et Ronan
+  \bgroup\fonteauteurs\bgroup Collobert\egroup\egroup{} :
+\newblock {{MLX}: Efficient and flexible machine learning on Apple silicon}.
+\newblock \url{https://github.com/ml-explore/mlx}, 2023.
+
+\bibitem{mlflow}
+Matei \bgroup\fonteauteurs\bgroup Zaharia\egroup\egroup{}, Andrew
+  \bgroup\fonteauteurs\bgroup Chen\egroup\egroup{}, Aaron
+  \bgroup\fonteauteurs\bgroup Davidson\egroup\egroup{}, Ali
+  \bgroup\fonteauteurs\bgroup Ghodsi\egroup\egroup{}, Sue~Ann
+  \bgroup\fonteauteurs\bgroup Hong\egroup\egroup{}, Andy
+  \bgroup\fonteauteurs\bgroup Konwinski\egroup\egroup{}, Siddharth
+  \bgroup\fonteauteurs\bgroup Murching\egroup\egroup{}, Tomas
+  \bgroup\fonteauteurs\bgroup Nykodym\egroup\egroup{}, Paul
+  \bgroup\fonteauteurs\bgroup Ogilvie\egroup\egroup{}, Mani
+  \bgroup\fonteauteurs\bgroup Parkhe\egroup\egroup{}, Fen
+  \bgroup\fonteauteurs\bgroup Xie\egroup\egroup{} et Corey
+  \bgroup\fonteauteurs\bgroup Zumar\egroup\egroup{} :
+\newblock {Accelerating the Machine Learning Lifecycle with {MLflow}}.
+\newblock {\em IEEE Data Engineering Bulletin}, 41(4)\string:\penalty500\relax
+  39--45, 2018.
+
+\bibitem{mlflow_docs}
+\bgroup\fonteauteurs\bgroup {MLflow Project}\egroup\egroup{} :
+\newblock {MLflow Documentation : Tracking et Model Registry}.
+\newblock \url{https://mlflow.org/docs/latest/}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{postgres_rls}
+\bgroup\fonteauteurs\bgroup {The PostgreSQL Global Development
+  Group}\egroup\egroup{} :
+\newblock {PostgreSQL Documentation : Row Security Policies}.
+\newblock \url{https://www.postgresql.org/docs/current/ddl-rowsecurity.html}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{flutter}
+\bgroup\fonteauteurs\bgroup {Google}\egroup\egroup{} :
+\newblock {Flutter Documentation}.
+\newblock \url{https://docs.flutter.dev}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{mapkit}
+\bgroup\fonteauteurs\bgroup {Apple Inc.}\egroup\egroup{} :
+\newblock {MapKit : documentation pour les développeurs}.
+\newblock \url{https://developer.apple.com/documentation/mapkit}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{supabase}
+\bgroup\fonteauteurs\bgroup {Supabase}\egroup\egroup{} :
+\newblock {Supabase Documentation : Auth, Database, Storage, Realtime}.
+\newblock \url{https://supabase.com/docs}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{fastapi}
+Sebastián \bgroup\fonteauteurs\bgroup Ramírez\egroup\egroup{} :
+\newblock {FastAPI Documentation}.
+\newblock \url{https://fastapi.tiangolo.com}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{peft}
+Sourab \bgroup\fonteauteurs\bgroup Mangrulkar\egroup\egroup{}, Sylvain
+  \bgroup\fonteauteurs\bgroup Gugger\egroup\egroup{}, Lysandre
+  \bgroup\fonteauteurs\bgroup Debut\egroup\egroup{}, Younes
+  \bgroup\fonteauteurs\bgroup Belkada\egroup\egroup{}, Sayak
+  \bgroup\fonteauteurs\bgroup Paul\egroup\egroup{} et Benjamin
+  \bgroup\fonteauteurs\bgroup Bossan\egroup\egroup{} :
+\newblock {{PEFT}: State-of-the-art Parameter-Efficient Fine-Tuning methods}.
+\newblock \url{https://github.com/huggingface/peft}, 2022.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{pytorch}
+Adam \bgroup\fonteauteurs\bgroup Paszke\egroup\egroup{}, Sam
+  \bgroup\fonteauteurs\bgroup Gross\egroup\egroup{}, Francisco
+  \bgroup\fonteauteurs\bgroup Massa\egroup\egroup{}, Adam
+  \bgroup\fonteauteurs\bgroup Lerer\egroup\egroup{}, James
+  \bgroup\fonteauteurs\bgroup Bradbury\egroup\egroup{}, Gregory
+  \bgroup\fonteauteurs\bgroup Chanan\egroup\egroup{} \emph{et~al.} :
+\newblock {{PyTorch}: An Imperative Style, High-Performance Deep Learning
+  Library}.
+\newblock \emph{In} {\em Advances in Neural Information Processing Systems 32
+  (NeurIPS)}, pages 8024--8035, 2019.
+
+\bibitem{mlxlm}
+\bgroup\fonteauteurs\bgroup {Apple Machine Learning Research}\egroup\egroup{} :
+\newblock {mlx-lm : génération de texte et affinage de modèles de langage
+  avec MLX}.
+\newblock \url{https://github.com/ml-explore/mlx-lm}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{mlxvlm}
+Prince \bgroup\fonteauteurs\bgroup Canuma\egroup\egroup{} :
+\newblock {{MLX-VLM}: inférence et affinage de modèles vision-langage avec
+  MLX}.
+\newblock \url{https://github.com/Blaizzy/mlx-vlm}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{qwen25}
+\bgroup\fonteauteurs\bgroup {Qwen Team}\egroup\egroup{} :
+\newblock {Qwen2.5 Technical Report}.
+\newblock Prépublication arXiv:2412.15115, 2024.
+
+\bibitem{llama32}
+\bgroup\fonteauteurs\bgroup {Meta AI}\egroup\egroup{} :
+\newblock {Llama-3.2-3B-Instruct : fiche du modèle}.
+\newblock \url{https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct}, 2024.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{sbert}
+Nils \bgroup\fonteauteurs\bgroup Reimers\egroup\egroup{} et Iryna
+  \bgroup\fonteauteurs\bgroup Gurevych\egroup\egroup{} :
+\newblock {Making Monolingual Sentence Embeddings Multilingual using Knowledge
+  Distillation}.
+\newblock \emph{In} {\em Proceedings of the 2020 Conference on Empirical
+  Methods in Natural Language Processing (EMNLP)}, pages 4512--4525, 2020.
+
+\bibitem{rouge}
+Chin-Yew \bgroup\fonteauteurs\bgroup Lin\egroup\egroup{} :
+\newblock {{ROUGE}: A Package for Automatic Evaluation of Summaries}.
+\newblock \emph{In} {\em Text Summarization Branches Out (ACL Workshop)}, pages
+  74--81, 2004.
+
+\bibitem{bleu}
+Kishore \bgroup\fonteauteurs\bgroup Papineni\egroup\egroup{}, Salim
+  \bgroup\fonteauteurs\bgroup Roukos\egroup\egroup{}, Todd
+  \bgroup\fonteauteurs\bgroup Ward\egroup\egroup{} et Wei-Jing
+  \bgroup\fonteauteurs\bgroup Zhu\egroup\egroup{} :
+\newblock {{BLEU}: a Method for Automatic Evaluation of Machine Translation}.
+\newblock \emph{In} {\em Proceedings of the 40th Annual Meeting of the
+  Association for Computational Linguistics}, pages 311--318, 2002.
+
+\bibitem{chrf}
+Maja \bgroup\fonteauteurs\bgroup Popović\egroup\egroup{} :
+\newblock {{chrF}: character n-gram F-score for automatic {MT} evaluation}.
+\newblock \emph{In} {\em Proceedings of the Tenth Workshop on Statistical
+  Machine Translation}, pages 392--395, 2015.
+
+\bibitem{cord}
+Seunghyun \bgroup\fonteauteurs\bgroup Park\egroup\egroup{}, Seung
+  \bgroup\fonteauteurs\bgroup Shin\egroup\egroup{}, Bado
+  \bgroup\fonteauteurs\bgroup Lee\egroup\egroup{}, Junyeop
+  \bgroup\fonteauteurs\bgroup Lee\egroup\egroup{}, Jaeheung
+  \bgroup\fonteauteurs\bgroup Surh\egroup\egroup{}, Minjoon
+  \bgroup\fonteauteurs\bgroup Seo\egroup\egroup{} et Hwalsuk
+  \bgroup\fonteauteurs\bgroup Lee\egroup\egroup{} :
+\newblock {{CORD}: A Consolidated Receipt Dataset for Post-{OCR} Parsing}.
+\newblock \emph{In} {\em Workshop on Document Intelligence at NeurIPS 2019},
+  2019.
+
+\bibitem{sroie}
+Zheng \bgroup\fonteauteurs\bgroup Huang\egroup\egroup{}, Kai
+  \bgroup\fonteauteurs\bgroup Chen\egroup\egroup{}, Jianhua
+  \bgroup\fonteauteurs\bgroup He\egroup\egroup{}, Xiang
+  \bgroup\fonteauteurs\bgroup Bai\egroup\egroup{}, Dimosthenis
+  \bgroup\fonteauteurs\bgroup Karatzas\egroup\egroup{}, Shijian
+  \bgroup\fonteauteurs\bgroup Lu\egroup\egroup{} et C.~V.
+  \bgroup\fonteauteurs\bgroup Jawahar\egroup\egroup{} :
+\newblock {{ICDAR2019} Competition on Scanned Receipt {OCR} and Information
+  Extraction}.
+\newblock \emph{In} {\em International Conference on Document Analysis and
+  Recognition (ICDAR)}, pages 1516--1520, 2019.
+
+\bibitem{wildreceipt}
+Hongbin \bgroup\fonteauteurs\bgroup Sun\egroup\egroup{}, Zhanghui
+  \bgroup\fonteauteurs\bgroup Kuang\egroup\egroup{}, Xiaoyu
+  \bgroup\fonteauteurs\bgroup Yue\egroup\egroup{}, Chenhao
+  \bgroup\fonteauteurs\bgroup Lin\egroup\egroup{} et Wayne
+  \bgroup\fonteauteurs\bgroup Zhang\egroup\egroup{} :
+\newblock {Spatial Dual-Modality Graph Reasoning for Key Information
+  Extraction}.
+\newblock Prépublication arXiv:2103.14470, 2021.
+
+\bibitem{osrm}
+Dennis \bgroup\fonteauteurs\bgroup Luxen\egroup\egroup{} et Christian
+  \bgroup\fonteauteurs\bgroup Vetter\egroup\egroup{} :
+\newblock {Real-time routing with {OpenStreetMap} data}.
+\newblock \emph{In} {\em Proceedings of the 19th ACM SIGSPATIAL International
+  Conference on Advances in Geographic Information Systems}, pages 513--516,
+  2011.
+
+\bibitem{osm}
+\bgroup\fonteauteurs\bgroup {OpenStreetMap contributors}\egroup\egroup{} :
+\newblock {OpenStreetMap}.
+\newblock \url{https://www.openstreetmap.org}.
+\newblock Consulté le 13 octobre 2026.
+
+\bibitem{croes}
+G.~A. \bgroup\fonteauteurs\bgroup Croes\egroup\egroup{} :
+\newblock {A Method for Solving Traveling-Salesman Problems}.
+\newblock {\em Operations Research}, 6(6)\string:\penalty500\relax 791--812,
+  1958.
+
+\end{thebibliography}

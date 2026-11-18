@@ -1,0 +1,833 @@
+0	1 offline expense sent
+1	{0} offline expenses sent
+2	{0} · {1} rejected by the server, please re-enter
+3	EquiPay
+4	Missing configuration.\nRun the app with:\nflutter run --dart-define-from-file=env.json
+5	Trip
+6	Outing
+7	Everyday
+8	Loan
+9	Housing
+10	Groceries
+11	Transport
+12	Bills
+13	Subscriptions
+14	Health
+15	Restaurants
+16	Leisure
+17	Shopping
+18	Education
+19	Family
+20	Savings
+21	Other
+22	Salary
+23	Bonus
+24	Freelance
+25	Rent received
+26	Benefits
+27	Other income
+28	Unlimited ongoing activities
+29	Unlimited receipt scans
+30	Unlimited one-sentence expenses
+31	Unlimited organized routes
+32	{0} ongoing activities
+33	{0} receipt scans per month
+34	{0} one-sentence expenses per month
+35	{0} organized routes per month
+36	Your {0} plan allows {1} ongoing activities.
+37	You've used your whole monthly quota with the {0} plan: {1}.
+38	Upgrade to {0} ({1}), or archive a finished activity.
+39	Upgrade to {0} ({1}) to continue.
+40	Plan limit reached.
+41	Ongoing activities
+42	Receipt scans
+43	Expenses described in one sentence
+44	Routes organized by AI
+45	Free
+46	To try it out with a few friends
+47	Plus
+48	For outings and weekends
+49	Pro
+50	For frequent travelers
+51	Premium
+52	Everything unlimited, no counting
+53	Delete “{0}”?
+54	Leave “{0}”?
+55	Delete
+56	Leave
+57	Delete {0} activities?
+58	The activity, its expenses and its photos will be deleted for all participants.
+59	{0} activities you created {3} for all participants, along with expenses and photos.
+60	will be deleted
+61	will be deleted
+62	You won't see it anymore and the other participants will keep it. Not possible if you have expenses in it.
+63	You will leave {0} you didn't create (not possible if you have expenses in them).
+64	the activity
+65	the {0} activities
+66	This action cannot be undone.
+67	Cancel
+68	Activity deleted
+69	{0} activities deleted
+70	activity left
+71	{0} activities left
+72	 · {0} failed: {1}
+73	Activity archived
+74	{0} activities archived
+75	Activity unarchived
+76	{0} activities unarchived
+77	You
+78	Expenses per participant
+79	No expenses yet:\ncharts will appear with the first one.
+80	paid in total
+81	consumed in total
+82	Paid and share of each
+83	Paid
+84	Share
+85	Who advanced the money
+86	What each person consumed
+87	Balance
+88	Paid − share: + is owed money, − owes money
+89	Activity updated
+90	Charts and statistics
+91	Expense charts and statistics are available from the Plus plan.
+92	Ongoing activities limit
+93	Edit activity
+94	Receipt photo
+95	Activity photos
+96	Photo added
+97	{0} photos added
+98	{0} photos added, {1} could not be uploaded
+99	Added by {0}
+100	a former member
+101	Photo deleted
+102	Add an expense
+103	Expense
+104	Loading expenses…
+105	Expenses ({0})
+106	Members ({0})
+107	Photos ({0})
+108	More actions
+109	Edit
+110	Unarchive
+111	Archive
+112	Summary
+113	Expense chart
+114	Insights
+115	Leave activity
+116	No expenses yet.
+117	Waiting to send · will be sent when the network is back
+118	Paid by {0} · {1}
+119	Tap a participant to change their role or remove them
+120	Add
+121	Share trip photos, quotes or memories with the group.
+122	Code copied: share it to invite someone
+123	Code unavailable · retry
+124	Hide code
+125	Show code
+126	Copy code
+127	Itinerary
+128	Things to do, votes and map
+129	Nothing planned: add the first activity
+130	{0} planned item(s) · votes and map
+131	Total expenses
+132	No expenses yet
+133	{0} expense{1}
+134	Creator
+135	Member
+136	Viewer
+137	paid
+138	Retry
+139	Default
+140	A → Z
+141	Balance ↑
+142	Balance ↓
+143	No insights yet: add a first expense to see the activity's trends.
+144	Total
+145	Expenses
+146	Average per expense
+147	Over 1 day
+148	Per day ({0} days)
+149	Per participant
+150	Biggest spending day
+151	Your situation
+152	You paid
+153	Your share
+154	You are owed
+155	You owe
+156	You're settled
+157	You advanced {0}% of the expenses and your share is {1}% of the total.
+158	To settle up
+159	Everyone is settled, no repayment needed.
+160	 give to
+161	 gives to
+162	{0} transfer(s) are enough to bring all balances back to zero.
+163	Highlights
+164	Biggest expense
+165	{0} · {1}\nPaid by {2}, {3}
+166	Biggest payer
+167	Currencies used
+168	{0} · {1} expense(s) converted to {2}
+169	Expenses per month
+170	By day of the week
+171	Summary “{0}”
+172	Total expenses: {0}
+173	Everyone is settled.
+174	• {0} owes {1} to {2}
+175	Copy summary
+176	Summary copied
+177	No expenses yet:\nthe summary will appear with the first one.
+178	Everyone is settled
+179	1 repayment to balance everything
+180	{0} repayments to balance everything
+181	{0} · {1} expense{2}
+182	Should receive {0}
+183	Should repay {0}
+184	Settled
+185	Paid {0} · Share {1}
+186	You repay {0}
+187	Repays {0}
+188	You receive from {0}
+189	Receives from {0}
+190	Choose from gallery
+191	Take a photo
+192	Use the default logo
+193	Unable to access photos. Check the permissions.
+194	Give your activity a name
+195	Change the activity photo
+196	Change photo
+197	Title
+198	The activity already has expenses: its currency can no longer change.
+199	All of the activity's expenses are calculated in this currency.
+200	Save
+201	{0} is now {1}
+202	Remove {0}?
+203	This person will no longer have access to the activity. They can ask to join again with the code.
+204	Remove
+205	{0} was removed from the activity
+206	Role
+207	Member (participant)
+208	Adds expenses and takes part in the split
+209	Views the activity without changing anything
+210	Remove from activity
+211	1 place shown on the map
+212	{0} places shown on the map
+213	Saved. Place not found: it won't appear on the map.
+214	Added to the itinerary
+215	Updated
+216	Itinerary updated
+217	The item and its votes will be deleted for everyone.
+218	Itinerary · {0}
+219	List
+220	Calendar
+221	Map
+222	Organize the route
+223	Loading itinerary…
+224	Nothing planned yet.\nAdd visits and outings, then vote together!
+225	Nothing planned yet.
+226	No date
+227	Edit or delete
+228	For
+229	Against
+230	All
+231	No place to show.\nAdd an address to itinerary items to see them on the map.
+232	No place to show for this day.
+233	OpenStreetMap
+234	1 item without a found place is not shown
+235	{0} items without a found place are not shown
+236	Planned day
+237	Planned time
+238	Edit item
+239	Add to itinerary
+240	Name
+241	E.g. Visit the Majorelle Garden
+242	Give this activity a name
+243	Place
+244	E.g. Majorelle Garden
+245	Place found: it will be shown on the map
+246	Address
+247	E.g. Rue Yves Saint Laurent, Marrakech
+248	The place and address are used to show it on the map
+249	Date
+250	Remove date
+251	Time
+252	Remove time
+253	By date
+254	Most voted
+255	I'm looking for the visiting order that wastes the least time, day by day, while keeping the times you set.
+256	Getting around
+257	Visits per day
+258	No limit
+259	Any instruction? (optional)
+260	E.g. we like to walk slowly, not too early in the morning
+261	Organize
+262	To fit in
+263	Route organization failed.
+264	Unable to open Maps.
+265	Apply this itinerary?
+266	The suggested days and times will be saved in the itinerary for the whole group.
+267	Apply
+268	Suggested route
+269	Apply this itinerary
+270	Only the activity's creator can apply this itinerary.
+271	Upgrade your plan
+272	Calculating routes and writing the itinerary…
+273	Open the route in Maps
+274	A word from the AI
+275	Set aside (more votes against than for)
+276	{0} saved
+277	Your order is already the best
+278	{0} of travel {1} instead of {2}
+279	{0} of travel {1} in total
+280	⚠︎ Estimated as the crow flies: the routing service isn't responding.
+281	Time set by the group
+282	Suggested day
+283	Budget history
+284	The Free plan keeps the last {0} months. Upgrade to see your full history.
+285	Entry deleted
+286	Budget per category
+287	Set a maximum budget per category and get warned before you exceed it, from the Plus plan.
+288	Savings goals
+289	Create savings goals and track your progress, from the Plus plan.
+290	Budget
+291	Bills and income
+292	Settings
+293	Sign in to manage your budget
+294	Sign in
+295	Loading budget…
+296	This month
+297	Manage
+298	Add your salary and fixed bills (rent, utilities, subscriptions): they'll come back every month.
+299	By category
+300	Your expenses for the month will appear here, sorted by category.
+301	Holidays, emergency fund, new phone… set yourself a goal and track your progress.
+302	Entries
+303	No entries this month. Tap “Add” to record an expense or income.
+304	Salary, rent received, pension…
+305	Rent, electricity, internet, subscriptions, loan…
+306	On the {0} of every month
+307	Disabled
+308	What comes back every month. You'll be reminded 2 days before each bill is due.
+309	Income
+310	Fixed bills
+311	Left to spend
+312	≈ {0} per day for {1} days
+313	+{0} to come
+314	+{0} to pay
+315	Received on {0}
+316	Paid on {0}
+317	Expected on {0}
+318	Due on {0}
+319	Mark as received
+320	Mark as paid
+321	Tap to set a budget
+322	{0} of {1}
+323	Goal reached 🎉
+324	{0} per month
+325	by {0}
+326	Amount
+327	Invalid amount
+328	Manage your salary every month
+329	Record your salary and fixed bills: EquiPay works out what you have left to spend and reminds you what to pay.
+330	Net monthly salary
+331	Payday
+332	The {0} of the month
+333	Create my budget
+334	New expense
+335	New income
+336	Income
+337	Label (optional)
+338	E.g. Groceries at Marjane
+339	E.g. Year-end bonus
+340	Change
+341	Give it a name
+342	Monthly income
+343	Monthly fixed bill
+344	E.g. Salary
+345	E.g. Rent, Internet, Netflix
+346	Received on
+347	Due on
+348	Active
+349	Turn it off if it no longer comes back (history is kept).
+350	{0} budget
+351	Maximum amount to spend each month in this category. You'll be warned at 80% and when you exceed it.
+352	Remove budget
+353	Enter a name and a valid amount
+354	New savings goal
+355	{0} saved out of {1}
+356	Add to savings
+357	Goal
+358	E.g. Summer holidays
+359	Target amount
+360	No deadline
+361	By {0}
+362	Choose
+363	Budget settings
+364	Reminders
+365	Bills due 2 days before, and payday
+366	Manual entry
+367	Enter the amount, who paid and the split
+368	Scan a receipt
+369	Take or import a photo of your receipt, the assistant fills in the expense
+370	Describe the expense
+371	Write “€60 restaurant with Sara”, the assistant does the rest
+372	Sara
+373	Restaurant with {0}, I paid {1} yesterday, 60/40
+374	Groceries {0} for everyone except {1}
+375	{0} paid for the taxi {1} for both of us
+376	The assistant is unavailable. Try again.
+377	Describe the expense as you would to a friend: what, how much, who paid, for whom and how to split. The assistant fills in the form, you check it before adding.
+378	One expense per sentence
+379	Members: {0} · currency {1}
+380	Examples
+381	Fill in the expense
+382	The assistant is reading your sentence…
+383	Amount, date, payer, participants and split
+384	Former member
+385	All members' balances will be recalculated. This action is final.
+386	Expense deleted
+387	Edit expense
+388	Delete expense
+389	i.e. {0} (1 {1} = {2} {3})
+390	Paid by
+391	Description
+392	Added by
+393	Split ({0})
+394	Receipt photo
+395	No photo. Add it with the pencil at the top.
+396	No photo for this expense.
+397	Expense date
+398	Exchange rate unavailable. Enter it manually.
+399	i.e. {0} in the totals
+400	Looking up today's rate…
+401	Rate entered manually
+402	Automatic rate from {0}
+403	To convert the expense into the activity's currency
+404	Proof of payment
+405	Give the expense a name
+406	Enter a positive amount
+407	2 decimal places maximum
+408	Amount too high
+409	Please wait, the rate is being looked up
+410	Enter the exchange rate
+411	6 decimal places maximum
+412	Choose at least one participant
+413	Each participant must have a percentage above 0
+414	The percentages must add up to 100%
+415	Choose who paid
+416	Offline: expense kept on the phone, sent when the network is back (add the photo later)
+417	Offline: expense kept on the phone, it will be sent when the network is back
+418	Expense updated
+419	Expense added
+420	{0}, but the photo could not be saved
+421	E.g. Dinner at the riad
+422	Store name read on the receipt
+423	Not found on the receipt: to complete
+424	Read on the receipt: “{0}”
+425	Read on the receipt
+426	Currency read: {0} (not available) — choose the right one
+427	Read on the receipt
+428	Understood from your sentence
+429	No currency in your sentence: activity currency
+430	Activity currency
+431	Exchange rate
+432	Automatic rate
+433	Date not found on the receipt: today by default
+434	No date in your sentence: today by default
+435	Understood from your sentence
+436	No payer in your sentence: you by default
+437	Split
+438	Equal shares
+439	Participants not specified: everyone
+440	Participants understood from your sentence
+441	percentage split
+442	split in shares
+443	amounts per person converted to %
+444	equal shares
+445	Receipt photo (1 maximum)
+446	More details
+447	Description and place (optional)
+448	Country
+449	City
+450	Add the expense
+451	Not in your sentence: to complete
+452	Not taking part
+453	Total: 100%
+454	Total: {0}% ({1}% missing)
+455	Total: {0}% ({1}% too much)
+456	Add a receipt photo
+457	Replace
+458	Amount missing from your sentence: enter it.
+459	Currency {0} is not available in the app.
+460	Filled in from your sentence
+461	Check each field, correct if needed and complete what's missing before confirming.
+462	The amount doesn't exactly match the printed total: check it.
+463	Total not found: enter it.
+464	Date not found on the receipt.
+465	Filled in from the receipt
+466	{0} ×
+467	No information found in this photo. Is it really a receipt?
+468	The receipt could not be read. Try again.
+469	Reading the receipt…
+470	The assistant picks out the total, the date, the store and the items.
+471	Enter manually with this photo
+472	Create an activity
+473	Trip, outing, everyday expenses…
+474	Join an activity
+475	With the code sent by its creator
+476	This is taking a bit longer than expected…
+477	Choose the currency for expenses
+478	New activity
+479	E.g. Marrakech 2026
+480	All of the activity's expenses will be calculated in this currency.
+481	Create
+482	Choose the activity logo
+483	Add a logo (optional)
+484	Change logo
+485	The code has 8 characters
+486	Activity code
+487	ABCD-EFGH
+488	The activity's creator will receive your request and can accept it.
+489	Send request
+490	Create or join an activity
+491	Activity created, but the logo could not be uploaded.
+492	Request sent! You'll be notified as soon as the creator replies.
+493	{0} · find them in Profile > Archived activities
+494	{0}/{1} ongoing
+495	Sign in to get started
+496	Create your activities and share your expenses with your friends.
+497	Unable to load your activities
+498	Loading your activities…
+499	No activities
+500	Create your first activity or join a friend's with their code.
+501	by Alae Lahbichi
+502	Cancel selection
+503	My activities
+504	My activities · {0}
+505	Select activities
+506	{0} selected
+507	Deselect all
+508	Select all
+509	Select
+510	Upgrade to Plus
+511	Limit reached: {0}/{1} ongoing activities
+512	Upgrade to EquiPay {0}
+513	{0}, more scans and statistics · {1} DH/month
+514	View
+515	Requests
+516	Profile
+517	Morocco
+518	Enter your name
+519	3 to 30 characters: lowercase letters, numbers or _
+520	Back
+521	Continue
+522	Finish
+523	Welcome to EquiPay
+524	A few questions to set up your account. It takes less than a minute.
+525	Your name
+526	Visible to the members of your activities
+527	Username
+528	Your friends find you with @username
+529	Your currency and country
+530	Your currency will be suggested by default when you create an activity.
+531	You live in
+532	Your country
+533	You'll use EquiPay for…
+534	Choose as many answers as you like.
+535	How did you hear about EquiPay?
+536	Trips
+537	Outings with friends
+538	Flatsharing
+539	As a couple
+540	Loans and credit
+541	Events
+542	A friend
+543	Social media
+544	App Store / Google Play
+545	School or university
+546	Sign in to choose a plan.
+547	{0} DH / year
+548	{0} DH / month
+549	Upgrade to {0}
+550	{0}, no commitment: you can cancel anytime from Profile > My plan.\n\nDemo mode: no payment is requested. Payment through the App Store or Google Play will be added when the app is published.
+551	Confirm
+552	Welcome to the {0} plan!
+553	{0} instead of {1}
+554	No more charts or statistics
+555	Cancel the {0} plan?
+556	You go back to the Free plan. Your activities and expenses are kept.
+557	Keep {0}
+558	Cancel plan
+559	Subscription cancelled. You're back on the Free plan.
+560	Plan limit reached
+561	Upgrade to {0} · {1} DH/month
+562	Compare all plans
+563	Later
+564	No charts
+565	0 DH
+566	Choose your plan
+567	Our plans
+568	Monthly
+569	Yearly · 2 months free
+570	Start for free
+571	Prices in dirhams, no commitment: cancel anytime from Profile > My plan. The help assistant stays unlimited in every plan.
+572	Welcome! Choose your plan
+573	Unlock all of EquiPay
+574	Start for free, and upgrade when you need it.
+575	More ongoing activities, more scans and AI-organized routes, and detailed statistics.
+576	My {0} subscription
+577	active since {0}
+578	no commitment
+579	Cancel subscription
+580	Your plan
+581	★ Most popular
+582	Trip itinerary, votes and map
+583	Current plan
+584	Choose {0}
+585	Your usage
+586	Ongoing activities, and AI uses this month
+587	{0} · unlimited
+588	About
+589	Version 1.0.0 · by Alae Lahbichi
+590	EquiPay makes it easy to share expenses between friends, family or colleagues. No more complicated calculations after a trip or a night out: everyone adds what they paid, and the app splits the amounts fairly and transparently.
+591	Features
+592	© 2026 Alae Lahbichi
+593	Activities
+594	Create a trip, an outing, everyday expenses or a loan, and invite your friends with a unique code or by email.
+595	Add each expense with its amount, currency, date, a place and up to two receipt photos. Only its author can edit it.
+596	Fair split
+597	Split each expense equally or by percentage: EquiPay works out who owes how much to whom.
+598	Real-time balances
+599	Totals and each member's balance update instantly on every phone.
+600	Viewers
+601	Invite someone read-only: they follow the activity without being able to change it.
+602	Smart assistant
+603	An assistant trained specifically for EquiPay answers your questions about the app, even without an account.
+604	{0}: it's back in your activities
+605	Archived activities
+606	Loading archives…
+607	No archived activities
+608	Archive a finished activity from its ⋮ menu or by selecting several activities on the home screen: it will be stored here.
+609	Archived for you only: the other participants still see them.
+610	Profile photo
+611	Uploading photo…
+612	Profile photo updated.
+613	Information saved. Confirm your new email with the link sent to {0}.
+614	Information saved.
+615	Edit my information
+616	Required
+617	Lowercase letters, numbers and _ (3 to 30)
+618	Invalid username
+619	Email
+620	Invalid email
+621	My plan
+622	Preferences
+623	Extra
+624	Sign out
+625	Delete my account
+626	EquiPay · version 1.0.0\nby Alae Lahbichi
+627	Sign out?
+628	You can sign back in at any time.
+629	You are signed out.
+630	Delete your account?
+631	Your profile, the activities you created and your expenses will be permanently deleted. This action cannot be undone.
+632	Your account has been deleted.
+633	Failed: {0}
+634	Google sign-in failed.
+635	Sign in to create your activities\nand share your expenses.
+636	Continue with Google
+637	Continue with email
+638	View profile photo
+639	Change profile photo
+640	Dark mode
+641	Allow EquiPay notifications in the phone settings.
+642	Notifications
+643	Requests, added expenses, budget reminders
+644	Language
+645	{0} plan
+646	Manage or cancel my subscription
+647	Upgrade to {0} from {1} DH/month: more AI and statistics
+648	Support
+649	G
+650	Incorrect email or password.
+651	Confirm your email first (link sent by email).
+652	An account already exists with this email.
+653	Password too weak (6 characters minimum).
+654	Check your inbox
+655	A confirmation link was sent to {0}.\nOpen it from this phone to activate your account.
+656	Got it
+657	Create an account
+658	Sign in
+659	Sign up
+660	First name
+661	6 characters minimum
+662	Password
+663	Show
+664	Hide
+665	Create my account
+666	Sign in to see your requests
+667	Requests to join your activities will appear here.
+668	Received
+669	Sent
+670	No requests received
+671	Share your activity's code: every request to join it will arrive here.
+672	No requests sent
+673	Join an activity with its code from the home screen: you'll follow the answer here.
+674	{0} joined “{1}”
+675	Request from {0} declined
+676	 wants to join
+677	Decline
+678	Accept
+679	Request cancelled
+680	Sent {0}
+681	Pending
+682	Accepted
+683	Declined
+684	Cancelled
+685	Welcome!
+686	We'll retry automatically as soon as the connection is back.
+687	EquiPay assistant
+688	typing…
+689	Support · online
+690	Sign in to keep your conversation history.
+691	Hello 👋
+692	Hello {0} 👋
+693	I'm the EquiPay assistant. Ask me a question about using the app.
+694	Type your question…
+695	Send
+696	How do I create an activity?
+697	How do I join an activity with a code?
+698	Who can edit an expense?
+699	How do I invite a viewer?
+700	Sign in to access your activities.
+701	You have expenses in “{0}”: you can't leave it. Archive it instead.
+702	Only the creator can delete the activity
+703	Only the creator can edit the activity
+704	Only the creator can change roles
+705	Only the creator can remove a participant
+706	The server is taking too long to respond. Try again in a moment.
+707	No internet connection.
+708	Sign-in failed: {0}
+709	Something went wrong. Try again.
+710	Assistant not configured (API_URL missing in env.json).
+711	Authorization
+712	Bearer {0}
+713	The assistant is taking too long to respond. Try again.
+714	Unable to reach the assistant. Check your connection.
+715	Your session has expired. Sign in again and retry.
+716	The assistant is unavailable.
+717	This username is already taken.
+718	Google sign-in is not enabled yet.
+719	Rate {0} → {1} not found.
+720	Exchange rate unavailable (offline?). Enter it manually.
+721	Sign in to describe an expense.
+722	Unexpected response from the assistant.
+723	I didn't understand this sentence. Rephrase it or add details.
+724	That doesn't look like an expense. At least say what was paid, for example “taxi €20”.
+725	Only the expense's creator can delete it
+726	You can't delete this photo
+727	New request
+728	{0} wants to join “{1}”
+729	Join requests
+730	Budget reminders
+731	Activities and expenses
+732	Request accepted: the person has joined your activity.
+733	Request declined.
+734	The reply could not be sent. Open the app to try again.
+735	Request accepted 🎉
+736	You joined “{0}”.
+737	Request declined
+738	Your request for “{0}” was declined.
+739	New expense in “{0}”
+740	{0} added “{1}”: {2}
+741	A member
+742	Payday 💰
+743	Has your salary arrived? Mark it as received and plan your budget for the month.
+744	Due soon: {0}
+745	{0} due on the {1} of this month.
+746	{0} budget exceeded
+747	{0} budget almost reached
+748	{0} spent out of {1} this month.
+749	Scanner not configured (API_URL missing in env.json).
+750	Sign in to scan a receipt.
+751	POST
+752	Reading the receipt is taking too long. Try again.
+753	Unable to reach the scanner. Check your connection.
+754	Unexpected response from the scanner.
+755	The receipt could not be read. Try a sharper photo.
+756	The scanner is unavailable.
+757	Unable to load requests.
+758	{0} cancelled their request for “{1}”
+759	Your request for “{0}” was accepted 🎉
+760	Your request for “{0}” was declined
+761	Server not configured (API_URL missing in env.json).
+762	Sign in to organize the route.
+763	Organizing is taking too long. Try again in a moment.
+764	Unable to reach the server. Check your connection.
+765	Unexpected response from the server.
+766	Route organization is unavailable.
+767	On foot
+768	on foot
+769	Bike
+770	by bike
+771	Car
+772	by car
+773	Sign in to see the itinerary.
+774	Only the author or the creator can edit this item
+775	Only the author or the creator can delete this item
+776	Only the author or the creator can check this item
+777	Only the creator can apply this itinerary
+778	today
+779	yesterday
+780	Euro
+781	Moroccan dirham
+782	US dollar
+783	Pound sterling
+784	Swiss franc
+785	Canadian dollar
+786	Turkish lira
+787	UAE dirham
+788	Saudi riyal
+789	Tunisian dinar
+790	Algerian dinar
+791	Japanese yen
+792	Choose from gallery (several allowed)
+793	just now
+794	{0} min ago
+795	{0} h ago
+796	{0} d ago
+797	on {1}/{0}/{2}
+798	Offline · your latest data is still available
+799	Connection restored
+800	Currency
+801	Choose the currency
+802	Loading…
+803	Slow connection. Check your network, we keep trying.
+804	Delete this photo?
+805	It will be removed for all members of the activity.
+806	Close
+807	Delete photo
+808	Photo unavailable
+809	User not signed in
+810	Invalid code
+811	Only the creator can change the code
+812	This person is already a member of the activity
+813	Invitation not found
+814	The creator and the payer must be members (not viewers) of the activity
+815	The participant must be a member (not a viewer) of the activity
+816	This member has expenses: make them a viewer instead of removing them
+817	The photo must belong to the expense's activity
+818	An expense can have at most 2 photos
+819	Sign-in required
+820	Request not found
+821	Only the activity's creator can reply
+822	This request has already been handled
+823	This request can no longer be cancelled
+824	The currency can no longer be changed: the activity already has expenses
+825	Only the expense's creator can edit it
+826	An expense can have at most 1 photo
+827	The plan is changed from the plans page
+828	France
+829	Belgium
+830	Switzerland
+831	Canada
+832	Spain

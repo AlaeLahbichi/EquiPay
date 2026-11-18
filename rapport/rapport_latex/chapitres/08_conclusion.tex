@@ -1,0 +1,40 @@
+% ---------------------------------------------------------------------
+%  Conclusion générale
+% ---------------------------------------------------------------------
+\pagetitre{CONCLUSION GÉNÉRALE}
+
+Ce projet nous a permis de concevoir et de réaliser \equipay, une application mobile de
+partage des dépenses de groupe qui fait de l'intelligence artificielle un outil concret
+plutôt qu'une vitrine. Partant d'un constat simple (la saisie manuelle décourage les
+utilisateurs, et rien ne relie les dépenses d'un voyage à son organisation), nous avons
+construit une application complète : Flutter pour le mobile, Supabase pour les données
+partagées et sécurisées, un backend FastAPI pour les modèles, et MLflow pour suivre leur
+cycle de vie.
+
+Sur le plan de l'IA, quatre fonctions ont été intégrées. L'assistant conversationnel, affiné
+à partir de Qwen3-4B sur un jeu de données que nous avons construit, passe d'un score de
+0,276 à 0,770 et a appris à refuser les questions hors sujet. Le scanner de tickets, affiné à
+partir de Qwen3-VL-4B, trouve le bon total sur 97,2 \% des tickets de test et sur la totalité
+des tickets en dirhams et en euros. La saisie par phrase atteint un score de 0,976. Enfin,
+l'organisation du trajet combine un calcul d'itinéraire, un algorithme d'ordre de visite et
+un modèle de langage chargé uniquement de la rédaction. La conversion en 4 bits avec MLX a
+réduit de moitié la mémoire nécessaire, ce qui permet de servir tous ces modèles sur un
+simple ordinateur portable.
+
+Au-delà des résultats chiffrés, ce projet nous a appris plusieurs leçons. La première
+version du scanner, excellente sur son jeu de test mais inutilisable sur nos propres
+tickets, nous a montré qu'un bon score ne vaut que si le jeu de test ressemble à l'usage
+réel. La séparation entre ce que calcule un algorithme et ce que rédige un modèle s'est
+révélée essentielle pour obtenir des résultats fiables. Et la démarche MLOps (données
+versionnées, évaluations comparables, choix d'un champion) a transformé une suite d'essais en
+une progression mesurable. Le travail en binôme, avec relecture croisée et décisions prises
+à deux, a été un apprentissage directement transposable en entreprise.
+
+L'application reste un prototype validé à petite échelle. Les perspectives sont claires :
+héberger le backend sur un serveur GPU pour rendre l'IA disponible partout, publier
+l'application sur les magasins d'applications (ce qui imposera la connexion avec un compte
+Apple), compléter la traduction en anglais et en arabe déjà prévue dans les préférences,
+enrichir le jeu de données de l'assistant pour réduire ses réponses inventées sur les
+questions de support, et ajouter les notifications. Au terme de ce projet, l'objectif initial
+est atteint : \equipay montre qu'il est possible d'intégrer des modèles de langage affinés
+dans une application du quotidien, de façon mesurée, traçable et utile.

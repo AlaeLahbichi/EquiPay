@@ -1,0 +1,50 @@
+{
+    "adapter_path": "/Users/alaethelegend/Desktop/EMSI_5/Projets/Generation_Textuelle_Mardi/ml/describe/models/lora-qwen3-4b-r16-L16-1ep-20261012-001340",
+    "batch_size": 4,
+    "clear_cache_threshold": 0,
+    "config": "/var/folders/g0/w11lzhm97qs1cxg4xlyq4_6r0000gn/T/tmp9vsazbtr.yaml",
+    "data": "/Users/alaethelegend/Desktop/EMSI_5/Projets/Generation_Textuelle_Mardi/ml/describe/data",
+    "fine_tune_type": "lora",
+    "grad_accumulation_steps": 1,
+    "grad_checkpoint": false,
+    "iters": 3000,
+    "learning_rate": 0.0001,
+    "lora_parameters": {
+        "dropout": 0.05,
+        "rank": 16,
+        "scale": 20.0
+    },
+    "lr_schedule": {
+        "arguments": [
+            0.0001,
+            3000,
+            5e-06
+        ],
+        "name": "cosine_decay",
+        "warmup": 90
+    },
+    "mask_prompt": true,
+    "max_seq_length": 768,
+    "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+    "num_layers": 16,
+    "optimizer": "adam",
+    "optimizer_config": {
+        "adam": {},
+        "adamw": {},
+        "muon": {},
+        "sgd": {},
+        "adafactor": {}
+    },
+    "project_name": null,
+    "report_to": null,
+    "resume_adapter_file": null,
+    "save_every": 500,
+    "seed": 42,
+    "steps_per_eval": 500,
+    "steps_per_report": 20,
+    "test": false,
+    "test_batches": 500,
+    "train": true,
+    "trust_remote_code": false,
+    "val_batches": 40
+}

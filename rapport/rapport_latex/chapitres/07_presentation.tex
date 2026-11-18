@@ -1,0 +1,194 @@
+% =====================================================================
+\chapitre{Présentation de l'application réalisée}
+% =====================================================================
+
+Après la conception et la réalisation, ce dernier chapitre montre le résultat. Il présente
+\equipay telle qu'elle a été testée sur iPhone, à travers un parcours complet : un voyage créé, un membre qui le rejoint, deux dépenses ajoutées avec l'IA, les
+comptes équilibrés, puis le programme de la journée organisé. Toutes les captures sont
+issues d'une utilisation réelle de l'application, dans la devise de l'activité (le dirham).
+
+% ---------------------------------------------------------------------
+\subsection{Aperçu général}
+
+L'écran d'accueil (figure~\ref{fig:ecran_accueil}, à gauche) liste les activités de
+l'utilisateur ; le bouton orange permet d'en créer une ou d'en rejoindre une avec son code,
+et le mode « Sélectionner » permet d'archiver ou de supprimer plusieurs activités d'un coup.
+La barre d'onglets donne accès aux activités, aux demandes pour rejoindre et au profil ; un
+quatrième onglet, « Free Card », est réservé à une évolution future. Le profil regroupe les
+informations du compte, les activités archivées et les préférences (langue, mode sombre). La
+bulle « Support » ouvre l'assistant conversationnel depuis n'importe quel écran principal.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{accueil.jpeg}\caption{Accueil : mes activités}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{profil.jpeg}\caption{Profil de l'utilisateur}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{profil_preferences.jpeg}\caption{Préférences et compte}\end{subfigure}
+\caption{Accueil, profil et préférences de l'application}
+\label{fig:ecran_accueil}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Page d'une activité}
+
+La page d'une activité (figure~\ref{fig:ecran_activite}) affiche son logo, son type et son
+code d'accès, masqué par défaut et copiable en un geste. La carte sarcelle donne le total des
+dépenses ; juste en dessous, la carte « Programme » mène au programme du voyage. Les onglets
+Dépenses, Membres et Photos donnent accès au détail. Le menu à trois points rassemble les
+actions moins fréquentes : modifier, archiver, résumé, graphique des dépenses, statistiques
+et suppression. Après l'ajout des deux dépenses du test, le total passe à 65,95 DH et chaque
+dépense indique qui l'a payée.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{activite_vide.jpeg}\caption{Activité qui vient d'être créée}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{activite_actions.jpeg}\caption{Menu des actions}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{activite_apres_ajout.jpeg}\caption{Après l'ajout de deux dépenses}\end{subfigure}
+\caption{Page d'une activité de type voyage}
+\label{fig:ecran_activite}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Rejoindre une activité}
+
+Pour rejoindre un voyage, un ami saisit son code depuis l'accueil. La demande apparaît alors
+chez le créateur, dans l'onglet des demandes reçues, avec le nom et le pseudonyme du
+demandeur ; le créateur l'accepte ou la refuse (figure~\ref{fig:ecran_demandes}). Le
+demandeur suit l'état de ses propres demandes dans l'onglet des demandes envoyées.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{demandes_recues.jpeg}\caption{Demande reçue et acceptée}\end{subfigure}\hspace{0.05\textwidth}
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{demandes_envoyees.jpeg}\caption{Demandes envoyées}\end{subfigure}
+\caption{Gestion des demandes pour rejoindre une activité}
+\label{fig:ecran_demandes}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Ajouter une dépense en scannant un ticket}
+
+Le bouton « Dépense » propose trois façons d'ajouter une dépense : la saisie manuelle, le
+scanner de tickets et la description en une phrase (figure~\ref{fig:ecran_scan}). Après la
+photo, une animation de balayage indique que l'assistant lit le ticket. Le formulaire
+s'ouvre ensuite pré-rempli : sur le ticket du test, l'enseigne (« Shop Name »), le total de
+47,95 et la devise ont été lus correctement. Le bandeau « Rempli à partir du ticket »
+rappelle de vérifier chaque champ, et l'application signale que la date n'a pas été trouvée
+sur le ticket, plutôt que d'en inventer une. Les articles lus sont reportés dans la
+description, et la photo du ticket est jointe à la dépense.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{ajout_options.jpeg}\caption{Trois façons d'ajouter}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{scan_lecture.jpeg}\caption{Lecture du ticket}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{scan_formulaire.jpeg}\caption{Formulaire pré-rempli}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{scan_formulaire_suite.jpeg}\caption{Répartition et articles}\end{subfigure}
+\caption{Ajout d'une dépense à partir de la photo d'un ticket}
+\label{fig:ecran_scan}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Décrire une dépense en une phrase}
+
+La deuxième dépense du test a été saisie en écrivant simplement « Haythame a payé le taxi
+18 DH pour nous deux » (figure~\ref{fig:ecran_phrase}). L'écran rappelle les membres de
+l'activité et sa devise, puis affiche « L'assistant lit ta phrase… » pendant le traitement.
+Le formulaire obtenu contient le titre (Taxi), le montant (18 DH), la devise, la date du jour
+(aucune date n'étant donnée dans la phrase), le payeur (Haythame Benladoul) et une
+répartition à parts égales entre les deux membres. Sous chaque champ, la mention « Compris
+dans ta phrase » indique son origine.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{decrire_saisie.jpeg}\caption{Phrase en cours d'analyse}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{decrire_formulaire.jpeg}\caption{Champs compris}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{decrire_formulaire_suite.jpeg}\caption{Payeur et répartition}\end{subfigure}
+\caption{Ajout d'une dépense à partir d'une phrase libre}
+\label{fig:ecran_phrase}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Soldes, résumé et graphiques}
+
+Une fois les deux dépenses enregistrées, le résumé (figure~\ref{fig:ecran_soldes}, à gauche)
+indique qu'un seul remboursement suffit pour équilibrer les comptes : l'utilisateur a payé
+47,95 DH pour une part de 32,98 DH, il doit donc recevoir 14,98 DH, que Haythame lui
+rembourse. Le résumé peut être copié pour être envoyé au groupe. Le graphique des dépenses
+présente les mêmes données sous trois angles : ce que chacun a payé (73 \% et 27 \%), ce que
+chacun a consommé (50 \% chacun) et le solde qui en résulte (+14,98 DH et $-$14,98 DH).
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{resume.jpeg}\caption{Résumé}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{graphique_paye.jpeg}\caption{Payé}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{graphique_part.jpeg}\caption{Part}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{graphique_solde.jpeg}\caption{Solde}\end{subfigure}
+\caption{Résumé des remboursements et graphiques par participant}
+\label{fig:ecran_soldes}
+\end{figure}
+
+La page de statistiques (figure~\ref{fig:ecran_stats}) complète cette vue : total, nombre de
+dépenses, moyenne par dépense et par participant, jour le plus dépensier, situation
+personnelle de l'utilisateur, faits marquants (plus grosse dépense, plus gros payeur) et
+répartition des dépenses par jour de la semaine.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{insights_1.jpeg}\caption{Indicateurs et situation}\end{subfigure}\hspace{0.05\textwidth}
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{insights_2.jpeg}\caption{Faits marquants}\end{subfigure}
+\caption{Statistiques des dépenses d'une activité}
+\label{fig:ecran_stats}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Programme du voyage}
+
+Pour le test, trois visites ont été ajoutées au programme : les Champs-Élysées, Notre-Dame
+et la place Charles-de-Gaulle, le mercredi 14 octobre 2026 à 10 h, 12 h et 15 h
+(figure~\ref{fig:ecran_programme}). Le formulaire demande un nom, un lieu, une adresse, une
+date et une heure ; le lieu et l'adresse servent à placer automatiquement la visite sur la
+carte. Chaque proposition peut recevoir des votes pour ou contre, affichés en direct. Le
+programme se consulte en liste, en calendrier (une frise par jour, dans l'ordre des heures)
+ou sur la carte Apple Plans, où chaque visite est un repère numéroté dans l'ordre
+chronologique et coloré selon les votes ; un filtre permet de n'afficher qu'un jour.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{programme_ajout.jpeg}\caption{Ajout d'une visite}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{programme_liste.jpeg}\caption{Liste et votes}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{programme_calendrier.jpeg}\caption{Calendrier}\end{subfigure}\hfill
+\begin{subfigure}[t]{0.235\textwidth}\centering\capture[0.95]{programme_carte.jpeg}\caption{Carte Apple Plans}\end{subfigure}
+\caption{Programme d'un voyage : ajout, liste, calendrier et carte}
+\label{fig:ecran_programme}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Organisation du trajet}
+
+Le bouton « Organiser le trajet » ouvre les options (figure~\ref{fig:ecran_trajet}) : le
+mode de déplacement (à pied, à vélo, en voiture), le nombre maximal de visites par jour et
+une consigne facultative. Sur le test, le trajet à pied a été demandé. Les heures des trois
+visites étant déjà fixées et l'ordre déjà optimal, l'application l'indique (« Votre ordre est
+déjà le meilleur ») et affiche le temps de marche total, soit 2 h 00. Pour chaque étape, elle
+donne l'heure, puis le temps et la distance jusqu'à l'étape suivante (52 min et 3,9 km, puis
+1 h 08 et 5,1 km), et trace l'itinéraire dans les rues sur la carte. Le bouton « Ouvrir
+l'itinéraire dans Plans » lance la navigation dans l'application Plans avec toutes les
+étapes, et le créateur peut enregistrer le programme proposé avec « Appliquer ce
+programme ».
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{trajet_options.jpeg}\caption{Options du trajet}\end{subfigure}\hspace{0.05\textwidth}
+\begin{subfigure}[t]{0.31\textwidth}\centering\capture[0.93]{trajet_resultat.jpeg}\caption{Trajet proposé}\end{subfigure}
+\caption{Organisation automatique du trajet d'une journée}
+\label{fig:ecran_trajet}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Conclusion du chapitre}
+
+Les tests menés sur iPhone couvrent l'ensemble du parcours de l'application : création d'une
+activité et arrivée d'un membre, ajout de dépenses par le scanner et par une phrase,
+équilibrage des comptes, statistiques, programme partagé et organisation du trajet. Chaque
+fonction d'IA a été vérifiée en conditions réelles, et chaque fois le résultat a été proposé à
+l'utilisateur avant d'être enregistré. Ces tests restent menés à petite échelle (un voyage,
+deux membres, quelques dépenses) : le comportement de l'application avec de grands groupes
+et un usage prolongé reste à observer.

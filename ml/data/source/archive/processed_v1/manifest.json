@@ -1,0 +1,17 @@
+{
+  "source_sha256": "4d288f5a3421",
+  "seed": 42,
+  "topics": 65,
+  "questions_source": 783,
+  "sizes": {
+    "train": 2578,
+    "valid": 144,
+    "test": 237,
+    "eval": 237
+  },
+  "test_by_behaviour": {
+    "in_scope": 195,
+    "support": 18,
+    "off_topic": 24
+  }
+}

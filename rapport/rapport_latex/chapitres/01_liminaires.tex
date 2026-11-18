@@ -1,0 +1,128 @@
+% ---------------------------------------------------------------------
+%  Pages liminaires (numérotées en chiffres romains)
+% ---------------------------------------------------------------------
+
+\pagetitre{REMERCIEMENTS}
+
+Nous tenons tout d'abord à remercier notre encadrante, Madame Hasnââ CHAABI, pour
+la qualité de son accompagnement tout au long de ce projet. Ses conseils, sa
+disponibilité et ses remarques nous ont aidés à garder une démarche rigoureuse, en
+particulier sur l'évaluation des modèles et sur la façon de présenter nos résultats.
+
+Nous remercions également l'École Marocaine des Sciences de l'Ingénieur (EMSI) pour la
+formation reçue et pour les moyens mis à notre disposition durant notre cursus
+d'ingénieur, en 5\textsuperscript{ème} année de la filière IASDR, option Intelligence
+Artificielle. Nos remerciements vont aussi à l'ensemble des enseignants qui ont
+contribué à notre formation, notamment en traitement automatique du langage, en
+apprentissage profond, en génération de texte et en développement logiciel : ce projet
+s'appuie directement sur ce qu'ils nous ont transmis.
+
+Nous remercions enfin nos familles et nos proches pour leur soutien et leurs
+encouragements, ainsi que les amis qui ont accepté de tester l'application et de nous
+faire part de leurs retours. Ce projet a été pour nous l'occasion de construire, de bout
+en bout, une application réelle qui associe développement mobile et intelligence
+artificielle, et de mesurer ce qu'il faut pour faire passer un modèle de l'entraînement
+à un usage quotidien.
+
+% ---------------------------------------------------------------------
+\pagetitre{RÉSUMÉ}
+
+Ce projet porte sur la conception et le développement d'\equipay, une application
+mobile de partage des dépenses de groupe (voyages, sorties, colocation, crédits) qui
+intègre plusieurs modèles d'intelligence artificielle. L'objectif est double : permettre
+à un groupe de savoir à tout moment qui doit combien à qui, et supprimer la saisie
+fastidieuse qui décourage les utilisateurs des applications existantes.
+
+L'application, développée avec Flutter, s'appuie sur Supabase (PostgreSQL, authentification,
+stockage et temps réel) pour les données partagées, et sur un backend FastAPI exécuté
+localement sur un Mac Apple Silicon pour les fonctions d'IA. Quatre usages de l'IA
+générative y sont intégrés : un assistant conversationnel qui répond aux questions sur
+l'application, un scanner de tickets de caisse fondé sur un modèle vision-langage, la
+saisie d'une dépense à partir d'une simple phrase, et l'organisation automatique du
+programme d'un voyage. Les trois premiers modèles sont des versions affinées par LoRA de
+Qwen3-4B et Qwen3-VL-4B, entraînées sur GPU puis converties en 4 bits avec MLX pour
+l'inférence ; le quatrième combine un calcul d'itinéraire (OSRM), un algorithme d'ordre de
+visite et un modèle de langage chargé de rédiger le programme. Chaque entraînement est
+suivi dans MLflow, et seule la meilleure version, désignée « champion », est servie par
+l'application. Sur leurs jeux de test respectifs, l'assistant passe d'un score de 0,276 à
+0,770, le scanner de 0,792 à 0,954 et la saisie par phrase de 0,656 à 0,976.
+
+\noindent\textbf{Mots-clés :} Intelligence artificielle, Génération de texte, LLM,
+Modèle vision-langage, LoRA, Quantification, MLX, MLOps, MLflow, Flutter, Supabase,
+FastAPI, Partage de dépenses.
+
+% ---------------------------------------------------------------------
+\pagetitre{ABSTRACT}
+
+This project covers the design and development of \equipay, a mobile application for
+sharing group expenses (trips, outings, shared housing, loans) that embeds several
+artificial intelligence models. The goal is twofold: let a group know at any time who
+owes how much to whom, and remove the tedious data entry that discourages users of
+existing apps.
+
+The application is built with Flutter and relies on Supabase (PostgreSQL, authentication,
+storage and real-time updates) for shared data, and on a FastAPI backend running locally
+on an Apple Silicon Mac for AI features. Four generative AI use cases are integrated: a
+conversational assistant that answers questions about the app, a receipt scanner based on
+a vision-language model, expense entry from a single free-text sentence, and automatic
+planning of a trip itinerary. The first three models are LoRA fine-tuned versions of
+Qwen3-4B and Qwen3-VL-4B, trained on a GPU and then quantized to 4 bits with MLX for
+inference; the fourth combines route computation (OSRM), a visit-ordering algorithm and a
+language model that writes the final plan. Every training run is tracked in MLflow, and
+only the best version, tagged as ``champion'', is served to the app. On their respective
+test sets, the assistant improves from a score of 0.276 to 0.770, the receipt scanner from
+0.792 to 0.954, and sentence-based entry from 0.656 to 0.976.
+
+\noindent\textbf{Keywords:} Artificial Intelligence, Text Generation, LLM,
+Vision-Language Model, LoRA, Quantization, MLX, MLOps, MLflow, Flutter, Supabase,
+FastAPI, Expense Sharing.
+
+% ---------------------------------------------------------------------
+%  Table des matières, liste des figures, liste des tableaux
+% ---------------------------------------------------------------------
+\clearpage
+\phantomsection
+\addcontentsline{toc}{liminaire}{TABLE DES MATIÈRES}
+{\setstretch{1.15}\tableofcontents}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{liminaire}{LISTE DES FIGURES}
+{\setstretch{1.15}\listoffigures}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{liminaire}{LISTE DES TABLEAUX}
+{\setstretch{1.15}\listoftables}
+
+% ---------------------------------------------------------------------
+\pagetitre{LISTE DES ABRÉVIATIONS}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{0.92\textwidth}{|L{2.6cm}|Y|}
+\hline
+\rowcolor{entete}\textbf{Abréviation} & \textbf{Signification} \\ \hline
+IA      & Intelligence Artificielle \\ \hline
+LLM     & \textit{Large Language Model}, grand modèle de langage \\ \hline
+VLM     & \textit{Vision-Language Model}, modèle vision-langage \\ \hline
+LoRA    & \textit{Low-Rank Adaptation}, adaptation par matrices de faible rang \\ \hline
+PEFT    & \textit{Parameter-Efficient Fine-Tuning}, affinage économe en paramètres \\ \hline
+MLX     & Bibliothèque d'apprentissage automatique d'Apple pour Apple Silicon \\ \hline
+MLOps   & \textit{Machine Learning Operations}, industrialisation des modèles \\ \hline
+GPU     & \textit{Graphics Processing Unit}, processeur graphique \\ \hline
+API     & \textit{Application Programming Interface}, interface de programmation \\ \hline
+REST    & \textit{Representational State Transfer} \\ \hline
+JSON    & \textit{JavaScript Object Notation} \\ \hline
+JWT     & \textit{JSON Web Token}, jeton d'authentification signé \\ \hline
+RLS     & \textit{Row Level Security}, sécurité au niveau des lignes \\ \hline
+SQL     & \textit{Structured Query Language} \\ \hline
+OCR     & \textit{Optical Character Recognition}, reconnaissance de caractères \\ \hline
+OSRM    & \textit{Open Source Routing Machine}, moteur de calcul d'itinéraires \\ \hline
+UML     & \textit{Unified Modeling Language} \\ \hline
+UI / UX & Interface utilisateur / expérience utilisateur \\ \hline
+MAD, DH & Dirham marocain \\ \hline
+\end{tabularx}
+\caption{Liste des abréviations utilisées dans le rapport}
+\end{table}

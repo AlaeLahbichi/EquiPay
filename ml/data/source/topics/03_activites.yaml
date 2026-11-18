@@ -1,0 +1,471 @@
+# Activités : création, détail, modification, rôles et gestion des participants.
+category: activites
+
+topics:
+  - id: types_activite
+    answer: >-
+      Il existe 4 types d'activité : Voyage, Sortie, Quotidien (dépenses du quotidien) et
+      Crédit. Tu choisis le type quand tu crées l'activité.
+    keywords: [Voyage, Sortie, Quotidien, Crédit]
+    questions:
+      - Quels types d'activité existent ?
+      - Je peux créer autre chose qu'un voyage ?
+      - C'est quoi les catégories d'activité ?
+      - Quels sont les différents types ?
+      - On peut gérer des sorties aussi ?
+      - Je peux suivre un crédit avec l'app ?
+      - Quelles activités je peux créer ?
+      - What types of activities are there?
+      - Chno homa les types dyal les activités ?
+      - Combien de types d'activité il y a ?
+      - Les catégories Voyage, Sortie, c'est quoi ?
+      - Quel type choisir pour mon activité ?
+
+  - id: type_quotidien_credit
+    answer: >-
+      Quotidien sert aux dépenses courantes partagées, comme les courses ou les factures d'une
+      colocation. Crédit sert à suivre un prêt ou une dette entre amis : qui a avancé l'argent
+      et combien il reste à rembourser.
+    keywords: [Quotidien, colocation, Crédit, prêt]
+    questions:
+      - C'est quoi le type Quotidien ?
+      - À quoi sert le type Crédit ?
+      - Quelle différence entre Quotidien et Crédit ?
+      - Le type Crédit c'est pour un prêt bancaire ?
+      - Quand utiliser le type Quotidien ?
+      - Comment suivre un prêt entre amis ?
+      - J'ai prêté de l'argent à un ami, quel type choisir ?
+      - What is the Credit activity type for?
+      - Type Crédit chno kaydir ?
+      - Pour ma coloc, je prends quel type ?
+      - Le type Sortie c'est pour quoi ?
+
+  - id: creer_activite
+    answer: >-
+      Sur l'accueil, appuie sur le bouton rond orange « + », puis sur « Créer une activité ».
+      Donne-lui un nom, choisis sa devise et son type (Voyage, Sortie, Quotidien ou Crédit),
+      ajoute un logo si tu veux, puis appuie sur « Créer ».
+    keywords: [+, Créer une activité, nom, devise, type]
+    questions:
+      - Comment créer une activité ?
+      - Comment je crée un voyage ?
+      - Je veux créer une nouvelle activité
+      - Comment ajouter un voyage ?
+      - Comment on démarre un nouveau groupe de dépenses ?
+      - Créer une sortie entre amis, comment faire ?
+      - Où je crée une activité ?
+      - Comment faire pour créer un nouveau voyage ?
+      - Comment j'organise un nouveau voyage dans l'app ?
+      - Comment lancer un nouveau projet de dépenses ?
+      - Comment créer un groupe pour la coloc ?
+      - Étapes pour créer une activité ?
+      - How do I create an activity?
+      - How to create a new trip?
+      - Kifach ncree activité jdida ?
+      - Bghit ndir voyage jdid f l'app
+      - Comment créer un événement pour partager les frais ?
+
+  - id: champs_creation
+    answer: >-
+      Pour créer une activité, le nom et la devise sont obligatoires. Le type est choisi parmi
+      Voyage, Sortie, Quotidien ou Crédit, et le logo est optionnel.
+    keywords: [nom, devise, obligatoires, optionnel]
+    questions:
+      - Quels champs sont obligatoires pour créer une activité ?
+      - Le nom de l'activité est obligatoire ?
+      - Pourquoi il me dit donne un nom à ton activité ?
+      - Pourquoi il me dit choisis la devise des dépenses ?
+      - Je ne peux pas créer l'activité, il manque quoi ?
+      - Que faut-il remplir pour créer un voyage ?
+      - What is required to create an activity?
+      - Chno khass n3ammar bach ncree activité ?
+      - La création de l'activité est refusée
+      - Le logo est obligatoire pour créer ?
+
+  - id: devise_creation
+    answer: >-
+      À la création, choisis la devise dans le champ « Devise » : toutes les dépenses de
+      l'activité seront calculées dans cette devise. Il n'y a pas de devise par défaut, tu
+      dois la choisir.
+    keywords: [Devise, dépenses, choisir]
+    questions:
+      - Comment choisir la devise d'une activité ?
+      - Où je mets la monnaie du voyage ?
+      - Pourquoi l'app me demande une devise ?
+      - La devise est obligatoire ?
+      - Quelle devise choisir pour mon voyage ?
+      - Il y a une devise par défaut ?
+      - À quoi sert la devise de l'activité ?
+      - How do I choose the currency of an activity?
+      - Fin nkhtar la devise ?
+      - Mon voyage au Maroc, je mets quelle devise ?
+      - Comment mettre le voyage en dirhams ?
+
+  - id: liste_devises
+    answer: >-
+      EquiPay propose 12 devises : euro (EUR), dirham marocain (MAD), dollar américain (USD),
+      livre sterling (GBP), franc suisse (CHF), dollar canadien (CAD), livre turque (TRY),
+      dirham des Émirats (AED), riyal saoudien (SAR), dinar tunisien (TND), dinar algérien
+      (DZD) et yen japonais (JPY).
+    keywords: [12, EUR, MAD, USD]
+    questions:
+      - Quelles devises sont disponibles ?
+      - L'app gère le dirham ?
+      - On peut utiliser le dollar ?
+      - Le dinar tunisien est disponible ?
+      - Quelles monnaies propose EquiPay ?
+      - Il y a le franc suisse ?
+      - La livre turque est dans la liste ?
+      - Combien de devises sont gérées ?
+      - Which currencies are supported?
+      - Wach kayn dirham f l'app ?
+      - Le riyal saoudien existe dans l'app ?
+      - Je peux mettre le dinar algérien ?
+      - Liste des devises d'EquiPay ?
+      - Le yen est disponible pour un voyage au Japon ?
+
+  - id: changer_devise
+    answer: >-
+      Si tu es l'owner, ouvre l'activité, appuie sur le crayon « Modifier l'activité », choisis
+      une autre devise puis « Enregistrer ». Les montants s'affichent ensuite dans la nouvelle
+      devise.
+    keywords: [owner, Modifier l'activité, devise, Enregistrer]
+    questions:
+      - Comment changer la devise d'un voyage ?
+      - Je me suis trompé de devise, comment corriger ?
+      - Je peux modifier la monnaie de l'activité ?
+      - Comment passer mon activité en dirhams ?
+      - Comment remplacer l'euro par le dollar dans mon voyage ?
+      - On peut changer de monnaie après la création ?
+      - How do I change the currency?
+      - Kifach nbdel la devise dyal l'activité ?
+      - Où modifier la devise d'une sortie ?
+      - Qui peut changer la devise ?
+
+  - id: devise_verrouillee
+    answer: >-
+      Dès qu'une activité contient des dépenses, sa devise ne peut plus être changée : chaque
+      dépense garde un taux de change vers cette devise, et les totaux deviendraient faux. Le
+      champ devise apparaît alors grisé avec un cadenas.
+    keywords: [dépenses, taux de change, cadenas]
+    questions:
+      - Pourquoi je ne peux plus changer la devise ?
+      - Le champ devise est grisé, pourquoi ?
+      - Pourquoi il y a un cadenas sur la devise ?
+      - La devise est bloquée dans mon activité
+      - Impossible de modifier la devise de mon voyage
+      - Pourquoi la devise ne peut plus changer après des dépenses ?
+      - Why is the currency locked?
+      - 3lach la devise mbloquia ?
+      - Message la devise ne peut plus être changée
+      - Mon activité a des dépenses, je peux changer de devise ?
+
+  - id: logo_activite
+    answer: >-
+      Lors de la création, appuie sur le cercle en haut du formulaire : choisis une photo dans
+      ta galerie ou prends-en une. Le logo est optionnel : sans logo, l'icône du type
+      d'activité est utilisée.
+    keywords: [galerie, photo, optionnel, icône]
+    questions:
+      - Comment mettre un logo à mon activité ?
+      - Je peux ajouter une photo à mon voyage ?
+      - Comment choisir l'image de l'activité ?
+      - Comment personnaliser l'icône d'un voyage ?
+      - Je n'ai pas mis de logo, c'est grave ?
+      - Comment ajouter une image de couverture ?
+      - Pourquoi mon activité a une icône d'avion ?
+      - Je peux prendre une photo pour le logo ?
+      - How do I add a logo to my activity?
+      - Kifach n7et tswira l l'activité ?
+      - Le logo de mon voyage ne s'est pas envoyé
+      - Pourquoi mon activité affiche une icône et pas une photo ?
+
+  - id: detail_activite
+    answer: >-
+      En ouvrant une activité, tu vois son logo, son nom et son type, le total des dépenses
+      avec leur nombre, puis la liste des membres avec ce que chacun a payé et son solde.
+    keywords: [total, membres, payé, solde]
+    questions:
+      - Que montre la page d'une activité ?
+      - Qu'est-ce que je vois en ouvrant un voyage ?
+      - Comment lire le détail d'une activité ?
+      - Que contient l'écran d'une activité ?
+      - Explique-moi la page de détail
+      - What do I see inside an activity?
+      - Chno kayban mli kan7el activité ?
+      - À quoi sert l'écran du voyage ?
+      - Quelles infos sont affichées dans une activité ?
+      - Comment voir le résumé d'un voyage ?
+
+  - id: membres_activite
+    answer: >-
+      Dans le détail de l'activité, la section « Membres » liste tous les participants avec
+      leur photo, leur nom, leur rôle (Créateur, Membre ou Spectateur), le montant qu'ils ont
+      payé et leur solde. Ta ligne porte la mention « (toi) ».
+    keywords: [Membres, Créateur, Spectateur, payé, toi]
+    questions:
+      - Comment voir les membres d'une activité ?
+      - Qui fait partie de mon voyage ?
+      - Où voir la liste des participants ?
+      - Je peux voir les autres membres ?
+      - Comment savoir qui est dans le groupe ?
+      - Que veut dire toi à côté de mon nom ?
+      - Que signifie le badge Créateur ?
+      - How do I see the members?
+      - Chkoun li m3aya f had l'activité ?
+      - Pourquoi il y a écrit Membres (3) ?
+      - Les membres voient-ils les dépenses des autres ?
+      - Comment savoir combien chacun a dépensé ?
+
+  - id: modifier_activite
+    answer: >-
+      Seul l'owner peut modifier une activité : ouvre-la, appuie sur le crayon « Modifier
+      l'activité » en haut à droite (ou sur le logo), change le titre, la photo ou la devise,
+      puis appuie sur « Enregistrer ».
+    keywords: [owner, Modifier l'activité, titre, photo, Enregistrer]
+    questions:
+      - Comment modifier une activité ?
+      - Comment renommer mon voyage ?
+      - Je peux changer le logo après la création ?
+      - Qui peut changer le nom de l'activité ?
+      - Je me suis trompé de nom de voyage
+      - Comment mettre à jour les infos d'une activité ?
+      - Comment éditer une sortie ?
+      - À quoi sert le crayon en haut de l'activité ?
+      - Comment changer la photo de mon activité ?
+      - How do I edit an activity?
+      - How to rename my trip?
+      - Kifach nbdel smiya dyal l'activité ?
+      - Comment modifier le titre du voyage ?
+      - Je veux changer l'image de la sortie
+
+  - id: logo_defaut_retour
+    answer: >-
+      Dans « Modifier l'activité », appuie sur la photo puis sur « Utiliser le logo par
+      défaut » et enregistre : l'icône du type d'activité remplace la photo.
+    keywords: [Modifier l'activité, Utiliser le logo par défaut, icône]
+    questions:
+      - Comment revenir au logo par défaut ?
+      - Comment supprimer la photo de l'activité ?
+      - Je ne veux plus de photo sur mon voyage
+      - Comment enlever l'image de l'activité ?
+      - Remettre l'icône d'origine, c'est possible ?
+      - How do I remove the activity photo?
+      - Kifach n7ayed tswira dyal l'activité ?
+      - Comment retirer le logo de ma sortie ?
+      - J'ai mis une mauvaise photo, comment l'enlever ?
+
+  - id: pas_owner_modifier
+    answer: >-
+      Seul l'owner (le créateur) peut modifier l'activité ou gérer ses participants. Si tu es
+      membre ou spectateur, le crayon n'apparaît pas : demande au créateur de faire le
+      changement.
+    keywords: [owner, membre, spectateur, créateur]
+    questions:
+      - Pourquoi je ne peux pas modifier ce voyage ?
+      - Je ne vois pas le crayon pour modifier l'activité
+      - Pourquoi je n'ai pas le bouton modifier ?
+      - Un membre peut changer le nom de l'activité ?
+      - Pourquoi je ne peux pas gérer les participants ?
+      - Je ne peux rien changer dans l'activité de mon ami
+      - Why can't I edit this activity?
+      - 3lach ma9adrch nbdel f had l'activité ?
+      - Le crayon a disparu, pourquoi ?
+      - Seul le créateur peut modifier ?
+
+  - id: type_non_modifiable
+    answer: >-
+      Le type (Voyage, Sortie, Quotidien ou Crédit) se choisit à la création et ne peut pas
+      être modifié ensuite. L'owner peut seulement changer le titre, la photo et la devise.
+    keywords: [type, création, titre, photo, devise]
+    questions:
+      - Je peux changer le type de mon activité ?
+      - Comment passer une sortie en voyage ?
+      - Je me suis trompé de type d'activité
+      - Le type de l'activité est modifiable ?
+      - Comment transformer mon activité Quotidien en Voyage ?
+      - Can I change the activity type?
+      - Wach nqder nbdel type dyal l'activité ?
+      - Pourquoi je ne trouve pas le type dans la modification ?
+      - J'ai choisi Crédit par erreur
+
+  - id: roles
+    answer: >-
+      Il y a 3 rôles : l'owner (le créateur) gère l'activité et ses participants ; le membre
+      voit tout et gère ses propres dépenses ; le spectateur peut seulement regarder, sans
+      ajouter de dépense.
+    keywords: [owner, membre, spectateur]
+    questions:
+      - Quels sont les rôles dans une activité ?
+      - C'est quoi la différence entre membre et spectateur ?
+      - Qui peut faire quoi dans un voyage ?
+      - Explique-moi les rôles
+      - C'est quoi un owner ?
+      - Quels droits a un membre ?
+      - Quels sont les différents statuts des participants ?
+      - Owner, membre, spectateur, c'est quoi ?
+      - Qui a le plus de droits dans un voyage ?
+      - Quelles permissions ont les participants ?
+      - What are the roles in an activity?
+      - Chno homa les rôles ?
+      - Créateur, Membre, Spectateur, quelle différence ?
+
+  - id: owner
+    answer: >-
+      L'owner est le créateur de l'activité : il voit et partage le code, accepte ou refuse
+      les demandes, change les rôles, retire des participants et modifie le titre, la photo et
+      la devise.
+    keywords: [créateur, code, demandes, rôles]
+    questions:
+      - Que peut faire l'owner ?
+      - C'est quoi le rôle du créateur ?
+      - Quels sont les droits de l'owner ?
+      - Je suis owner, je peux faire quoi ?
+      - Le créateur a quels pouvoirs ?
+      - Qu'est-ce que l'owner peut faire de plus ?
+      - Pourquoi je suis owner de ce voyage ?
+      - Qui est l'administrateur d'un voyage ?
+      - L'owner peut tout modifier ?
+      - What can the owner do?
+      - Chno ydir l'owner ?
+      - Le créateur de l'activité, il sert à quoi ?
+
+  - id: owner_unique
+    answer: >-
+      Une activité a un seul owner : la personne qui l'a créée. Ce rôle ne peut pas être
+      transféré à un autre participant.
+    keywords: [seul owner, créée, transféré]
+    questions:
+      - Je peux transférer le rôle d'owner ?
+      - Comment donner l'activité à quelqu'un d'autre ?
+      - On peut avoir deux owners ?
+      - Comment passer quelqu'un en owner ?
+      - Je veux que mon ami devienne administrateur
+      - Can I transfer ownership?
+      - Wach nqder n3ti l'owner l chi wa7ed akhor ?
+      - Comment changer le créateur d'un voyage ?
+      - Un membre peut devenir owner ?
+
+  - id: membre
+    answer: >-
+      Un membre voit toute l'activité, les dépenses et les soldes. Il peut ajouter des
+      dépenses et modifier ou supprimer celles qu'il a créées, mais il ne gère pas les
+      participants.
+    keywords: [membre, dépenses, soldes, participants]
+    questions:
+      - Que peut faire un membre ?
+      - Je suis membre, j'ai quels droits ?
+      - Un membre peut ajouter des dépenses ?
+      - Le rôle membre permet quoi ?
+      - Qu'est-ce qu'un participant peut faire ?
+      - What can a member do?
+      - Chno ydir membre ?
+      - Un membre peut voir les soldes des autres ?
+      - Différence entre membre et créateur ?
+
+  - id: spectateur
+    answer: >-
+      Un spectateur peut voir l'activité, les dépenses et les soldes, mais il ne peut pas
+      ajouter de dépense et ne participe à aucune dépense. Seul l'owner peut le passer en
+      membre.
+    keywords: [voir, ne peut pas, dépense, owner]
+    questions:
+      - Que peut faire un spectateur ?
+      - Un spectateur peut ajouter une dépense ?
+      - Je suis spectateur, je peux faire quoi ?
+      - Comment devenir membre au lieu de spectateur ?
+      - À quoi sert le rôle spectateur ?
+      - Un spectateur voit les soldes ?
+      - Pourquoi passer quelqu'un en spectateur ?
+      - Le spectateur paye quelque chose ?
+      - What is a viewer?
+      - Chno howa spectateur ?
+      - Pourquoi je suis spectateur dans ce voyage ?
+      - Un parent peut suivre le voyage sans participer ?
+
+  - id: gerer_participants
+    answer: >-
+      Si tu es l'owner, ouvre l'activité et touche un participant dans la liste « Membres » :
+      tu peux changer son rôle (Membre ou Spectateur) ou le retirer de l'activité.
+    keywords: [owner, Membres, rôle, retirer]
+    questions:
+      - Comment gérer les participants ?
+      - Comment gérer les membres de mon activité ?
+      - Où je gère les personnes de mon voyage ?
+      - À quoi servent les trois points à côté d'un membre ?
+      - Comment administrer mon groupe ?
+      - Que se passe-t-il quand je touche un participant ?
+      - How do I manage participants?
+      - Kifach n gérer les membres ?
+      - Où sont les options pour chaque membre ?
+      - Comment modifier un participant ?
+
+  - id: changer_role
+    answer: >-
+      L'owner touche le participant dans la liste « Membres », puis choisit « Membre
+      (participant) » ou « Spectateur ». Le changement est appliqué tout de suite.
+    keywords: [owner, Membres, Membre (participant), Spectateur]
+    questions:
+      - Comment changer le rôle d'un participant ?
+      - Comment passer quelqu'un en spectateur ?
+      - Je peux promouvoir un spectateur en membre ?
+      - Qui peut modifier les rôles ?
+      - Comment rendre quelqu'un spectateur ?
+      - Comment donner plus de droits à un participant ?
+      - Un membre peut changer le rôle d'un autre ?
+      - Comment retirer les droits d'un membre ?
+      - Comment faire d'un spectateur un membre ?
+      - Où je change les permissions ?
+      - How do I change someone's role?
+      - Kifach nbdel rôle dyal chi wa7ed ?
+
+  - id: retirer_membre
+    answer: >-
+      L'owner touche le participant dans la liste « Membres », puis « Retirer de l'activité »
+      et confirme. La personne n'a plus accès à l'activité.
+    keywords: [owner, Retirer de l'activité, confirme, accès]
+    questions:
+      - Comment retirer quelqu'un d'une activité ?
+      - Comment exclure un participant ?
+      - Comment enlever un membre de mon voyage ?
+      - Comment supprimer un participant ?
+      - Comment virer quelqu'un du voyage ?
+      - Qui peut exclure un membre ?
+      - J'ai accepté la mauvaise personne, comment l'enlever ?
+      - How do I remove a member?
+      - Kifach n7ayed chi wa7ed mn l'activité ?
+      - Comment expulser quelqu'un du groupe ?
+      - Une personne retirée voit encore l'activité ?
+
+  - id: retirer_bloque
+    answer: >-
+      Un participant qui a des dépenses ne peut pas être retiré, sinon les soldes seraient
+      faux. Passe-le plutôt en spectateur : il ne participera plus aux nouvelles dépenses.
+    keywords: [dépenses, soldes, spectateur]
+    questions:
+      - Pourquoi je ne peux pas supprimer ce membre ?
+      - Je n'arrive pas à retirer un ami du groupe
+      - Retirer un membre qui a payé des dépenses ?
+      - Ce membre a des dépenses, je ne peux pas l'enlever
+      - Message ce membre a des dépenses
+      - Pourquoi passez-le en spectateur plutôt que de le retirer ?
+      - Why can't I remove this member?
+      - 3lach ma9adrch n7ayed had l'membre ?
+      - Le retrait du participant échoue
+      - Comment retirer quelqu'un qui a déjà payé ?
+
+  - id: retire_revenir
+    answer: >-
+      Oui : une personne retirée peut redemander à rejoindre l'activité avec son code. L'owner
+      reçoit alors une nouvelle demande et peut l'accepter ou la refuser.
+    keywords: [code, demande, accepter, refuser]
+    questions:
+      - Une personne retirée peut revenir ?
+      - J'ai été retiré d'une activité, je peux revenir ?
+      - Comment réintégrer un membre retiré ?
+      - Mon ami a été enlevé par erreur, que faire ?
+      - Can a removed member come back?
+      - Wach li t7ayed y9der yrje3 ?
+      - Je veux rajouter quelqu'un que j'avais retiré
+      - Après un retrait, le code marche encore pour lui ?
+      - Pourquoi j'ai disparu d'une activité ?

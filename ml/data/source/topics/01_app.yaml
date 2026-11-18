@@ -1,0 +1,344 @@
+# L'application en général : présentation, navigation, préférences.
+category: app
+
+topics:
+  - id: presentation
+    answer: >-
+      EquiPay est une application mobile pour gérer et partager les dépenses d'un groupe :
+      un voyage, une sortie, des dépenses du quotidien ou un crédit. Elle calcule
+      automatiquement qui doit combien à qui.
+    keywords: [dépenses, groupe, voyage]
+    questions:
+      - C'est quoi EquiPay ?
+      - À quoi sert cette application ?
+      - Tu peux me présenter EquiPay ?
+      - EquiPay ça sert à quoi exactement ?
+      - Quel est le but de l'app ?
+      - Explique-moi ce que fait EquiPay
+      - Pourquoi utiliser EquiPay ?
+      - Que permet de faire cette appli ?
+      - EquiPay c'est pour quoi faire ?
+      - Résume-moi EquiPay en quelques mots
+      - Comment EquiPay peut m'aider pendant un voyage ?
+      - C'est quoi le principe de l'application ?
+      - Décris-moi l'application EquiPay
+      - EquiPay, c'est une app de quoi ?
+      - What is EquiPay?
+      - What does this app do?
+      - Chno hiya EquiPay ?
+      - Had l'application katdir chno ?
+      - En une phrase, EquiPay c'est quoi ?
+      - J'ai téléchargé EquiPay, elle sert à quoi ?
+
+  - id: createur
+    answer: >-
+      EquiPay a été créée par Alae Lahbichi, dans le cadre d'un projet à l'EMSI.
+    keywords: [Alae Lahbichi, EMSI]
+    questions:
+      - Qui a créé EquiPay ?
+      - Qui est le développeur de l'application ?
+      - C'est qui l'auteur de l'app ?
+      - Qui a fait cette application ?
+      - Qui est derrière EquiPay ?
+      - Par qui EquiPay a été développée ?
+      - Qui a conçu l'app ?
+      - Qui est le créateur d'EquiPay ?
+      - L'application a été faite par qui ?
+      - Qui a codé EquiPay ?
+      - Who made this app?
+      - Who is the developer of EquiPay?
+      - Chkoun li dar had l'app ?
+      - EquiPay a été développée dans quel cadre ?
+      - C'est une app faite par un étudiant ?
+      - EquiPay vient d'une entreprise ou d'un projet d'école ?
+      - Qui signe l'application ?
+
+  - id: plateformes
+    answer: >-
+      EquiPay est une application mobile disponible sur iPhone et sur Android.
+    keywords: [iPhone, Android]
+    questions:
+      - EquiPay marche sur Android ?
+      - L'app est disponible sur iPhone ?
+      - Sur quels téléphones fonctionne EquiPay ?
+      - Je peux l'utiliser sur un Samsung ?
+      - C'est compatible iOS ?
+      - EquiPay existe sur quelles plateformes ?
+      - L'application tourne sur Android et iOS ?
+      - Est-ce que ça marche sur mon iPhone ?
+      - C'est une application mobile ?
+      - J'ai un téléphone Android, je peux l'installer ?
+      - Is EquiPay available on Android?
+      - Does it work on iPhone?
+      - Wach khdama f Android ?
+      - Mon ami a un Xiaomi, il peut utiliser EquiPay ?
+      - Un utilisateur iPhone et un utilisateur Android peuvent partager une activité ?
+      - EquiPay fonctionne sur un Huawei ?
+
+  - id: version_app
+    answer: >-
+      La version actuelle d'EquiPay est la 1.0.0. Tu la trouves dans l'onglet Profile, section
+      Extra, puis « À propos ».
+    keywords: [1.0.0, Profile, À propos]
+    questions:
+      - Quelle est la version de l'application ?
+      - Je suis sur quelle version d'EquiPay ?
+      - Où voir le numéro de version ?
+      - C'est quelle version de l'app ?
+      - Comment connaître la version installée ?
+      - EquiPay version combien ?
+      - Which version of the app is this?
+      - Où trouver les informations de version ?
+      - L'app est en version 1 ?
+      - Numéro de version d'EquiPay ?
+
+  - id: a_propos
+    answer: >-
+      Dans l'onglet Profile, section Extra, appuie sur « À propos » : tu y trouves le logo
+      d'EquiPay, sa version, une description de l'application et ses principales
+      fonctionnalités.
+    keywords: [Profile, Extra, À propos, fonctionnalités]
+    questions:
+      - Où est la page À propos ?
+      - Comment ouvrir la page À propos ?
+      - Il y a une page qui présente l'application ?
+      - Où trouver la description de l'app ?
+      - Que contient la page À propos ?
+      - Où voir les fonctionnalités d'EquiPay dans l'app ?
+      - C'est quoi la section Extra du profil ?
+      - Comment accéder aux infos sur l'application ?
+      - Where is the About page?
+      - À quoi sert le lien À propos ?
+      - Je cherche la présentation de l'app dans les réglages
+
+  - id: onglets
+    answer: >-
+      La barre du bas a 4 onglets : EquiPay (l'accueil avec tes activités), Requests (les
+      demandes pour rejoindre des activités), Free Card (bientôt disponible) et Profile (ton
+      profil et tes préférences).
+    keywords: [EquiPay, Requests, Free Card, Profile]
+    questions:
+      - Quels sont les onglets de l'app ?
+      - À quoi servent les boutons en bas de l'écran ?
+      - Comment est organisée l'application ?
+      - C'est quoi les menus en bas ?
+      - Explique-moi la barre de navigation
+      - Quelles pages il y a dans l'app ?
+      - Comment naviguer dans EquiPay ?
+      - C'est quoi les 4 icônes en bas ?
+      - Comment se déplacer dans l'application ?
+      - Quelles sections contient EquiPay ?
+      - What are the tabs at the bottom?
+      - Chno homa les onglets li lte7t ?
+      - Fais-moi le tour de l'application
+      - Il y a combien d'onglets ?
+      - La barre en bas de l'écran, ça sert à quoi ?
+
+  - id: accueil
+    answer: >-
+      L'accueil (onglet EquiPay) affiche la liste de tes activités avec leur logo, leur nom et
+      une flèche pour ouvrir le détail. Le bouton rond orange « + » en bas permet d'en créer
+      une ou d'en rejoindre une.
+    keywords: [activités, logo, flèche, +]
+    questions:
+      - Que montre la page d'accueil ?
+      - À quoi sert l'écran principal ?
+      - Où je vois mes activités ?
+      - Comment ouvrir une activité ?
+      - À quoi sert la flèche à droite ?
+      - Où est la liste de mes voyages ?
+      - C'est quoi le bouton orange avec un plus ?
+      - Comment voir le détail d'une activité ?
+      - Que contient l'onglet EquiPay ?
+      - What is on the home screen?
+      - Fin kayn les activités dyali ?
+      - L'écran Mes activités, ça affiche quoi ?
+      - À quoi sert le gros bouton + ?
+      - Comment j'accède à un de mes voyages ?
+      - Où retrouver mes groupes de dépenses ?
+
+  - id: ordre_activites
+    answer: >-
+      Tes activités sont affichées de la plus récente à la plus ancienne : celle que tu as
+      créée ou rejointe en dernier apparaît en haut de la liste.
+    keywords: [plus récente, haut]
+    questions:
+      - Pourquoi mes activités sont dans cet ordre ?
+      - Comment sont triées mes activités ?
+      - Pourquoi mon nouveau voyage est en haut ?
+      - Dans quel ordre s'affichent les activités ?
+      - L'ordre de la liste dépend de quoi ?
+      - Mon activité la plus ancienne est en bas, c'est normal ?
+      - How are my activities sorted?
+      - Pourquoi la dernière activité rejointe apparaît en premier ?
+      - Les activités sont classées par date ?
+      - Comment est rangée ma liste d'activités ?
+
+  - id: aucune_activite
+    answer: >-
+      « Aucune activité » veut dire que tu ne fais encore partie d'aucune activité. Appuie
+      sur le bouton « + » pour en créer une ou pour rejoindre celle d'un ami avec son code.
+    keywords: [+, créer, rejoindre, code]
+    questions:
+      - Pourquoi il est écrit aucune activité ?
+      - Ma liste est vide, c'est normal ?
+      - Je ne vois aucun voyage, pourquoi ?
+      - Je viens de m'inscrire, je ne vois rien
+      - L'accueil est vide, que faire ?
+      - Pourquoi je n'ai pas d'activité ?
+      - Je n'ai rien sur mon écran d'accueil
+      - Par quoi je commence, ma liste est vide ?
+      - Aucune activité, ça veut dire quoi ?
+      - My list is empty, what should I do?
+      - Makayn walo f l'accueil, chno ndir ?
+      - Nouvel utilisateur, mon écran est vide
+      - Pourquoi l'app n'affiche aucun groupe ?
+
+  - id: premiers_pas
+    answer: >-
+      Pour bien démarrer : connecte-toi dans l'onglet Profile, puis sur l'accueil appuie sur
+      « + » pour créer une activité ou en rejoindre une avec un code. Partage ensuite le code
+      de ton activité avec tes amis pour qu'ils te rejoignent.
+    keywords: [Profile, +, créer, code]
+    questions:
+      - Comment bien commencer avec EquiPay ?
+      - Je suis nouveau, par où commencer ?
+      - Quelles sont les premières étapes ?
+      - Comment utiliser l'application pour la première fois ?
+      - Tu peux me guider pour démarrer ?
+      - Comment ça marche au début ?
+      - Mode d'emploi rapide de l'app ?
+      - Je viens de télécharger l'app, je fais quoi maintenant ?
+      - How do I get started?
+      - Kifach nbda nkhdem b EquiPay ?
+      - Guide de démarrage d'EquiPay ?
+      - Explique-moi comment utiliser EquiPay étape par étape
+      - Comment organiser mon premier voyage avec l'app ?
+      - Quelle est la première chose à faire dans l'application ?
+
+  - id: deconnecte_accueil
+    answer: >-
+      Sans être connecté, l'accueil affiche « Connecte-toi pour commencer ». Appuie sur
+      « Se connecter » ou va dans l'onglet Profile pour te connecter et voir tes activités.
+    keywords: [Connecte-toi, Se connecter, Profile]
+    questions:
+      - Pourquoi l'accueil dit connecte-toi pour commencer ?
+      - Je ne vois pas le bouton +, pourquoi ?
+      - Il faut être connecté pour voir ses activités ?
+      - Pourquoi je ne peux pas créer d'activité ?
+      - L'app me demande de me connecter, pourquoi ?
+      - Le bouton Se connecter de l'accueil mène où ?
+      - Pourquoi mes activités ne s'affichent pas alors que j'en avais ?
+      - The home screen asks me to sign in
+      - L'accueil m'affiche un message de connexion
+      - L'écran me dit de me connecter, c'est normal ?
+      - Sans compte, je peux faire quoi dans l'app ?
+
+  - id: free_card
+    answer: >-
+      L'onglet Free Card n'est pas encore disponible : il arrivera dans une prochaine version
+      d'EquiPay.
+    keywords: [Free Card, pas encore disponible]
+    questions:
+      - C'est quoi Free Card ?
+      - À quoi sert l'onglet Free Card ?
+      - Pourquoi Free Card est vide ?
+      - Free Card ça marche comment ?
+      - L'onglet Free Card est disponible ?
+      - Free Card n'est pas encore disponible ?
+      - Il y a quoi dans Free Card ?
+      - Free Card est en panne ?
+      - Pourquoi rien ne s'affiche dans Free Card ?
+      - C'est quoi la carte gratuite ?
+      - What is Free Card?
+      - Free Card chno hiya ?
+      - L'onglet carte ne marche pas
+      - J'ai appuyé sur Free Card et il n'y a rien
+
+  - id: mode_sombre
+    answer: >-
+      Dans l'onglet Profile, section Préférences, active ou désactive l'interrupteur « Mode
+      sombre ». Par défaut, EquiPay suit le mode clair ou sombre de ton téléphone.
+    keywords: [Profile, Préférences, Mode sombre, téléphone]
+    questions:
+      - Il y a un mode sombre ?
+      - Comment activer le dark mode ?
+      - L'app peut passer en thème sombre ?
+      - Comment changer le thème de l'application ?
+      - Je veux l'app en noir
+      - Le mode nuit existe ?
+      - Pourquoi l'application est devenue sombre ?
+      - Comment mettre EquiPay en mode clair ?
+      - L'app gère le dark mode ?
+      - Comment avoir un fond sombre ?
+      - Comment désactiver le mode sombre ?
+      - How do I turn on dark mode?
+      - Kifach ndir dark mode ?
+      - L'écran est trop blanc, je peux l'assombrir ?
+      - Où est l'option thème sombre ?
+      - Le mode sombre est retenu quand je relance l'app ?
+
+  - id: langue
+    answer: >-
+      Dans l'onglet Profile, section Préférences, appuie sur « Langue » pour choisir entre
+      l'arabe, le français et l'anglais. Ton choix est enregistré ; pour l'instant
+      l'application est affichée en français, les traductions arrivent bientôt.
+    keywords: [Profile, Préférences, Langue, arabe, anglais]
+    questions:
+      - Comment changer la langue de l'application ?
+      - L'app est disponible en anglais ?
+      - EquiPay existe en arabe ?
+      - Quelles langues sont disponibles ?
+      - Je veux l'application en anglais
+      - Où changer la langue ?
+      - J'ai choisi l'anglais mais l'app reste en français, pourquoi ?
+      - Can I use the app in English?
+      - How do I change the language?
+      - Wach kayna l'arabiya f l'app ?
+      - Kifach nbdel lougha ?
+      - Je peux mettre l'app en arabe ?
+      - Pourquoi tout est en français ?
+      - Le choix de la langue sert à quoi ?
+      - La traduction de l'app est prévue ?
+
+  - id: preferences
+    answer: >-
+      La section Préférences de l'onglet Profile contient la langue (arabe, français ou
+      anglais) et l'interrupteur « Mode sombre ». Tes choix restent enregistrés sur ton
+      téléphone.
+    keywords: [Préférences, Profile, langue, Mode sombre]
+    questions:
+      - Où sont les réglages de l'application ?
+      - Il y a des paramètres dans EquiPay ?
+      - Comment personnaliser l'application ?
+      - Où se trouvent les préférences ?
+      - Quelles options je peux régler ?
+      - Où sont les settings ?
+      - Where are the settings?
+      - Fin kaynin les paramètres ?
+      - Que contient la section Préférences ?
+      - Mes préférences sont gardées si je ferme l'app ?
+      - Comment configurer l'app à mon goût ?
+
+  - id: usages
+    answer: >-
+      EquiPay sert pour toutes les dépenses partagées : un voyage, un week-end, une soirée, le
+      restaurant, la colocation, les courses du quotidien ou un prêt entre amis avec le type
+      Crédit.
+    keywords: [voyage, colocation, Crédit]
+    questions:
+      - EquiPay sert seulement pour les voyages ?
+      - Je peux l'utiliser pour une soirée ?
+      - Ça marche pour la colocation ?
+      - EquiPay pour les dépenses de tous les jours ?
+      - Dans quelles situations utiliser l'app ?
+      - D'autres usages que le voyage ?
+      - Ça sert aussi pour les sorties au resto ?
+      - Je peux gérer les dépenses d'un mariage ?
+      - On peut l'utiliser entre collègues ?
+      - Can I use it with my roommates?
+      - Wach nqder nkhdem biha m3a s7abi f dar ?
+      - L'app est adaptée pour une association ?
+      - Je peux suivre les dépenses familiales ?
+      - C'est utile pour un séjour au ski ?
+      - Pour un anniversaire entre amis, ça marche ?

@@ -1,0 +1,185 @@
+# Soldes, total et remboursements.
+category: soldes
+
+topics:
+  - id: solde
+    answer: >-
+      Ton solde = ce que tu as payé − ta part des dépenses. Positif (en vert, avec +) : on te
+      doit de l'argent. Négatif (en rouge, avec −) : tu dois de l'argent. À 0 : tu es à
+      l'équilibre.
+    keywords: [payé, part, positif, négatif]
+    questions:
+      - Comment est calculé mon solde ?
+      - Que veut dire un solde négatif ?
+      - Pourquoi mon solde est en rouge ?
+      - Mon solde est positif, ça veut dire quoi ?
+      - Comment savoir combien je dois ?
+      - Comment savoir si on me doit de l'argent ?
+      - C'est quoi le solde ?
+      - Je comprends pas mon solde
+      - Pourquoi mon solde est en vert ?
+      - Explique-moi le calcul des soldes
+      - How is my balance calculated?
+      - What does a negative balance mean?
+      - Chno ma3na solde 7mer ?
+      - Kifach kayt7seb solde ?
+      - Le chiffre en rouge sous mon nom, c'est quoi ?
+
+  - id: solde_zero
+    answer: >-
+      Un solde à 0 veut dire que tu es à l'équilibre : tu as payé exactement ta part, tu ne
+      dois rien et on ne te doit rien. Dans ce cas, aucun solde n'est affiché sous le
+      montant payé.
+    keywords: [0, équilibre, ne dois rien]
+    questions:
+      - Que signifie un solde à zéro ?
+      - Pourquoi je n'ai pas de solde affiché ?
+      - Mon solde est nul, c'est normal ?
+      - Solde à 0, ça veut dire quoi ?
+      - Pourquoi aucun montant vert ou rouge sous mon nom ?
+      - What does a zero balance mean?
+      - Solde dyali 0, chno ma3naha ?
+      - Je suis à l'équilibre ?
+
+  - id: solde_exemple
+    answer: >-
+      Exemple : un riad à 200 € payé par Sara, partagé à 50 % avec Alae. Sara a payé 200 € et
+      sa part est de 100 € : son solde est +100 €. Alae n'a rien payé et sa part est de 100 € :
+      son solde est −100 €, il doit 100 € à Sara.
+    keywords: [200, 100, Sara, Alae]
+    questions:
+      - Tu peux me donner un exemple de calcul de solde ?
+      - Explique le solde avec un exemple
+      - Un exemple concret de partage ?
+      - Comment ça marche avec un exemple ?
+      - Montre-moi comment le solde est calculé sur un cas réel
+      - Donne-moi un exemple de dépense partagée
+      - Exemple de solde positif et négatif ?
+      - Je veux un exemple simple de répartition
+      - Give me an example of a balance
+      - Mital 3la solde ?
+
+  - id: solde_exemple_trois
+    answer: >-
+      Exemple à trois : Omar paie un dîner de 90 € partagé en parts égales avec Sara et Alae.
+      Chacun doit 30 €. Omar a payé 90 € pour une part de 30 € : son solde est +60 €. Sara et
+      Alae ont chacun un solde de −30 € et doivent 30 € à Omar.
+    keywords: [90, 30, 60, Omar]
+    questions:
+      - Exemple de partage à trois personnes ?
+      - Comment ça se passe si on est trois ?
+      - Calcul des soldes avec trois amis ?
+      - Un dîner payé par un seul pour trois, ça donne quoi ?
+      - Un exemple avec plus de deux personnes ?
+      - Example with three people?
+      - Mital b tlata dyal nas ?
+      - Qui doit combien si un ami paie tout pour trois ?
+
+  - id: paye_affiche
+    answer: >-
+      Dans la liste des membres, le grand montant sous « payé » est le total que la personne a
+      payé dans l'activité. En dessous, son solde en vert (+) ou en rouge (−) indique si on
+      lui doit ou si elle doit de l'argent.
+    keywords: [payé, total, solde]
+    questions:
+      - Que veut dire le montant payé à côté de chaque membre ?
+      - C'est quoi le chiffre à droite de mon nom ?
+      - Le montant affiché à côté des membres correspond à quoi ?
+      - Pourquoi il y a deux montants pour chaque membre ?
+      - Payé et solde, quelle différence ?
+      - What does the paid amount mean?
+      - Chno had lmontant li 7da smiti ?
+      - Le montant en gras sous payé, c'est quoi ?
+
+  - id: qui_doit_quoi
+    answer: >-
+      Regarde les soldes dans la liste des membres : les personnes en rouge (−) doivent de
+      l'argent, celles en vert (+) doivent en recevoir. Ceux qui sont en négatif remboursent
+      ceux qui sont en positif jusqu'à revenir à 0.
+    keywords: [rouge, vert, remboursent, 0]
+    questions:
+      - Comment voir qui doit de l'argent ?
+      - Qui doit combien à qui ?
+      - Comment savoir qui rembourser ?
+      - À qui je dois de l'argent ?
+      - Comment savoir qui doit me rembourser ?
+      - Who owes whom?
+      - Chkoun li khasso ykhelless ?
+      - Comment équilibrer les comptes ?
+      - Comment savoir à qui donner mon argent ?
+
+  - id: rembourser
+    answer: >-
+      EquiPay ne fait pas de paiement : il calcule qui doit combien. Le remboursement se fait
+      en dehors de l'application (espèces, virement…) en suivant les soldes affichés.
+    keywords: [paiement, dehors, soldes]
+    questions:
+      - Comment rembourser mon ami ?
+      - Je peux payer directement dans l'app ?
+      - Comment régler mes dettes ?
+      - EquiPay fait les virements ?
+      - Comment rembourser ce que je dois ?
+      - L'app permet d'envoyer de l'argent ?
+      - Comment payer ma part à Sara ?
+      - On peut payer par carte dans EquiPay ?
+      - Comment solder les comptes à la fin du voyage ?
+      - Je dois de l'argent, comment le rendre ?
+      - Can I pay my friend in the app?
+      - Wach nqder nkhelless f l'app ?
+      - EquiPay transfère l'argent ?
+
+  - id: noter_remboursement
+    answer: >-
+      Pour enregistrer un remboursement, ajoute une dépense payée par la personne qui
+      rembourse, avec 100 % pour la personne remboursée : les deux soldes se rapprochent
+      alors de 0.
+    keywords: [remboursement, payée, 100 %, 0]
+    questions:
+      - Comment noter un remboursement dans l'app ?
+      - J'ai remboursé Sara, comment le montrer dans EquiPay ?
+      - Comment enregistrer que j'ai rendu l'argent ?
+      - Comment remettre les soldes à zéro après remboursement ?
+      - Mon ami m'a remboursé, que faire dans l'app ?
+      - How do I record a repayment?
+      - Rje3t lflouss, kifach nsejjel hadchi ?
+      - Comment indiquer qu'une dette est réglée ?
+      - Les soldes ne changent pas après mon virement
+
+  - id: total
+    answer: >-
+      Dans le détail de l'activité, la carte « Total des dépenses » affiche le montant total
+      dépensé dans la devise de l'activité, ainsi que le nombre de dépenses.
+    keywords: [Total des dépenses, devise, nombre]
+    questions:
+      - Comment voir le total dépensé ?
+      - Combien on a dépensé en tout pendant le voyage ?
+      - Où est le montant total ?
+      - Comment connaître la somme totale des dépenses ?
+      - L'app affiche le total du voyage ?
+      - Quel est le budget total dépensé ?
+      - Combien de dépenses on a fait ?
+      - Comment voir le coût total de la sortie ?
+      - Le total est dans quelle devise ?
+      - Where can I see the total spent?
+      - Ch7al khserna f l'voyage ?
+      - Pourquoi il est écrit aucune dépense pour le moment ?
+
+  - id: temps_reel
+    answer: >-
+      Oui, tout se met à jour en temps réel : quand un participant ajoute une dépense ou qu'un
+      membre rejoint l'activité, le total, la liste et les soldes se mettent à jour
+      automatiquement sur ton téléphone. Tu peux aussi tirer l'écran vers le bas pour
+      recharger.
+    keywords: [temps réel, automatiquement]
+    questions:
+      - Les soldes se mettent à jour tout seuls ?
+      - Je dois rafraîchir pour voir les nouvelles dépenses ?
+      - L'app est en temps réel ?
+      - Quand mon ami ajoute une dépense, je la vois tout de suite ?
+      - Les données sont synchronisées ?
+      - Il faut recharger la page ?
+      - Mes amis voient mes dépenses immédiatement ?
+      - Pourquoi le solde a changé tout seul ?
+      - Is it updated in real time?
+      - Wach kaytbdel direct ?
+      - Comment rafraîchir manuellement ?

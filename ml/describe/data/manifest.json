@@ -1,0 +1,93 @@
+{
+  "dataset_sha": "88b6724ca0e1",
+  "sizes": {
+    "train": 12000,
+    "valid": 500,
+    "test": 800,
+    "manual": 50
+  },
+  "stats": {
+    "train": {
+      "total": 12000,
+      "styles": {
+        "sms": 2430,
+        "fr": 4978,
+        "dj": 2399,
+        "en": 2193
+      },
+      "participants": {
+        "with": 3315,
+        "me_and": 1490,
+        "none": 2675,
+        "non_expense": 997,
+        "for": 1319,
+        "except": 1101,
+        "all": 1103
+      },
+      "split_types": {
+        "aucune": 10157,
+        "equal": 895,
+        "percent": 463,
+        "shares": 253,
+        "amounts": 232
+      },
+      "avec_articles": 1477,
+      "non_depenses": 997
+    },
+    "valid": {
+      "total": 500,
+      "styles": {
+        "dj": 104,
+        "fr": 211,
+        "sms": 92,
+        "en": 93
+      },
+      "participants": {
+        "none": 119,
+        "with": 159,
+        "all": 42,
+        "except": 46,
+        "me_and": 51,
+        "for": 72,
+        "non_expense": 11
+      },
+      "split_types": {
+        "aucune": 415,
+        "percent": 28,
+        "equal": 38,
+        "amounts": 6,
+        "shares": 13
+      },
+      "avec_articles": 59,
+      "non_depenses": 11
+    },
+    "test": {
+      "total": 800,
+      "styles": {
+        "dj": 147,
+        "fr": 324,
+        "sms": 173,
+        "en": 156
+      },
+      "participants": {
+        "all": 60,
+        "with": 234,
+        "except": 84,
+        "none": 170,
+        "for": 103,
+        "non_expense": 49,
+        "me_and": 100
+      },
+      "split_types": {
+        "aucune": 665,
+        "shares": 22,
+        "percent": 28,
+        "equal": 66,
+        "amounts": 19
+      },
+      "avec_articles": 99,
+      "non_depenses": 49
+    }
+  },
+  "system_prompt": "Assistant de saisie EquiPay. Extrais UNE dépense de la phrase, en JSON : is_expense, title, merchant, amount, currency (ISO), date (AAAA-MM-JJ), paid_by, participants, split (null, equal, ou percent/amounts/shares avec values), items [{label, qty, price}]. Noms de la liste uniquement, « moi » pour l'utilisateur. Total absent : somme des articles, sinon 0. Information absente : null."
+}

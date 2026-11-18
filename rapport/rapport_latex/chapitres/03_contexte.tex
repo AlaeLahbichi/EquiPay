@@ -1,0 +1,160 @@
+% =====================================================================
+\chapitre{Contexte général du projet}
+% =====================================================================
+
+Ce premier chapitre situe le projet. Il présente le cadre dans lequel il a été mené et
+l'organisation de notre binôme, puis le besoin auquel répond \equipay et la problématique
+qui en découle. Il fixe enfin les objectifs, le périmètre retenu et la démarche de travail
+adoptée.
+
+\subsection{Cadre du projet}
+
+Le tableau~\ref{tab:cadre} résume le cadre dans lequel ce projet a été mené.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{3.2cm}|Y|}
+\hline
+\rowcolor{entete}\textbf{Critère} & \textbf{Description} \\ \hline
+Établissement & École Marocaine des Sciences de l'Ingénieur (EMSI), 5\textsuperscript{ème} année du
+cycle ingénieur, filière IASDR, option Intelligence Artificielle. \\ \hline
+Module & Génération Textuelle : grands modèles de langage, affinage, évaluation de textes générés
+et mise en production des modèles. \\ \hline
+Équipe & Binôme : Alae Lahbichi et Haytham Benladoul. \\ \hline
+Encadrement & Mme Hasnââ CHAABI. \\ \hline
+Matériel & Un MacBook Pro M3 Pro (18 Go de mémoire unifiée) pour le développement, l'inférence et
+le suivi des expériences ; un PC équipé d'une carte NVIDIA RTX 5080 pour l'entraînement des
+modèles ; un iPhone pour les tests en conditions réelles. \\ \hline
+Contrainte principale & Aucun service payant : services gratuits ou exécutés en local, modèles
+ouverts. \\ \hline
+\end{tabularx}
+\caption{Cadre du projet}
+\label{tab:cadre}
+\end{table}
+
+\subsection{Organisation du binôme}
+
+Nous avons mené le projet de bout en bout, de l'idée de départ à l'application installée sur
+téléphone. Le travail a été découpé par module (application mobile, base de données,
+backend, puis chacun des modèles) afin que chacun puisse avancer sur sa partie sans bloquer
+l'autre. Les choix d'architecture, les jeux de données et les résultats d'évaluation ont en
+revanche toujours été discutés à deux, et chaque modification importante a été relue par
+l'autre membre du binôme avant d'être intégrée. Les points réguliers avec notre encadrante
+ont servi à valider les grandes orientations, en particulier la méthode d'évaluation des
+modèles.
+
+\subsection{Le partage des dépenses : un besoin du quotidien}
+
+Les dépenses partagées font partie de la vie de groupe : un week-end, un voyage d'études,
+une colocation ou un simple dîner. Le calcul n'est pas difficile en soi, mais il devient
+vite pénible lorsque les dépenses s'accumulent, que les parts ne sont pas égales ou que
+certains ont payé dans une autre devise. Pour un voyage, la question ne s'arrête d'ailleurs
+pas à l'argent : il faut aussi décider de ce que l'on visite, dans quel ordre et à quel
+moment, ce qui se fait le plus souvent dans une conversation de groupe où les propositions
+se perdent.
+
+\subsection{Problématique}
+
+Deux difficultés se dégagent. La première tient à la saisie : chaque dépense doit être
+entrée à la main (montant, payeur, participants, répartition), si bien que beaucoup
+d'utilisateurs abandonnent en cours de route et reviennent au calcul approximatif. La
+seconde tient à l'organisation : rien ne relie les dépenses du voyage à son programme, et
+aucun outil grand public n'aide un groupe à choisir ensemble les lieux à visiter puis à les
+enchaîner sans perdre de temps.
+
+Les modèles de langage récents permettent de répondre aux deux. Un modèle vision-langage
+peut lire un ticket de caisse, un modèle de langage affiné peut comprendre une phrase libre
+et en tirer une dépense structurée, et un modèle généraliste peut rédiger un programme
+clair à partir d'un itinéraire calculé. La question est alors de savoir comment intégrer
+ces modèles dans une application fiable, gratuite et utilisable au quotidien, tout en
+gardant la maîtrise de leur qualité : c'est la problématique à laquelle répond ce projet.
+
+\subsection{Objectifs visés et délimitation du périmètre}
+
+L'objectif est de concevoir une application mobile de partage des dépenses qui réduit la
+saisie au minimum grâce à l'IA, aide le groupe à organiser ses sorties, et s'appuie sur une
+démarche MLOps complète pour l'entraînement et le suivi des modèles.
+
+Le périmètre retenu est présenté dans la figure~\ref{fig:perimetre}. Il comprend
+l'application mobile (iOS en priorité, Android prêt), la base de données et
+l'authentification, le backend d'IA, l'entraînement des modèles et leur suivi dans MLflow.
+Le paiement intégré, la publication sur les magasins d'applications, l'hébergement du
+backend dans le cloud et les notifications sont laissés comme évolutions futures.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  titre/.style={rounded corners=4pt, minimum width=6.6cm, minimum height=0.9cm, font=\bfseries\color{white}},
+  item/.style={rounded corners=3pt, minimum width=6.6cm, minimum height=0.72cm, font=\footnotesize, draw=#1!60, fill=#1!8},
+  ]
+  \node[titre, fill=lagon] (in) at (0,0) {Inclus dans le projet};
+  \node[titre, fill=gristexte] (out) at (7.3,0) {Hors périmètre (évolutions)};
+  \foreach \t [count=\i] in {{Application mobile Flutter (iOS, Android prêt)},
+                             {Comptes, activités, dépenses et soldes},
+                             {Base Supabase : RLS et temps réel},
+                             {Assistant conversationnel},
+                             {Scanner de tickets et saisie par phrase},
+                             {Programme de voyage et trajet optimisé},
+                             {Entraînement et suivi dans MLflow}}
+    \node[item=lagon] at (0,-0.35-0.85*\i) {\t};
+  \foreach \t [count=\i] in {{Paiement intégré entre membres},
+                             {Publication App Store et Play Store},
+                             {Backend d'IA hébergé dans le cloud},
+                             {Notifications push},
+                             {Connexion avec un compte Apple}}
+    \node[item=gristexte] at (7.3,-0.35-0.85*\i) {\t};
+\end{tikzpicture}
+\caption{Périmètre fonctionnel retenu : fonctionnalités incluses et exclues}
+\label{fig:perimetre}
+\end{figure}
+
+\subsection{Démarche de travail et organisation du projet}
+
+Nous avons adopté une démarche itérative et incrémentale, inspirée des méthodes agiles :
+chaque cycle court se termine par une fonctionnalité testable sur téléphone. Comme le
+montre la figure~\ref{fig:phases}, le projet s'est déroulé en cinq phases. Le cadrage a
+fixé les besoins, le périmètre et les choix techniques. La conception a porté sur le schéma
+de la base, l'architecture et la charte graphique. Le développement a produit l'application
+et le backend. L'entraînement des modèles s'est déroulé en parallèle : préparation des
+données, affinage sur GPU, évaluation et conversion. Les tests et la finalisation ont
+regroupé la validation sur iPhone, l'optimisation et la rédaction de ce rapport.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  phase/.style={circle, minimum size=1.95cm, draw=white, line width=3pt, fill=#1, align=center,
+                font=\footnotesize\bfseries, text=white, drop shadow={opacity=0.18}},
+  bulle/.style={rectangle, rounded corners=6pt, draw=black!15, fill=white, align=center,
+                font=\scriptsize, text width=2.75cm, minimum height=1.1cm},
+  ]
+  \fill[grisfond, rounded corners=6pt] (-1.6,-3.6) rectangle (14.1,3.6);
+  \foreach \x/\y/\c/\n/\t/\d [count=\i] in {
+      0/0.75/lagon/01/Cadrage/{Besoins, objectifs,\\ choix techniques},
+      3.1/-0.75/violet/02/Conception/{Base de données,\\ architecture,\\ charte graphique},
+      6.25/0.75/orange/03/Développement/{Application mobile,\\ backend, intégration\\ des modèles},
+      9.4/-0.75/bleuclair/04/{Entraînement\\ des modèles}/{Données, affinage\\ LoRA, évaluation,\\ conversion MLX},
+      12.5/0.75/recevoir/05/{Tests et\\ finalisation}/{Validation sur iPhone,\\ optimisation,\\ rapport}}
+  {
+    \node[phase=\c] (p\i) at (\x,\y) {\n\\[1pt]\t};
+    \ifodd\i
+      \node[bulle] (b\i) at (\x,-2.55) {\d};
+      \draw[\c, thick] (p\i.south) -- (b\i.north);
+      \fill[\c] (p\i.south) circle (2pt);
+    \else
+      \node[bulle] (b\i) at (\x,2.55) {\d};
+      \draw[\c, thick] (p\i.north) -- (b\i.south);
+      \fill[\c] (p\i.north) circle (2pt);
+    \fi
+  }
+\end{tikzpicture}
+\caption{Les cinq phases de la démarche de travail adoptée}
+\label{fig:phases}
+\end{figure}
+
+\subsection{Conclusion du chapitre}
+
+Ce chapitre a présenté le cadre du projet, l'organisation de notre binôme et le besoin
+auquel répond \equipay. La problématique posée, les objectifs, le périmètre retenu et la
+démarche adoptée constituent le point de départ de l'étude préalable présentée dans le
+chapitre suivant.

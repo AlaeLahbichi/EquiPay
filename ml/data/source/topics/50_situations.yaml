@@ -1,0 +1,318 @@
+# Situations concrètes : dépannage, cas pratiques et astuces d'utilisation.
+category: situations
+
+topics:
+  - id: assistant_injoignable
+    answer: >-
+      « Impossible de joindre l'assistant » veut dire que ton téléphone n'arrive pas à
+      contacter le serveur de l'assistant : vérifie ta connexion internet, puis appuie sur
+      « Réessayer » sous le message.
+    keywords: [Impossible de joindre l'assistant, connexion, Réessayer]
+    questions:
+      - Pourquoi l'assistant dit impossible de joindre l'assistant ?
+      - L'assistant ne répond pas
+      - Le chat d'aide ne marche pas
+      - L'assistant met trop de temps à répondre
+      - Message d'erreur dans le chat Support
+      - The assistant is not answering
+      - L'assistant makayjawebch
+      - Pourquoi j'ai une bulle rouge dans le chat ?
+      - Comment renvoyer ma question à l'assistant ?
+      - L'assistant est indisponible, que faire ?
+
+  - id: logo_non_envoye
+    answer: >-
+      Si l'app affiche « Activité créée, mais le logo n'a pas pu être envoyé », ton activité
+      existe bien. Ajoute le logo ensuite : ouvre l'activité, appuie sur le crayon « Modifier
+      l'activité » et choisis la photo.
+    keywords: [Activité créée, Modifier l'activité, photo]
+    questions:
+      - Le logo de mon activité n'a pas été envoyé
+      - Activité créée mais le logo n'a pas pu être envoyé, que faire ?
+      - Mon activité n'a pas de photo alors que j'en avais choisi une
+      - La photo du voyage ne s'est pas enregistrée
+      - Comment remettre le logo qui a échoué ?
+      - The logo upload failed
+      - Tswira dyal l'activité ma tsiftatch
+      - Pourquoi mon logo n'apparaît pas ?
+
+  - id: email_modifie_confirmation
+    answer: >-
+      Après un changement d'email, l'app affiche « Informations enregistrées » et peut te
+      demander de confirmer la nouvelle adresse avec le lien reçu par email. Ouvre ce lien
+      pour terminer le changement.
+    keywords: [Informations enregistrées, confirmer, lien]
+    questions:
+      - J'ai changé mon email, je dois confirmer quelque chose ?
+      - Pourquoi mon nouvel email n'apparaît pas encore ?
+      - Confirme ton nouvel email, ça veut dire quoi ?
+      - Mon changement d'adresse n'est pas pris en compte
+      - J'ai reçu un lien après avoir changé mon email
+      - Do I need to confirm my new email?
+      - Bdelt l'email w mazal ma tbdlch
+      - Le message Informations enregistrées veut dire quoi ?
+
+  - id: activite_apparait
+    answer: >-
+      Dès que le créateur accepte ta demande, l'activité apparaît automatiquement sur ton
+      accueil, et une notification te prévient. Tu n'as pas besoin de ressaisir le code.
+    keywords: [accepte, accueil, notification]
+    questions:
+      - Ma demande est acceptée, où est l'activité ?
+      - Quand est-ce que l'activité apparaît sur mon accueil ?
+      - On m'a accepté, je dois refaire quelque chose ?
+      - Je dois ressaisir le code après l'acceptation ?
+      - L'activité arrive toute seule dans ma liste ?
+      - Where does the activity appear after I'm accepted ?
+      - T9belt, fin kayna l'activité ?
+      - Comment accéder à l'activité après l'acceptation ?
+
+  - id: ajouter_spectateur
+    answer: >-
+      Pour ajouter un spectateur, envoie-lui le code : il demande à rejoindre et tu acceptes,
+      il arrive comme membre. Touche ensuite son nom dans « Membres » et choisis
+      « Spectateur ».
+    keywords: [code, accepte, Membres, Spectateur]
+    questions:
+      - Comment inviter un spectateur ?
+      - Comment ajouter quelqu'un en lecture seule ?
+      - Comment ajouter mes parents pour qu'ils suivent le voyage ?
+      - Je veux qu'une personne voie le voyage sans participer
+      - Comment inviter quelqu'un juste pour regarder ?
+      - How do I add a viewer?
+      - Kifach nzid spectateur ?
+      - Ajouter un observateur à mon activité ?
+      - Mon père veut suivre nos dépenses sans en ajouter
+
+  - id: une_activite_par_evenement
+    answer: >-
+      Le plus clair est de créer une activité par événement : une pour chaque voyage ou
+      soirée. Pour la colocation, une seule activité Quotidien suffit et sert toute l'année.
+    keywords: [une activité par événement, voyage, Quotidien]
+    questions:
+      - Je crée une activité par voyage ou une seule pour tout ?
+      - Faut-il une nouvelle activité pour chaque sortie ?
+      - Comment organiser plusieurs voyages avec les mêmes amis ?
+      - Une activité pour toute l'année de coloc, c'est bien ?
+      - Combien d'activités créer pour mon groupe d'amis ?
+      - Should I create one activity per trip?
+      - Ndir activité wa7da wla bzaf ?
+      - Mélanger tous nos voyages dans une activité, bonne idée ?
+
+  - id: meme_nom_activite
+    answer: >-
+      Oui, deux activités peuvent avoir le même nom. Pour les distinguer, donne-leur un logo
+      différent ou ajoute l'année au titre, par exemple « Marrakech 2026 ».
+    keywords: [même nom, logo, Marrakech 2026]
+    questions:
+      - Deux activités peuvent avoir le même nom ?
+      - J'ai deux voyages Marrakech, comment les différencier ?
+      - Comment distinguer deux activités qui se ressemblent ?
+      - Le nom de l'activité doit être unique ?
+      - Can two activities have the same name?
+      - Jouj activités b nfs smiya ?
+      - Mes activités ont le même titre, c'est un problème ?
+      - Comment bien nommer mes activités ?
+
+  - id: plusieurs_demandes
+    answer: >-
+      Oui, tu peux envoyer des demandes pour plusieurs activités en même temps : chacune
+      apparaît dans Requests, section « Envoyées », avec son propre statut.
+    keywords: [plusieurs activités, Envoyées, statut]
+    questions:
+      - Je peux demander à rejoindre plusieurs activités ?
+      - Je peux être dans plusieurs voyages à la fois ?
+      - J'ai envoyé trois demandes, c'est possible ?
+      - On peut faire partie de plusieurs groupes ?
+      - Can I join several activities?
+      - Nqder nkon f bzaf d les activités ?
+      - Combien d'activités je peux rejoindre en même temps ?
+      - Je suis dans un voyage, je peux en rejoindre un autre ?
+
+  - id: tout_le_monde_na_pas_participe
+    answer: >-
+      Si tout le monde n'a pas participé, par exemple à une excursion, ajoute la dépense
+      seulement entre les personnes concernées : les autres n'ont pas de part et leur solde ne
+      change pas.
+    keywords: [personnes concernées, part, solde]
+    questions:
+      - Tout le monde n'a pas fait l'excursion, comment partager ?
+      - Seulement deux amis ont pris le taxi, comment faire ?
+      - Une dépense ne concerne qu'une partie du groupe
+      - Comment exclure quelqu'un d'une dépense ?
+      - Mon ami n'était pas là au dîner, il doit payer ?
+      - How do I split an expense with only some members?
+      - Machi kolchi chark f had dépense
+      - Partager une dépense entre deux personnes seulement dans un groupe de six
+
+  - id: depart_colocataire
+    answer: >-
+      Quand un colocataire part, faites les comptes : il règle son solde ou on le rembourse
+      jusqu'à 0. Comme il a des dépenses, l'owner ne peut pas le retirer : il le passe en
+      spectateur pour qu'il ne participe plus aux nouvelles dépenses.
+    keywords: [solde, 0, spectateur]
+    questions:
+      - Un colocataire quitte l'appartement, que faire dans l'app ?
+      - Comment gérer le départ d'un coloc ?
+      - Mon coloc déménage, comment solder ses comptes ?
+      - Un membre quitte définitivement le groupe, que faire ?
+      - Comment arrêter d'inclure quelqu'un dans les dépenses ?
+      - A roommate is moving out, what should we do?
+      - Wa7ed mn la coloc ghadi ykhrej
+      - Comment clôturer la participation d'un ami ?
+
+  - id: abonnement_partage
+    answer: >-
+      Pour un abonnement partagé (streaming, internet, salle de sport), crée une activité
+      Quotidien et ajoute chaque mois la dépense payée par le titulaire, partagée entre tous
+      les utilisateurs de l'abonnement.
+    keywords: [abonnement, Quotidien, chaque mois]
+    questions:
+      - Comment partager un abonnement Netflix entre amis ?
+      - On partage un compte Spotify famille, comment diviser ?
+      - Comment partager la box internet entre plusieurs personnes ?
+      - Abonnement de salle de sport en commun, comment gérer ?
+      - Comment rembourser celui qui paie l'abonnement ?
+      - How do we share a subscription?
+      - Kifach n9essmo abonnement ?
+      - Partage d'un forfait familial
+
+  - id: location_terrain
+    answer: >-
+      Pour un foot à cinq ou un terrain loué entre amis, celui qui réserve ajoute la dépense
+      dans une activité Sortie et la partage à parts égales entre les joueurs présents.
+    keywords: [Sortie, parts égales, joueurs]
+    questions:
+      - Comment partager la location d'un terrain de foot ?
+      - On loue un terrain chaque semaine, comment gérer ?
+      - Comment diviser les frais d'un match entre amis ?
+      - Qui paie le terrain de padel ?
+      - Partager le prix d'une salle louée
+      - How do we split a football pitch rental?
+      - Kifach n9essmo kra dyal terrain ?
+      - Frais de sport en groupe, quelle méthode ?
+
+  - id: toujours_le_meme_payeur
+    answer: >-
+      Si c'est toujours la même personne qui paie, son solde devient très positif. Regardez les
+      soldes régulièrement : les autres peuvent la rembourser ou payer les prochaines
+      dépenses à leur tour.
+    keywords: [solde, positif, rembourser, à leur tour]
+    questions:
+      - C'est toujours moi qui paie, comment rééquilibrer ?
+      - Mon ami paie tout, est-ce un problème ?
+      - Comment alterner qui paie ?
+      - Une seule personne avance tout l'argent du voyage
+      - Comment éviter qu'un seul paie toujours ?
+      - I always pay, how do we rebalance?
+      - Dima ana li kankhelles
+      - Mon solde est énorme car je paie tout
+
+  - id: achat_groupe
+    answer: >-
+      Pour un achat groupé, par exemple des courses en gros ou des billets, la personne qui
+      paie ajoute une seule dépense avec le montant total et répartit les pourcentages selon
+      ce que chacun reçoit.
+    keywords: [achat groupé, montant total, pourcentages]
+    questions:
+      - Comment partager un achat groupé ?
+      - On a acheté des billets de concert ensemble
+      - Courses en gros pour plusieurs familles, comment partager ?
+      - Un ami a commandé pour tout le monde en ligne
+      - Comment gérer une commande commune ?
+      - How do we split a group purchase?
+      - Chrina 7aja m3a ba3d, kifach n9essmo ?
+      - Achat de matériel en commun, qui paie quoi ?
+
+  - id: verifier_avant_rembourser
+    answer: >-
+      Avant de rembourser, ouvre l'activité et vérifie le total, ce que chacun a payé et les
+      soldes. Si une dépense semble fausse, demande à son créateur de la corriger avant de
+      faire les virements.
+    keywords: [total, soldes, créateur, corriger]
+    questions:
+      - Comment vérifier les comptes avant de rembourser ?
+      - Je pense qu'il y a une erreur dans une dépense
+      - Comment contrôler les dépenses du voyage ?
+      - Comment être sûr que les soldes sont justes ?
+      - Une dépense me semble trop élevée, que faire ?
+      - How do I check everything before settling up?
+      - Bghit nt2ekked mn l7sabat
+      - Que faire si je ne suis pas d'accord avec une dépense ?
+
+  - id: hors_ligne_demande
+    answer: >-
+      Sans internet, tu ne peux pas envoyer de demande, accepter un membre ni modifier une
+      activité. Attends le bandeau vert « Connexion rétablie », puis recommence.
+    keywords: [internet, Connexion rétablie, recommence]
+    questions:
+      - Je peux rejoindre une activité sans internet ?
+      - Ma demande n'est pas partie à cause du réseau
+      - J'ai accepté un membre hors connexion, ça a marché ?
+      - Pourquoi l'action échoue sans connexion ?
+      - Pas de connexion internet pendant que je créais l'activité
+      - Can I accept requests offline?
+      - Bla internet nqder nsift demande ?
+      - L'enregistrement a échoué à cause du réseau
+
+  - id: couleurs_solde
+    answer: >-
+      Dans EquiPay, le vert avec + signifie qu'on te doit de l'argent et le rouge avec −
+      signifie que tu dois de l'argent. Sans montant coloré, tu es à l'équilibre.
+    keywords: [vert, rouge, équilibre]
+    questions:
+      - Que veulent dire les couleurs dans l'app ?
+      - Vert et rouge, ça signifie quoi ?
+      - Pourquoi certains membres n'ont pas de montant coloré ?
+      - Le code couleur des soldes ?
+      - What do the colors mean?
+      - Chno ma3na lkhder w l7mer ?
+      - Pourquoi mon ami est en rouge et moi en vert ?
+      - Les couleurs des montants, comment les lire ?
+
+  - id: nouvel_utilisateur_ami
+    answer: >-
+      Ton ami doit d'abord installer EquiPay et créer un compte dans l'onglet Profile. Ensuite,
+      envoie-lui le code de ton activité : il le saisit avec « + », puis « Rejoindre une
+      activité », et tu acceptes sa demande.
+    keywords: [installer, compte, code, Rejoindre une activité]
+    questions:
+      - Mon ami n'a pas encore EquiPay, que doit-il faire ?
+      - Comment faire rejoindre quelqu'un qui n'a jamais utilisé l'app ?
+      - Mon ami n'a pas de compte, il peut rejoindre ?
+      - Que doit faire un nouvel utilisateur pour entrer dans mon voyage ?
+      - My friend doesn't have the app yet
+      - Sa7bi ma3ndouch l'app, chno ydir ?
+      - Je peux ajouter quelqu'un qui n'est pas inscrit ?
+      - Étapes pour qu'un ami sans compte nous rejoigne
+
+  - id: rafraichir
+    answer: >-
+      Les listes se mettent à jour automatiquement, mais tu peux aussi les recharger en tirant
+      l'écran vers le bas sur l'accueil, dans une activité ou dans Requests.
+    keywords: [automatiquement, tirant, vers le bas]
+    questions:
+      - Comment rafraîchir la liste ?
+      - Comment recharger mes activités ?
+      - Comment actualiser l'onglet Requests ?
+      - Il y a un bouton pour rafraîchir ?
+      - Comment mettre à jour l'écran ?
+      - How do I refresh?
+      - Kifach ndir refresh ?
+      - Ma liste n'est pas à jour, comment l'actualiser ?
+
+  - id: suggestions_chat
+    answer: >-
+      Au début de la discussion, l'assistant propose des questions fréquentes, par exemple
+      « Comment créer une activité ? ». Appuie sur l'une d'elles pour l'envoyer directement,
+      ou écris ta propre question.
+    keywords: [questions fréquentes, Appuie, écris]
+    questions:
+      - À quoi servent les questions proposées dans le chat ?
+      - C'est quoi les boutons de questions dans l'assistant ?
+      - Comment utiliser les suggestions du chat ?
+      - Je dois écrire ou je peux choisir une question ?
+      - What are the suggested questions for?
+      - Chno homa les questions li kaynin f chat ?
+      - Les bulles de questions au début du chat, ça sert à quoi ?
+      - Comment poser une question à l'assistant ?

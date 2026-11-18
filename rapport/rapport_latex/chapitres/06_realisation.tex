@@ -1,0 +1,655 @@
+% =====================================================================
+\chapitre{Réalisation et implémentation}
+% =====================================================================
+
+Ce chapitre présente la mise en œuvre de la conception : l'environnement de travail, le
+choix des modèles, la construction, l'entraînement et l'évaluation de chacun d'eux,
+l'organisation du trajet, puis les fonctionnalités transverses et la stratégie
+d'exécution retenue.
+
+Avant de détailler chaque fonctionnalité, il faut souligner une partie du travail qui ne se
+voit pas dans l'application : l'outillage qui encadre le développement. Un script lance
+l'ensemble des serveurs dans le bon ordre et un autre les arrête ; un autre enchaîne la
+préparation des données, l'entraînement et l'évaluation d'un modèle ; la configuration
+(adresse du backend, clés publiques) est centralisée dans un fichier unique passé à la
+compilation de l'application ; les changements de base de données passent toujours par une
+nouvelle migration ; et chaque modification est vérifiée par une suite de tests
+automatiques. Ces éléments ne sont pas des fonctionnalités, mais ce sont eux qui nous ont
+permis d'avancer vite sans casser ce qui fonctionnait déjà.
+
+% ---------------------------------------------------------------------
+\subsection{Environnement de travail et outils}
+
+\subsubsection{Stack technique}
+
+Le tableau~\ref{tab:stack} récapitule les technologies utilisées dans chaque partie du
+projet.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{2.6cm}|L{4.6cm}|Y|}
+\hline
+\rowcolor{entete}\textbf{Couche} & \textbf{Technologie} & \textbf{Rôle} \\ \hline
+Mobile & Flutter (Dart), Material 3 & Un seul code pour iOS et Android, interface moderne. \\ \hline
+Carte & MapKit (vue native Swift) & Carte Apple Plans, recherche de lieux, itinéraires. \\ \hline
+Données & Supabase : PostgreSQL, Auth, Storage, Realtime & Comptes, données partagées, fichiers et
+mises à jour en direct. \\ \hline
+Service d'IA & FastAPI (Python) & Routes typées, documentation générée automatiquement. \\ \hline
+Inférence & MLX, \code{mlx-lm}, \code{mlx-vlm} & Exécution des modèles en 4 bits sur la puce du Mac. \\ \hline
+Entraînement & PyTorch~\cite{pytorch}, Transformers, PEFT & Affinage LoRA sur la RTX 5080. \\ \hline
+MLOps & MLflow & Suivi des essais, registre des modèles, alias « champion ». \\ \hline
+Itinéraires & OSRM & Temps et distances réels entre les lieux. \\ \hline
+\end{tabularx}
+\caption{Stack technique du projet}
+\label{tab:stack}
+\end{table}
+
+Dans l'application comme dans le backend, le code est organisé en couches qui ne dépendent
+que de la couche inférieure (figure~\ref{fig:couches}). Côté mobile, les écrans ne parlent
+qu'à des services, et chaque service a deux implémentations : la vraie (Supabase, HTTP,
+géocodage natif) et une version en mémoire. Les tests utilisent la seconde, ce qui permet de
+vérifier tous les écrans sans réseau. Côté backend, chaque route délègue à un module métier
+qui charge et interroge son modèle.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+  couche/.style={rectangle, rounded corners=4pt, fill=#1, text=white, font=\small\bfseries,
+                 minimum width=6.4cm, minimum height=0.85cm, align=center},
+  note/.style={font=\scriptsize, text=gristexte, align=left, anchor=west},
+  fl/.style={-{Latex[length=2mm]}, line width=0.8pt, draw=gristexte},
+  ]
+  \node[font=\small\bfseries\color{bleu}] at (0,0.85) {Application mobile};
+  \node[couche=lagon] (m1) at (0,0) {Écrans (pages, widgets)};
+  \node[couche=lagon!80!black] (m2) at (0,-1.25) {Services (interfaces)};
+  \node[couche=lagon!60!black] (m3) at (0,-2.5) {Supabase · HTTP · natif iOS};
+  \node[couche=gristexte] (m4) at (0,-3.75) {Implémentations en mémoire (tests)};
+  \draw[fl] (m1) -- (m2); \draw[fl] (m2) -- (m3);
+  \draw[fl, dashed] (m2.south east) ++(-0.4,0) to[bend left=35] (m4.north east);
+
+  \node[font=\small\bfseries\color{bleu}] at (7.6,0.85) {Backend d'IA};
+  \node[couche=orange] (b1) at (7.6,0) {Routes FastAPI + vérification JWT};
+  \node[couche=orange!80!black] (b2) at (7.6,-1.25) {Modules : assistant, receipts,\\ describe, trips};
+  \node[couche=orange!60!black] (b3) at (7.6,-2.5) {Modèles MLX (chargement unique)};
+  \node[couche=recevoir!80!black] (b4) at (7.6,-3.75) {Registre MLflow (champion)};
+  \draw[fl] (b1) -- (b2); \draw[fl] (b2) -- (b3); \draw[fl] (b4) -- (b3);
+\end{tikzpicture}
+\caption{Organisation en couches de l'application et du backend}
+\label{fig:couches}
+\end{figure}
+
+\subsubsection{Base de données et migrations}
+
+Le schéma Supabase évolue uniquement par fichiers de migration datés, appliqués par un
+script qui garde la trace de ceux déjà passés. Douze migrations ont été écrites au fil du
+projet : le schéma initial, puis les photos, la suppression de compte, les demandes pour
+rejoindre, le verrouillage de la devise, l'enregistrement atomique des dépenses,
+l'archivage et enfin le programme des voyages. Une règle a été tenue du début à la fin : les
+migrations ne contiennent que de la structure (tables, règles, fonctions), jamais de
+données. La base livrée est vide, et ce sont les utilisateurs qui la remplissent.
+
+\subsubsection{MLX et MLflow}
+
+Le serveur MLflow tourne sur le Mac et sert à la fois l'interface de suivi et le stockage
+des fichiers produits par les entraînements. Le PC d'entraînement y envoie ses résultats
+par le réseau local. Chaque modèle a sa propre expérience (« Equipay » pour l'assistant,
+« Equipay-receipts » pour le scanner, « Equipay-describe » pour la saisie par phrase,
+« Equipay-trips » pour l'organisation des trajets) et son entrée dans le registre. Côté Mac,
+les modèles sont convertis et exécutés avec MLX~\cite{mlx}, en utilisant les bibliothèques
+\code{mlx-lm}~\cite{mlxlm} pour le texte et \code{mlx-vlm}~\cite{mlxvlm} pour la vision.
+
+% ---------------------------------------------------------------------
+\subsection{Choix des modèles d'intelligence artificielle}
+
+Le projet utilise deux familles de modèles : un modèle de langage pour tout ce qui est
+texte, et un modèle vision-langage pour les tickets. Les deux choix ont été guidés par la
+même contrainte : un modèle assez petit pour être affiné sur une carte de 16 Go et servi
+en local, mais assez bon en français pour comprendre des phrases familières.
+
+\subsubsection{Modèle de langage : Qwen3-4B-Instruct-2507}
+
+Pour l'assistant, nous avons d'abord comparé plusieurs modèles ouverts de petite taille,
+tous affinés avec le même jeu de données (première version) et évalués avec le même code
+(tableau~\ref{tab:choix_llm}). Sans affinage, aucun ne dépassait un score de 0,30 : ils
+répondaient de façon générique et inventaient des fonctionnalités. Après affinage, Qwen3-4B
+s'est montré le meilleur, et la version entraînée sur les 36 couches du modèle l'a encore
+amélioré. C'est ce modèle qui a été retenu pour toutes les tâches de texte.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{4.4cm}|C{1.9cm}|C{2.2cm}|Y|C{0.9cm}|}
+\hline
+\rowcolor{entete}\textbf{Modèle} & \textbf{Paramètres} & \textbf{Score après affinage} & \textbf{Remarques} & \textbf{Réf.} \\ \hline
+Qwen3-4B-Instruct-2507, LoRA sur les 36 couches & 4 milliards & \textbf{0,822} & Modèle retenu : meilleur score, bon
+niveau en français. & \cite{qwen3_4b} \\ \hline
+Qwen3-4B-Instruct-2507, LoRA partiel (Mac) & 4 milliards & 0,803 & Premier essai, LoRA sur une partie des couches, entraîné sur le Mac avec MLX. & \cite{qwen3_4b} \\ \hline
+Qwen2.5-1.5B-Instruct & 1,5 milliard & 0,780 & Deux fois plus rapide, mais score inférieur. & \cite{qwen25} \\ \hline
+Llama-3.2-3B-Instruct & 3 milliards & 0,770 & Score le plus faible des modèles affinés. & \cite{llama32} \\ \hline
+\end{tabularx}
+\caption{Comparaison des modèles de langage affinés pour l'assistant (jeu de données v1)}
+\label{tab:choix_llm}
+\end{table}
+
+\subsubsection{Modèle vision-langage : Qwen3-VL-4B-Instruct}
+
+Pour les tickets, nous avons écarté l'approche classique « OCR puis analyse du texte »,
+qui perd la mise en page du ticket : la position d'un montant (en bas, en gras, à côté du
+mot \textit{Total}) est justement ce qui permet de le reconnaître. Qwen3-VL-4B~\cite{qwen3vl}
+lit directement l'image et répond en JSON. Sans affinage, il obtenait déjà un score de 0,792
+sur notre jeu de test, ce qui en faisait un bon point de départ ; sa taille (4,5 milliards de
+paramètres) reste compatible avec un affinage LoRA sur notre GPU.
+
+\subsubsection{Inférence locale en 4 bits}
+
+Avec le scanner servi en précision complète par PyTorch, le backend occupait environ 11 Go
+de mémoire, ce qui laissait trop peu de place au reste du système sur un Mac de 18 Go. Nous avons donc converti chaque modèle en 4 bits avec MLX, puis mesuré l'effet de
+cette conversion sur le même jeu de test (tableau~\ref{tab:quantification}). La perte est
+faible et le gain de mémoire important : c'est la version 4 bits qui est servie, la version
+PyTorch restant disponible en secours.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|Y|C{3.3cm}|C{3.3cm}|}
+\hline
+\rowcolor{entete}\textbf{Mesure (scanner de tickets)} & \textbf{PyTorch, 16 bits} & \textbf{MLX, 4 bits} \\ \hline
+Score global & 0,954 & 0,941 \\ \hline
+Total du ticket exact & 97,2 \% & 96,3 \% \\ \hline
+Taille du modèle sur disque & 8,3 Go & 2,9 Go \\ \hline
+Mémoire du backend (assistant et scanner chargés) & environ 11 Go & environ 5,8 Go \\ \hline
+\end{tabularx}
+\caption{Effet de la quantification en 4 bits sur le scanner de tickets}
+\label{tab:quantification}
+\end{table}
+
+% ---------------------------------------------------------------------
+\subsection{Assistant conversationnel}
+
+\subsubsection{Jeu de données}
+
+L'assistant doit adopter trois comportements : répondre aux questions sur l'application,
+orienter vers le support quand la réponse n'existe pas (fonction absente, problème de
+compte), et refuser poliment ce qui n'a rien à voir avec \equipay. Nous avons écrit à la main
+les sources du jeu de données : 196 sujets répartis en douze catégories (activités,
+dépenses, soldes, compte, thème, applications concurrentes, situations concrètes, etc.),
+chacun avec une réponse de référence et des mots-clés attendus. Ces sources ont ensuite été
+déclinées en 2\,423 questions formulées de manières différentes. Le jeu final compte
+10\,921 exemples d'entraînement, 438 de validation et 727 de test.
+
+Les réponses de référence décrivent l'état réel de l'application : lorsqu'une fonction n'est
+pas encore développée (réinitialisation du mot de passe, invitation par e-mail, etc.), la
+réponse attendue oriente vers le support plutôt que d'inventer une procédure.
+
+\subsubsection{Entraînement}
+
+Le modèle Qwen3-4B-Instruct-2507 a été affiné par LoRA sur ses 36 couches (rang 16,
+$\alpha = 320$), sur le PC, pour cinq époques au maximum avec arrêt anticipé. La perte de
+validation a atteint son minimum autour de la deuxième époque (0,052) : c'est ce point qui a
+été conservé. La version obtenue est la seizième du registre \code{equipay-assistant}.
+
+\subsubsection{Évaluation}
+
+Une réponse générée est rarement identique mot pour mot à la référence. Nous avons donc
+combiné plusieurs mesures complémentaires dans un score global :
+
+\begin{itemize}
+  \item le rappel des mots-clés attendus (poids 0,30), qui vérifie que les informations
+        importantes sont présentes ;
+  \item la similarité sémantique (poids 0,25), mesurée par le cosinus entre les plongements
+        de la réponse et de la référence, calculés avec un modèle Sentence-BERT
+        multilingue~\cite{sbert} ;
+  \item le ROUGE-L~\cite{rouge} (poids 0,15), qui mesure la plus longue sous-séquence commune
+        avec la référence ;
+  \item le F1 macro du comportement (poids 0,30) : la réponse appartient-elle à la bonne
+        classe (répondre, orienter vers le support, refuser) ?
+\end{itemize}
+
+Le BLEU~\cite{bleu} et le chrF~\cite{chrf} sont également calculés et enregistrés dans MLflow
+à titre de comparaison, mais n'entrent pas dans le score. Le tableau~\ref{tab:assistant}
+compare le modèle de base et la version retenue sur le jeu de test.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|Y|C{3.2cm}|C{3.2cm}|}
+\hline
+\rowcolor{entete}\textbf{Métrique (jeu de test, 727 questions)} & \textbf{Qwen3-4B de base} & \textbf{Champion v16} \\ \hline
+Score global & 0,276 & \textbf{0,770} \\ \hline
+Similarité sémantique & 0,496 & 0,807 \\ \hline
+ROUGE-L & 0,146 & 0,697 \\ \hline
+Comportement correct (exactitude) & 41,7 \% & 91,7 \% \\ \hline
+Questions hors sujet auxquelles il répond quand même & 97,4 \% & 14,1 \% \\ \hline
+Questions de support correctement orientées & --- & 70,5 \% \\ \hline
+Temps de réponse moyen sur le Mac & --- & 1,3 s \\ \hline
+\end{tabularx}
+\caption{Résultats de l'assistant conversationnel avant et après affinage}
+\label{tab:assistant}
+\end{table}
+
+Le gain est net sur toutes les mesures. Le modèle de base répondait à presque toutes les
+questions, y compris aux recettes de cuisine, et décrivait des écrans qui n'existent pas.
+Après affinage, il connaît l'application et respecte son rôle. La faiblesse restante concerne
+les questions de support : sur une fonction inconnue, le modèle invente encore une réponse
+dans environ 30 \% des cas au lieu d'orienter vers le support. C'est la piste d'amélioration
+prioritaire pour une prochaine version du jeu de données.
+
+% ---------------------------------------------------------------------
+\subsection{Scanner de tickets de caisse}
+
+\subsubsection{Une première version instructive}
+
+La première version du scanner a été affinée uniquement sur CORD~\cite{cord}, un jeu de
+tickets indonésiens. Son score sur ce jeu était excellent, mais en conditions réelles elle a
+révélé deux défauts : elle ignorait les séparateurs décimaux (un total de 11,50 € devenait
+1\,150) et annonçait systématiquement des roupies indonésiennes. Le modèle avait simplement
+appris les habitudes de son unique source, où les montants sont des entiers et la devise
+toujours la même. Cette erreur a orienté toute la seconde version.
+
+\subsubsection{Jeu de données de la seconde version}
+
+Le jeu de la seconde version réunit quatre sources : CORD, SROIE~\cite{sroie} (tickets
+malaisiens), WildReceipt~\cite{wildreceipt} (photos prises dans des conditions variées) et
+des tickets synthétiques que nous avons générés pour la France, le Maroc, les États-Unis, le
+Royaume-Uni et la Suisse, avec des montants à virgule et des devises variées. Il compte
+4\,638 tickets d'entraînement, 378 de validation et 615 de test, dans sept devises. Le modèle
+doit renvoyer l'enseigne, l'adresse, la date, le total tel qu'il est écrit, le total en
+nombre, la devise et la liste des articles. Comme toutes les sources n'annotent pas tous les
+champs, les champs absents d'une source sont exclus du calcul de la perte, pour ne pas
+apprendre au modèle à les laisser vides.
+
+\subsubsection{Entraînement}
+
+L'affinage LoRA (rang 16, $\alpha = 32$) porte sur les couches du modèle de langage
+(projections d'attention et couches denses), la partie vision restant figée : 33 millions de
+paramètres entraînés sur 4,47 milliards, soit 0,74 \%. Les images sont redimensionnées à
+1\,024 pixels de côté au maximum, avec un lot effectif de 8 et trois époques au plus.
+L'entraînement a été interrompu par une défaillance du GPU à l'étape 1\,595 sur 1\,740 ; le
+meilleur point de validation ayant été atteint à l'étape 1\,158 et sauvegardé, aucune
+perte de résultat n'en a découlé.
+
+\subsubsection{Résultats}
+
+Les trois modèles (base, v1 et v2) ont été évalués sur le même jeu de test
+(tableau~\ref{tab:scanner} et figure~\ref{fig:scores}). Le score global pondère le total
+(0,35), les articles (0,15), la devise, la date, l'enseigne et la validité du JSON (0,10
+chacun), le total recopié et l'adresse (0,05 chacun).
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|Y|C{2.4cm}|C{2.4cm}|C{2.4cm}|}
+\hline
+\rowcolor{entete}\textbf{Métrique (615 tickets de test)} & \textbf{Base} & \textbf{v1 (CORD seul)} & \textbf{v2 (retenue)} \\ \hline
+Score global & 0,792 & 0,219 & \textbf{0,954} \\ \hline
+Total exact & 71,2 \% & 21,1 \% & \textbf{97,2 \%} \\ \hline
+Devise & 69,7 \% & 18,6 \% & \textbf{99,4 \%} \\ \hline
+Date & 86,4 \% & 0,0 \% & \textbf{96,4 \%} \\ \hline
+Enseigne & 89,4 \% & 0,0 \% & \textbf{91,3 \%} \\ \hline
+Articles (F1) & 73,5 \% & 16,9 \% & \textbf{88,3 \%} \\ \hline
+Ticket entièrement juste & 23,6 \% & 0,0 \% & \textbf{74,5 \%} \\ \hline
+Erreur « virgule ignorée » & 0,0 \% & 72,7 \% & \textbf{0,0 \%} \\ \hline
+\end{tabularx}
+\caption{Comparaison du modèle de base, de la v1 et de la v2 du scanner}
+\label{tab:scanner}
+\end{table}
+
+La v2 améliore toutes les mesures. Le total est exact sur 100 \% des tickets en euros et en
+dirhams du jeu de test. L'analyse des erreurs du modèle de base est instructive : dans
+13,5 \% des cas, il prenait pour total la somme donnée en espèces par le client, une
+confusion que l'affinage a fait disparaître. Deux limites demeurent : le modèle invente
+parfois une date lorsqu'aucune n'est imprimée, et environ 13 \% des articles proposés
+n'existent pas sur le ticket. C'est pourquoi l'application indique l'origine de chaque champ
+et laisse l'utilisateur corriger avant d'enregistrer.
+
+% ---------------------------------------------------------------------
+\subsection{Saisie d'une dépense en une phrase}
+
+\subsubsection{Jeu de données et entraînement}
+
+Le modèle reçoit une phrase libre (« Resto avec Sara, j'ai payé 45 € hier, 60/40 »), la
+liste des membres de l'activité, la date du jour et la devise par défaut, et doit renvoyer
+la dépense au format JSON : montant, devise, date, payeur, participants, répartition,
+titre, enseigne et articles. Le jeu de données a été généré à partir de modèles de phrases
+variés, dans quatre styles d'écriture (français, langage SMS, darija et anglais), avec
+des prénoms écrits en minuscules ou avec de petites fautes : 12\,000 exemples
+d'entraînement, 500 de validation et 800 de test, auxquels s'ajoutent 50 phrases écrites à
+la main pour un test plus proche de l'usage réel. Le modèle est un Qwen3-4B-Instruct-2507
+affiné par LoRA sur ses 36 couches pendant trois époques.
+
+\subsubsection{Post-traitement}
+
+Le modèle ne connaît que les noms écrits dans la phrase, alors que l'application a besoin
+d'identifiants de membres. Le backend relie donc chaque nom à un membre réel, en tolérant
+les fautes de frappe (figure~\ref{fig:code_matcher}) : « moi » désigne l'utilisateur
+connecté, un nom exact est accepté directement, et sinon le membre le plus proche est
+retenu seulement s'il est assez proche et sans ambiguïté. Un nom inconnu n'est jamais
+inventé. La répartition est ensuite convertie en pourcentages dont la somme fait exactement
+100 (figure~\ref{fig:code_pourcentages}).
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Python]
+def __call__(self, name) -> str | None:
+    key = norm(name)
+    if not key:
+        return None
+    if key in ("moi", "me", "ana", "je"):
+        return self.me_id
+    exact = {mid for k, mid in self.keys if k == key}
+    if len(exact) == 1:
+        return exact.pop()
+    # Faute de frappe (« Slma » → Salma) : le nom le plus proche, s'il est assez proche et sans ambiguïté
+    scored = sorted(((difflib.SequenceMatcher(None, key, k).ratio(), mid) for k, mid in self.keys), reverse=True)
+    if scored and scored[0][0] >= 0.75 and all(mid == scored[0][1] for r, mid in scored if r >= scored[0][0] - 0.05):
+        return scored[0][1]
+    return None
+\end{lstlisting}
+\caption{Rattachement d'un nom cité dans la phrase à un membre de l'activité}
+\label{fig:code_matcher}
+\end{figure}
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Python]
+def to_percentages(weights: dict[str, float]) -> dict[str, float] | None:
+    """Poids (parts, montants, %) → pourcentages au centième dont la somme fait exactement 100."""
+    weights = {k: v for k, v in weights.items() if v > 0}
+    total = sum(weights.values())
+    if not weights or total <= 0:
+        return None
+    ids = list(weights)
+    cents = [round(weights[i] / total * 10000) for i in ids]
+    cents[-1] += 10000 - sum(cents)
+    return {i: c / 100 for i, c in zip(ids, cents)}
+\end{lstlisting}
+\caption{Conversion d'une répartition quelconque en pourcentages exacts}
+\label{fig:code_pourcentages}
+\end{figure}
+
+\subsubsection{Résultats}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|Y|C{2.7cm}|C{2.7cm}|C{2.7cm}|}
+\hline
+\rowcolor{entete}\textbf{Métrique (version MLX 4 bits)} & \textbf{Test (800)} & \textbf{Phrases manuelles (50)} & \textbf{Modèle de base} \\ \hline
+Score global & \textbf{0,976} & \textbf{0,954} & 0,656 / 0,585 \\ \hline
+Dépense entièrement juste & 72,5 \% & 66 \% & --- \\ \hline
+Montant & 99,3 \% & 100 \% & --- \\ \hline
+Participants (F1) & 0,994 & 0,959 & --- \\ \hline
+Payeur & 97,2 \% & 97,8 \% & --- \\ \hline
+Répartition & 98,8 \% & 97,8 \% & --- \\ \hline
+Champs inventés & 1,6 \% & 15,6 \% & --- \\ \hline
+\end{tabularx}
+\caption{Résultats du modèle de saisie par phrase}
+\label{tab:phrase}
+\end{table}
+
+Le tableau~\ref{tab:phrase} montre que le montant, le payeur et la répartition sont presque
+toujours justes. Les phrases écrites à la main, plus libres que celles du jeu généré, font
+apparaître davantage de champs inventés (souvent une enseigne ou un titre déduits à tort).
+Deux cas restent difficiles : « pour nous deux » lorsqu'une autre personne a payé, et les
+prix unitaires (« 2 cafés à 3,50 ») parfois compris comme le prix de la ligne. Sur le Mac, une
+phrase est traitée en 1,5 à 2,5 secondes.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  ybar, bar width=0.62cm, width=0.86\textwidth, height=6.2cm,
+  ymin=0, ymax=1.18, ytick={0,0.2,0.4,0.6,0.8,1},
+  yticklabel style={/pgf/number format/.cd, fixed, fixed zerofill, precision=1, use comma},
+  symbolic x coords={Assistant, Scanner de tickets, Saisie par phrase},
+  xtick=data, x tick label style={font=\small},
+  enlarge x limits=0.25,
+  legend style={at={(0.5,1.04)}, anchor=south, legend columns=-1, draw=none, font=\small},
+  nodes near coords, nodes near coords style={font=\scriptsize, /pgf/number format/.cd, fixed, fixed zerofill, precision=3, use comma},
+  axis line style={draw=black!40}, tick style={draw=black!40},
+  ymajorgrids, grid style={draw=black!8},
+  ylabel={Score global}, ylabel style={font=\small},
+  ]
+  \addplot[fill=gristexte!60, draw=none] coordinates {(Assistant,0.276) (Scanner de tickets,0.792) (Saisie par phrase,0.656)};
+  \addplot[fill=lagon, draw=none] coordinates {(Assistant,0.770) (Scanner de tickets,0.954) (Saisie par phrase,0.976)};
+  \legend{Modèle de base, Modèle affiné (champion)}
+\end{axis}
+\end{tikzpicture}
+\caption{Score global de chaque modèle avant et après affinage, sur son jeu de test}
+\label{fig:scores}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Organisation du trajet}
+
+\subsubsection{Une chaîne en quatre étapes}
+
+Confier entièrement l'organisation d'une journée à un modèle de langage aurait été risqué :
+ces modèles calculent mal les distances et peuvent inventer des temps de trajet. Nous avons
+donc séparé le calcul et la rédaction. Le modèle n'intervient qu'à la fin, pour expliquer un
+résultat déjà calculé :
+
+\begin{enumerate}
+  \item \textbf{Temps de trajet.} Le backend demande à OSRM~\cite{osrm}, un moteur
+        d'itinéraires fondé sur les données OpenStreetMap~\cite{osm}, la matrice des temps et
+        des distances entre tous les lieux, à pied, à vélo ou en voiture. Si le service ne
+        répond pas, les temps sont estimés à partir de la distance à vol d'oiseau, et
+        l'application le signale.
+  \item \textbf{Répartition par jour.} Les lieux datés restent sur leur jour. Les lieux sans
+        date sont placés, du plus apprécié au moins apprécié, sur le jour dont ils sont le plus
+        proches, dans la limite du nombre de visites choisi. Les lieux qui ont plus de votes
+        contre que de votes pour sont écartés et listés à part.
+  \item \textbf{Ordre de visite.} Pour chaque jour, le backend cherche l'ordre qui minimise le
+        temps de déplacement, en respectant les heures déjà fixées par le groupe. Jusqu'à huit
+        lieux, toutes les permutations sont testées ; au-delà, une heuristique du plus proche
+        voisin est améliorée par la méthode 2-opt~\cite{croes} (figure~\ref{fig:code_ordre}).
+        Des heures sont ensuite proposées pour les lieux qui n'en ont pas : départ à 9 h,
+        90 minutes par visite, arrondi au quart d'heure.
+  \item \textbf{Rédaction.} Qwen3-4B-Instruct-2507, sans affinage, reçoit le programme
+        calculé et rédige un court texte par jour. Son prompt système lui interdit de
+        modifier l'ordre, les heures ou les durées, et d'inventer un lieu ou une distance.
+\end{enumerate}
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Python]
+def best_order(indices: list[int], stops: list[Stop], d: list[list[float]]) -> list[int]:
+    """Ordre de visite d'une journée qui minimise le temps de trajet (chemin ouvert)."""
+    if len(indices) <= EXACT_LIMIT:
+        best, best_cost = None, math.inf
+        for perm in itertools.permutations(indices):
+            if not respects_times(list(perm), stops):
+                continue
+            cost = path_cost(list(perm), d)
+            if cost < best_cost - 1e-9:
+                best, best_cost = list(perm), cost
+        return best or list(indices)
+    # Heuristique : plus proche voisin depuis chaque départ, puis améliorations 2-opt
+    best, best_cost = list(indices), math.inf
+    for start in indices:
+        order, rest = [start], set(indices) - {start}
+        while rest:
+            nxt = min(rest, key=lambda j: d[order[-1]][j])
+            order.append(nxt)
+            rest.remove(nxt)
+        improved = True
+        while improved:
+            improved = False
+            for i in range(1, len(order) - 1):
+                for k in range(i + 1, len(order)):
+                    candidate = order[:i] + order[i : k + 1][::-1] + order[k + 1 :]
+                    if path_cost(candidate, d) < path_cost(order, d) - 1e-9 and respects_times(candidate, stops):
+                        order, improved = candidate, True
+        if respects_times(order, stops) and path_cost(order, d) < best_cost:
+            best, best_cost = order, path_cost(order, d)
+    return best
+\end{lstlisting}
+\caption{Recherche du meilleur ordre de visite d'une journée (extrait simplifié)}
+\label{fig:code_ordre}
+\end{figure}
+
+\subsubsection{Garanties et suivi}
+
+L'ordre proposé n'est jamais plus long que l'ordre actuel du groupe : s'il n'y a rien à
+gagner, l'application l'indique (« Votre ordre est déjà le meilleur »). Chaque organisation
+demandée est enregistrée dans l'expérience MLflow « Equipay-trips » avec le nombre de lieux,
+le temps gagné, le temps de réponse, l'origine des temps (OSRM ou estimation) et le texte
+produit, ce qui permet
+de suivre la qualité de la rédaction et de préparer un éventuel affinage. Enfin, le trajet
+d'une journée peut être ouvert dans l'application Plans d'Apple~\cite{mapkit}, avec
+toutes les étapes dans l'ordre et le mode de déplacement choisi.
+
+% ---------------------------------------------------------------------
+\subsection{Fonctionnalités transverses}
+
+\subsubsection{Équilibrage des comptes}
+
+À partir des soldes, l'application calcule la liste des remboursements à effectuer
+(figure~\ref{fig:code_rembourse}). Les débiteurs et les créanciers sont triés par montant ;
+le plus gros débiteur rembourse le plus gros créancier, et l'on recommence avec ce qui
+reste. Pour $n$ personnes concernées, cette méthode produit au plus $n - 1$ virements.
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Dart]
+List<Settlement> settleUp(List<MemberSummary> members) {
+  final debtors = [for (final m in members) if (m.balance < -0.005) (m, -m.balance)]
+    ..sort((a, b) => b.$2.compareTo(a.$2));
+  final creditors = [for (final m in members) if (m.balance > 0.005) (m, m.balance)]
+    ..sort((a, b) => b.$2.compareTo(a.$2));
+  final result = <Settlement>[];
+  var d = 0, c = 0;
+  var owe = debtors.isEmpty ? 0.0 : debtors[0].$2;
+  var due = creditors.isEmpty ? 0.0 : creditors[0].$2;
+  while (d < debtors.length && c < creditors.length) {
+    final amount = math.min(owe, due);
+    if (amount >= 0.01) result.add(Settlement(debtors[d].$1, creditors[c].$1, (amount * 100).round() / 100));
+    owe -= amount;
+    due -= amount;
+    if (owe < 0.005 && ++d < debtors.length) owe = debtors[d].$2;
+    if (due < 0.005 && ++c < creditors.length) due = creditors[c].$2;
+  }
+  return result;
+}
+\end{lstlisting}
+\caption{Calcul des remboursements qui remettent tous les soldes à zéro}
+\label{fig:code_rembourse}
+\end{figure}
+
+\subsubsection{Temps réel et mode hors ligne}
+
+Les tables des dépenses, des photos et du programme sont publiées sur le canal temps réel de
+Supabase. Lorsqu'un membre ajoute une dépense ou vote, les autres téléphones reçoivent un
+événement et rechargent la vue concernée ; les rechargements rapprochés sont regroupés pour
+éviter les appels inutiles. Sans réseau, un bandeau l'indique, et l'application se met à jour
+d'elle-même au retour de la connexion.
+
+\subsubsection{Rôles, archivage et demandes}
+
+Rejoindre une activité passe par un code de huit caractères, puis par une demande que le
+créateur accepte ou refuse. L'archivage est propre à chaque utilisateur : archiver un voyage
+terminé ne le masque pas pour les autres. Supprimer une activité est réservé à son créateur ;
+un autre membre peut seulement la quitter, à condition de ne pas avoir de dépenses.
+
+% ---------------------------------------------------------------------
+\subsection{Extraits de code significatifs et choix d'implémentation}
+
+Plusieurs choix d'implémentation méritent d'être soulignés :
+
+\begin{itemize}
+  \item \textbf{La sécurité dans la base, pas dans l'application.} Les droits sont écrits en
+        SQL, au plus près des données (figure~\ref{fig:code_rls}). Même une requête construite
+        à la main avec un jeton valide ne peut pas lire ou modifier l'activité d'un autre
+        groupe.
+  \item \textbf{Un repli automatique pour le scanner.} Si le chargement de la version MLX
+        échoue, le backend charge la version PyTorch et continue de répondre
+        (figure~\ref{fig:code_repli}).
+  \item \textbf{Les chiffres ne viennent jamais du modèle quand un calcul est possible.}
+        Temps de trajet, ordre de visite, pourcentages et soldes sont calculés ; les modèles
+        extraient ou rédigent, ils ne calculent pas.
+  \item \textbf{Des services remplaçables.} Chaque service de l'application peut être
+        remplacé par une version en mémoire, ce qui a permis d'écrire 62 tests d'interface
+        exécutés sans réseau, complétés par 27 tests du backend.
+\end{itemize}
+
+\begin{figure}[H]
+\begin{lstlisting}[language=SQL2]
+create policy trip_items_insert on public.trip_items for insert to authenticated
+  with check (
+    created_by = (select auth.uid())
+    and public.can_edit(activity_id)
+    and public.has_program(activity_id)
+  );
+
+create policy trip_items_update on public.trip_items for update to authenticated
+  using (created_by = (select auth.uid()) or public.is_owner(activity_id))
+  with check (public.can_edit(activity_id));
+\end{lstlisting}
+\caption{Règles d'accès au programme : ajout par un membre, modification par l'auteur ou le créateur}
+\label{fig:code_rls}
+\end{figure}
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Python]
+def load(self) -> None:
+    """Charge le modèle. En cas d'échec, l'erreur est gardée et l'API répond 503."""
+    with self._loading:
+        if self.ready:
+            return
+        engines = ["mlx", "torch"] if config.RECEIPT_ENGINE == "mlx" else ["torch"]
+        for engine in engines:
+            try:
+                (self._load_mlx if engine == "mlx" else self._load_torch)()
+                self.engine = engine
+                self.error = None
+                return
+            except Exception as e:
+                self.error = f"{type(e).__name__}: {e}"
+                log.error("Scanner de reçus (%s) indisponible : %s", engine, self.error)
+\end{lstlisting}
+\caption{Chargement du scanner avec repli de MLX vers PyTorch (extrait simplifié)}
+\label{fig:code_repli}
+\end{figure}
+
+% ---------------------------------------------------------------------
+\subsection{Exécution locale et choix d'hébergement}
+
+\subsubsection{Exécution sur le Mac}
+
+Pendant le projet, le backend d'IA tourne sur le Mac de développement. Un script de
+lancement démarre MLflow, attend qu'il soit prêt, démarre le backend, puis installe et lance
+l'application sur l'iPhone ; un second script arrête l'ensemble. Le téléphone joint le
+backend par le nom réseau du Mac plutôt que par son adresse IP, qui change d'un réseau à
+l'autre. Le téléphone et le Mac doivent simplement être sur le même réseau.
+
+\subsubsection{Comparaison avec un serveur GPU dans le cloud}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabularx}{\textwidth}{|L{3.0cm}|Y|Y|}
+\hline
+\rowcolor{entete}\textbf{Critère} & \textbf{Mac local (retenu)} & \textbf{Serveur GPU dans le cloud} \\ \hline
+Coût & Nul : matériel déjà disponible & Facturation à l'heure, même sans utilisateur \\ \hline
+Mise en place & Immédiate, scripts de lancement & Image, pilotes GPU, HTTPS et nom de domaine à configurer \\ \hline
+Disponibilité & Seulement quand le Mac est allumé et sur le même réseau & Accessible partout, à tout moment \\ \hline
+Confidentialité & Photos et phrases ne quittent pas le réseau local & Données envoyées à un hébergeur \\ \hline
+Mémoire & 18 Go partagés, d'où la quantification en 4 bits & Plus de marge, modèles en 16 bits possibles \\ \hline
+Cas d'usage idéal & Développement, démonstration, petit groupe & Publication de l'application au public \\ \hline
+\end{tabularx}
+\caption{Comparaison entre l'exécution locale et un serveur GPU dans le cloud}
+\label{tab:hebergement}
+\end{table}
+
+Le tableau~\ref{tab:hebergement} résume ce choix. Pour un projet de démonstration utilisé par
+quelques personnes, l'exécution locale offre un coût nul et garde les données sur le réseau
+local, au prix d'une disponibilité limitée. Un passage au cloud ne demanderait aucun
+changement dans l'application : il suffirait de modifier l'adresse du backend.
+
+% ---------------------------------------------------------------------
+\subsection{Conclusion du chapitre}
+
+Ce chapitre a détaillé la réalisation d'\equipay : l'environnement de travail, le choix des
+modèles, l'entraînement et l'évaluation de chacun d'eux, l'organisation du trajet, les
+fonctionnalités transverses et la stratégie d'exécution retenue. Chaque modèle affiné fait
+nettement mieux que son modèle de base sur un jeu de test mesuré de la même façon pour
+toutes les versions, et chaque limite connue est compensée dans l'application par une
+vérification humaine. Le chapitre suivant présente l'application obtenue à travers ses
+principaux écrans.

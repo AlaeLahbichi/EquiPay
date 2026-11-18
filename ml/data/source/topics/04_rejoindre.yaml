@@ -1,0 +1,334 @@
+# Rejoindre une activité avec un code, demandes et onglet Requests.
+category: rejoindre
+
+topics:
+  - id: rejoindre_code
+    answer: >-
+      Sur l'accueil, appuie sur le bouton « + », puis « Rejoindre une activité ». Saisis le
+      code de 8 caractères envoyé par le créateur (par exemple FN3V-HM7S) et appuie sur
+      « Envoyer la demande ». Tu rejoins l'activité dès que le créateur accepte.
+    keywords: [+, Rejoindre une activité, code, Envoyer la demande, accepte]
+    questions:
+      - Comment rejoindre une activité ?
+      - Un ami m'a envoyé un code, j'en fais quoi ?
+      - Comment rejoindre le voyage de mes amis ?
+      - Où je mets le code d'une activité ?
+      - Comment entrer dans un groupe existant ?
+      - J'ai reçu un code de voyage, comment l'utiliser ?
+      - Comment je rejoins un groupe avec un code ?
+      - Comment participer à une activité déjà créée ?
+      - Où saisir le code d'invitation ?
+      - Mon pote a créé le voyage, comment j'y entre ?
+      - Comment intégrer une sortie existante ?
+      - How do I join an activity?
+      - My friend sent me a code, what do I do?
+      - Kifach ndkhol l activité b code ?
+      - Sa7bi sift liya code, fin n7etto ?
+      - Comment rejoindre la coloc sur l'app ?
+
+  - id: demande_validation
+    answer: >-
+      Quand tu saisis un code, une demande est envoyée au créateur de l'activité. Il l'accepte
+      ou la refuse dans son onglet Requests ; tu es prévenu de sa réponse et, s'il accepte, tu
+      deviens membre de l'activité.
+    keywords: [demande, créateur, Requests, membre]
+    questions:
+      - Pourquoi je n'entre pas directement dans l'activité avec le code ?
+      - Le créateur doit accepter ma demande ?
+      - Pourquoi mon code envoie une demande ?
+      - Que se passe-t-il après avoir saisi le code ?
+      - Faut-il une validation pour rejoindre ?
+      - Pourquoi il faut l'accord du créateur ?
+      - What happens after I enter the code?
+      - Does the owner have to approve me?
+      - Wach khass l'owner y9bel ?
+      - J'ai saisi le code mais je ne vois pas l'activité
+      - Demande envoyée, ça veut dire quoi ?
+      - L'activité n'apparaît pas après le code, normal ?
+
+  - id: rejoint_role
+    answer: >-
+      Quand le créateur accepte ta demande, tu rejoins l'activité en tant que membre. Le
+      créateur peut ensuite changer ton rôle en spectateur s'il le souhaite.
+    keywords: [membre, créateur, spectateur]
+    questions:
+      - Je rejoins avec quel rôle ?
+      - Avec le code, je suis membre ou spectateur ?
+      - Quel rôle j'ai après avoir rejoint ?
+      - En rejoignant, j'ai quels droits ?
+      - Which role do I get when I join?
+      - Ana membre wla spectateur mli ndkhol ?
+      - Pourquoi je suis passé spectateur après avoir rejoint ?
+      - Quel statut après l'acceptation de ma demande ?
+
+  - id: format_code
+    answer: >-
+      Le code fait 8 caractères, par exemple FN3V-HM7S. Tu peux le saisir en majuscules ou en
+      minuscules, avec ou sans tiret. Il ne contient ni 0, ni O, ni 1, ni I, ni L pour éviter
+      les confusions.
+    keywords: [8, majuscules, tiret]
+    questions:
+      - Le code est en majuscules ou minuscules ?
+      - Il faut mettre le tiret dans le code ?
+      - Combien de caractères fait le code ?
+      - À quoi ressemble un code d'activité ?
+      - Le code est sensible à la casse ?
+      - C'est un O ou un zéro dans le code ?
+      - Je dois taper le tiret ?
+      - Le code contient des chiffres ?
+      - C'est un I ou un 1 dans mon code ?
+      - Quel est le format du code ?
+      - What does an activity code look like?
+      - Code chhal fih men 7arf ?
+      - Il dit que le code contient 8 caractères
+
+  - id: code_invalide
+    answer: >-
+      « Code invalide » signifie que ce code ne correspond à aucune activité : vérifie les 8
+      caractères ou demande à nouveau le code au créateur de l'activité.
+    keywords: [Code invalide, 8, créateur]
+    questions:
+      - Pourquoi il me dit code invalide ?
+      - Mon code ne marche pas
+      - J'ai une erreur Code invalide
+      - Le code de mon ami est refusé
+      - Pourquoi je n'arrive pas à rejoindre avec le code ?
+      - Le code ne fonctionne plus, pourquoi ?
+      - Code refusé alors que je l'ai bien tapé
+      - Impossible de rejoindre, code invalide
+      - Que faire si le code est faux ?
+      - It says invalid code
+      - Code makhdamch, kaygoul invalide
+      - Le code d'hier ne marche plus
+
+  - id: deja_membre
+    answer: >-
+      Le message « Tu fais déjà partie de… » veut dire que tu es déjà dans cette activité :
+      inutile d'envoyer une demande, elle est déjà dans ta liste sur l'accueil.
+    keywords: [Tu fais déjà partie, accueil]
+    questions:
+      - Pourquoi il me dit que je fais déjà partie de l'activité ?
+      - Erreur déjà membre, ça veut dire quoi ?
+      - J'ai saisi le code de mon propre voyage
+      - Message tu fais déjà partie de
+      - Je suis déjà dans le groupe ?
+      - It says I'm already a member
+      - Kaygoul liya rak deja m3ahom
+      - Pourquoi je ne peux pas rejoindre une activité où je suis déjà ?
+      - J'ai rentré le code de ma propre activité
+
+  - id: demande_en_attente
+    answer: >-
+      « Ta demande est déjà en attente » veut dire que tu as déjà envoyé une demande pour
+      cette activité : attends la réponse du créateur. Tu la suis dans l'onglet Requests,
+      section Envoyées.
+    keywords: [déjà en attente, créateur, Requests, Envoyées]
+    questions:
+      - Pourquoi il dit que ma demande est déjà en attente ?
+      - J'ai envoyé deux fois le code
+      - Je peux renvoyer une demande ?
+      - Ma demande est en attente depuis longtemps
+      - Message demande déjà en attente
+      - It says my request is already pending
+      - Talab dyali mazal kaytsenna
+      - Comment relancer le créateur ?
+      - Pourquoi je ne peux pas redemander à rejoindre ?
+
+  - id: voir_code
+    answer: >-
+      Seul l'owner voit le code : ouvre l'activité, il apparaît discrètement sous son nom,
+      masqué (••••-••••). Appuie sur l'œil pour l'afficher. Si tu es membre, demande le code
+      au créateur.
+    keywords: [owner, masqué, œil, créateur]
+    questions:
+      - Où je trouve le code de mon activité ?
+      - Pourquoi je ne vois pas le code du voyage ?
+      - Qui peut voir le code d'invitation ?
+      - Je suis membre, je peux voir le code ?
+      - Où est affiché le code pour inviter des amis ?
+      - Comment obtenir le code d'un voyage ?
+      - Pourquoi le code est caché ?
+      - Comment récupérer le code de la sortie ?
+      - Pourquoi le code s'affiche avec des points ?
+      - Where can I find the activity code?
+      - Fin kayn l code dyal l'activité ?
+      - À quoi sert l'œil à côté du code ?
+      - Le code est confidentiel ?
+
+  - id: copier_code
+    answer: >-
+      Ouvre ton activité et appuie sur l'icône de copie à côté du code : il est copié dans ton
+      presse-papiers. Colle-le ensuite dans un message à tes amis.
+    keywords: [copie, code, presse-papiers]
+    questions:
+      - Comment copier le code ?
+      - Comment partager le code de l'activité ?
+      - Comment envoyer le code à mes amis ?
+      - Je veux donner le code à un ami, comment faire ?
+      - Comment envoyer le code par WhatsApp ?
+      - Il y a un bouton pour copier le code ?
+      - How do I copy the code?
+      - Kifach nnsakh l code ?
+      - Code copié, ça veut dire quoi ?
+      - Comment transmettre le code de mon voyage ?
+
+  - id: inviter_amis
+    answer: >-
+      Pour inviter des amis, ouvre ton activité, copie son code et envoie-le-leur. Chacun le
+      saisit avec « + » puis « Rejoindre une activité », et tu acceptes leurs demandes dans
+      l'onglet Requests.
+    keywords: [code, Rejoindre une activité, Requests]
+    questions:
+      - Comment inviter quelqu'un dans mon activité ?
+      - Comment ajouter un ami à mon voyage ?
+      - Comment ajouter des participants ?
+      - Comment faire venir mes amis dans le groupe ?
+      - Comment ajouter un nouvel utilisateur à mon voyage ?
+      - Comment inviter ma famille dans l'activité ?
+      - Comment j'invite des gens ?
+      - How do I invite friends?
+      - Kifach nzid s7abi f l'activité ?
+      - Bghit n invité khti
+      - Comment ajouter mes colocataires ?
+      - Un membre peut inviter quelqu'un ?
+      - Mon ami n'a pas encore l'app, comment l'inviter ?
+
+  - id: requests
+    answer: >-
+      L'onglet Requests regroupe les demandes pour rejoindre des activités, en deux parties :
+      « Reçues », les demandes pour tes activités à accepter ou refuser, et « Envoyées », les
+      demandes que tu as faites avec leur statut.
+    keywords: [Requests, Reçues, Envoyées, statut]
+    questions:
+      - C'est quoi l'onglet Requests ?
+      - À quoi sert Requests ?
+      - Que trouve-t-on dans Requests ?
+      - Requests ça veut dire quoi ?
+      - Où sont les demandes que je reçois ?
+      - L'onglet des demandes sert à quoi ?
+      - Que faire dans l'onglet Requests ?
+      - Explique-moi la page Requests
+      - Différence entre Reçues et Envoyées ?
+      - What is the Requests tab?
+      - Requests chno kayn fiha ?
+      - Où voir mes demandes ?
+
+  - id: accepter_demande
+    answer: >-
+      Va dans l'onglet Requests, section « Reçues » : chaque demande indique qui veut
+      rejoindre quelle activité. Appuie sur « Accepter » pour l'ajouter comme membre, ou sur
+      « Refuser ».
+    keywords: [Requests, Reçues, Accepter, Refuser]
+    questions:
+      - Comment accepter une demande ?
+      - Quelqu'un veut rejoindre mon activité, que faire ?
+      - Comment valider un nouveau membre ?
+      - Où j'accepte mes amis dans le voyage ?
+      - Comment refuser quelqu'un ?
+      - Comment répondre à une demande ?
+      - J'ai reçu une demande, comment l'accepter ?
+      - How do I accept a join request?
+      - Kifach n9bel chi wa7ed ?
+      - Une personne inconnue veut rejoindre mon voyage
+      - Je ne connais pas la personne qui demande à rejoindre
+      - Je veux refuser une demande
+
+  - id: notification_demande
+    answer: >-
+      Quand une demande arrive ou qu'on répond à la tienne, une notification s'affiche en bas
+      de l'écran avec un bouton « Voir », et un compteur rouge apparaît sur l'onglet Requests.
+    keywords: [notification, Voir, compteur, Requests]
+    questions:
+      - Comment je sais qu'une demande est arrivée ?
+      - C'est quoi le chiffre rouge sur Requests ?
+      - Pourquoi j'ai une pastille sur l'onglet Requests ?
+      - Je suis prévenu quand on accepte ma demande ?
+      - L'app m'avertit des nouvelles demandes ?
+      - C'est quoi le message avec le bouton Voir ?
+      - How do I know someone wants to join?
+      - Chno had r9em l7mer ?
+      - Pourquoi j'ai une notification dans Requests ?
+      - Le badge sur Requests ne part pas
+      - Je reçois une alerte quand on refuse ma demande ?
+
+  - id: statuts_demande
+    answer: >-
+      Dans l'onglet Requests, section « Envoyées », chaque demande a un statut : « En
+      attente » (pas encore de réponse), « Acceptée » (tu es membre), « Refusée » ou
+      « Annulée ».
+    keywords: [Envoyées, En attente, Acceptée, Refusée, Annulée]
+    questions:
+      - Comment suivre ma demande ?
+      - Ma demande a été acceptée ?
+      - Que veut dire En attente ?
+      - Comment savoir si on m'a accepté ?
+      - Où voir la réponse à ma demande ?
+      - Que signifie le statut Refusée ?
+      - Les statuts des demandes veulent dire quoi ?
+      - How do I check my request status?
+      - Kifach n3ref wach t9bel talab dyali ?
+      - Ma demande est passée en Acceptée, et maintenant ?
+
+  - id: annuler_demande
+    answer: >-
+      Tant que ta demande est « En attente », ouvre l'onglet Requests, section « Envoyées », et
+      appuie sur « Annuler » : le créateur ne pourra plus l'accepter.
+    keywords: [En attente, Envoyées, Annuler]
+    questions:
+      - Comment annuler ma demande ?
+      - Je me suis trompé de code, comment annuler ?
+      - Je ne veux plus rejoindre cette activité
+      - Comment retirer une demande envoyée ?
+      - Je peux supprimer une demande en attente ?
+      - Comment annuler une demande envoyée par erreur ?
+      - How do I cancel my request?
+      - Kifach nalghi talab ?
+      - Une demande acceptée peut être annulée ?
+      - J'ai demandé à rejoindre le mauvais voyage
+
+  - id: demande_refusee
+    answer: >-
+      Si ta demande est refusée, tu ne rejoins pas l'activité. Parles-en au créateur : s'il
+      est d'accord, renvoie une demande avec le même code.
+    keywords: [refusée, créateur, code]
+    questions:
+      - Ma demande a été refusée, pourquoi ?
+      - Le créateur a refusé ma demande, que faire ?
+      - Je peux redemander après un refus ?
+      - Pourquoi on m'a refusé ?
+      - Refus de ma demande, je fais quoi ?
+      - My request was rejected, what now?
+      - Rafdo talab dyali
+      - Demande refusée par erreur
+      - Comment rejoindre après un refus ?
+
+  - id: createur_ne_repond_pas
+    answer: >-
+      Ta demande reste « En attente » tant que le créateur n'a pas répondu. Préviens-le
+      directement : il la trouve dans son onglet Requests, section « Reçues ».
+    keywords: [En attente, créateur, Requests, Reçues]
+    questions:
+      - Le créateur ne répond pas à ma demande
+      - Ma demande n'est jamais acceptée
+      - Combien de temps pour être accepté ?
+      - Le propriétaire de l'activité ne voit pas ma demande
+      - Ma demande expire ?
+      - The owner never answers my request
+      - L'owner ma jawebnich
+      - Ça fait deux jours que j'attends l'acceptation
+      - Comment accélérer l'acceptation ?
+
+  - id: demandes_deconnecte
+    answer: >-
+      Sans être connecté, l'onglet Requests affiche « Connecte-toi pour voir tes demandes ».
+      Connecte-toi dans l'onglet Profile pour retrouver tes demandes reçues et envoyées.
+    keywords: [Connecte-toi pour voir tes demandes, Profile]
+    questions:
+      - Pourquoi Requests me demande de me connecter ?
+      - Je ne vois pas mes demandes, pourquoi ?
+      - L'onglet Requests est vide quand je suis déconnecté
+      - Requests dit connecte-toi pour voir tes demandes
+      - Why is the Requests tab asking me to sign in?
+      - Requests khawya, 3lach ?
+      - Mes demandes ont disparu après la déconnexion
+      - Il faut un compte pour recevoir des demandes ?

@@ -1,0 +1,448 @@
+# Le thème : partager des dépenses en groupe (conseils et cas pratiques),
+# toujours relié à la façon de le faire dans EquiPay.
+category: theme
+
+topics:
+  - id: egal_ou_equitable
+    answer: >-
+      Partager à parts égales, c'est diviser le montant par le nombre de personnes. Partager
+      équitablement, c'est tenir compte de ce que chacun a consommé ou de sa situation. Dans
+      EquiPay, les pourcentages de chaque dépense permettent les deux.
+    keywords: [parts égales, équitablement, pourcentages]
+    questions:
+      - Quelle différence entre partage égal et partage équitable ?
+      - Vaut-il mieux partager à parts égales ou au prorata ?
+      - C'est quoi un partage équitable ?
+      - Faut-il toujours diviser en parts égales ?
+      - Comment partager de façon juste entre amis ?
+      - What is the difference between equal and fair split?
+      - Partage égal ou équitable, lequel choisir ?
+      - Kifach n9essmo b l3adl ?
+      - Est-ce juste que tout le monde paie pareil ?
+      - Partage équitable ou égalitaire pour un voyage ?
+
+  - id: prorata_revenus
+    answer: >-
+      Pour partager selon les revenus, calcule la part de chacun dans le total des revenus. Par
+      exemple, si l'un gagne 2 000 € et l'autre 1 000 €, le premier paie 67 % et le second
+      33 %. Dans EquiPay, indique ces pourcentages dans la dépense.
+    keywords: [revenus, 67, 33, pourcentages]
+    questions:
+      - Comment partager selon les salaires ?
+      - Partager au prorata des revenus, comment faire ?
+      - Mon copain gagne plus que moi, comment partager le loyer ?
+      - Comment calculer une répartition selon les revenus ?
+      - Est-ce qu'on peut partager en fonction de ce que chacun gagne ?
+      - How do we split according to income?
+      - Kifach n9essmo 3la 7sab chehriya ?
+      - Répartition proportionnelle aux salaires dans un couple
+      - On ne gagne pas pareil, comment partager les dépenses ?
+
+  - id: colocation_loyer
+    answer: >-
+      En colocation, le loyer se partage souvent selon la taille des chambres : par exemple
+      40 % pour la grande chambre et 30 % pour chacune des deux autres. Crée une activité de
+      type Quotidien et utilise ces pourcentages pour chaque loyer.
+    keywords: [chambres, 40, 30, Quotidien, pourcentages]
+    questions:
+      - Comment partager le loyer en colocation ?
+      - Ma chambre est plus grande, je dois payer plus ?
+      - Comment diviser le loyer entre colocataires ?
+      - Loyer en coloc avec des chambres de tailles différentes
+      - Comment répartir le loyer équitablement ?
+      - How should roommates split the rent?
+      - Kifach n9essmo lkra f la coloc ?
+      - Faut-il payer plus pour la chambre avec balcon ?
+      - Comment gérer le loyer d'un appartement partagé ?
+
+  - id: colocation_courses
+    answer: >-
+      Pour les courses et les factures communes d'une colocation (électricité, internet,
+      produits ménagers), crée une activité de type Quotidien et ajoute chaque dépense en
+      parts égales. Les soldes montrent qui a avancé trop ou pas assez.
+    keywords: [Quotidien, parts égales, soldes]
+    questions:
+      - Comment gérer les courses en colocation ?
+      - Comment partager les factures d'électricité entre colocs ?
+      - Qui paie internet dans une coloc ?
+      - Comment suivre les dépenses communes de l'appartement ?
+      - Comment éviter les disputes pour les courses en coloc ?
+      - How to manage shared groceries with roommates?
+      - Kifach ndabro lmasrouf dyal dar m3a s7abi ?
+      - Comment organiser les dépenses du quotidien entre colocataires ?
+      - Factures partagées en coloc, quelle méthode ?
+
+  - id: budget_voyage
+    answer: >-
+      Avant un voyage en groupe, mettez-vous d'accord sur un budget par personne pour le
+      logement, le transport, les repas et les activités. Ensuite, créez une activité Voyage
+      dans EquiPay et notez chaque dépense au fil du séjour pour suivre le total.
+    keywords: [budget, logement, transport, Voyage, total]
+    questions:
+      - Comment préparer le budget d'un voyage entre amis ?
+      - Comment organiser l'argent d'un voyage en groupe ?
+      - Quel budget prévoir pour un voyage à plusieurs ?
+      - Comment gérer les dépenses d'un road trip ?
+      - Conseils pour gérer l'argent pendant un voyage entre potes
+      - How do we plan a group trip budget?
+      - Kifach nwejdo budget dyal safar m3a s7ab ?
+      - Comment éviter de dépasser le budget du voyage ?
+      - Comment suivre les dépenses pendant les vacances en groupe ?
+
+  - id: avance_ou_cagnotte
+    answer: >-
+      Il y a deux méthodes : une cagnotte commune où chacun verse la même somme au départ, ou
+      chacun avance les dépenses et on fait les comptes à la fin. EquiPay est fait pour la
+      seconde : chacun note ce qu'il paie et les soldes indiquent qui rembourse qui.
+    keywords: [cagnotte, avance, soldes]
+    questions:
+      - Vaut-il mieux faire une cagnotte ou que chacun avance ?
+      - Cagnotte commune ou comptes à la fin ?
+      - Comment gérer l'argent commun d'un groupe ?
+      - On met tous de l'argent au début ou pas ?
+      - Quelle méthode pour payer pendant un séjour en groupe ?
+      - Should we use a common pot or pay as we go?
+      - Ndiro sandou9 wla kol wa7ed ykhelles ?
+      - Comment fonctionne une caisse commune entre amis ?
+      - Pot commun ou dépenses avancées, que choisir ?
+
+  - id: addition_restaurant
+    answer: >-
+      Au restaurant, vous pouvez partager l'addition à parts égales, ou chacun paie ce qu'il a
+      commandé. Dans EquiPay, la personne qui a payé ajoute la dépense et ajuste les
+      pourcentages selon les plats de chacun.
+    keywords: [addition, parts égales, pourcentages]
+    questions:
+      - Comment partager une addition au restaurant ?
+      - L'un a pris une entrée et un dessert, comment partager ?
+      - Faut-il partager l'addition à parts égales ?
+      - Comment diviser la note quand chacun a commandé des choses différentes ?
+      - J'ai juste pris une salade, je dois payer autant que les autres ?
+      - How do we split a restaurant bill?
+      - Kifach n9essmo l'addition f restaurant ?
+      - Comment gérer l'addition d'un dîner de groupe ?
+      - Un ami n'a pas bu d'alcool, comment ajuster la note ?
+
+  - id: covoiturage_essence
+    answer: >-
+      Pour un covoiturage, additionnez l'essence et les péages, puis partagez entre les
+      passagers, conducteur compris ou non selon votre accord. Dans EquiPay, ajoute la dépense
+      payée par le conducteur avec les pourcentages choisis.
+    keywords: [essence, péages, conducteur, pourcentages]
+    questions:
+      - Comment partager les frais d'essence ?
+      - Comment diviser l'essence et les péages en covoiturage ?
+      - Le conducteur doit-il payer l'essence ?
+      - Comment rembourser le conducteur d'un road trip ?
+      - Partage des frais de voiture entre amis
+      - How do we split gas money?
+      - Kifach n9essmo lmazot ?
+      - Comment compter l'usure de la voiture ?
+      - Calculer la part d'essence de chaque passager
+
+  - id: location_logement
+    answer: >-
+      Pour une location comme un Airbnb ou un riad, la personne qui réserve ajoute la dépense
+      complète dans EquiPay et la partage entre les participants. Si certains restent moins de
+      nuits, ajuste les pourcentages en fonction des nuits passées.
+    keywords: [location, dépense, nuits, pourcentages]
+    questions:
+      - Comment partager un Airbnb entre amis ?
+      - Un ami reste moins de nuits, comment partager le logement ?
+      - Comment rembourser celui qui a réservé l'hôtel ?
+      - Partage de la location d'un riad à plusieurs
+      - Comment répartir le prix d'une maison de vacances ?
+      - How do we split an Airbnb?
+      - Kifach n9essmo lkra dyal riad ?
+      - Quelqu'un arrive un jour plus tard, comment calculer sa part ?
+      - Réservation payée par une seule personne pour le groupe
+
+  - id: cadeau_commun
+    answer: >-
+      Pour un cadeau commun, la personne qui l'achète ajoute la dépense dans EquiPay, se met
+      comme payeur et partage entre tous ceux qui participent. La personne qui reçoit le
+      cadeau n'est pas incluse dans le partage.
+    keywords: [cadeau, payeur, partage]
+    questions:
+      - Comment organiser un cadeau commun ?
+      - Comment partager le prix d'un cadeau d'anniversaire ?
+      - On offre un cadeau à plusieurs, comment gérer ?
+      - Cadeau collectif pour un collègue, comment partager ?
+      - Comment faire une collecte pour un cadeau ?
+      - How do we share a group gift?
+      - Kifach nchriw cadeau m3a ba3d ?
+      - Celui qui reçoit le cadeau doit-il payer ?
+      - Cadeau de mariage commun entre amis
+
+  - id: anniversaire_invite
+    answer: >-
+      Quand on invite quelqu'un, par exemple pour son anniversaire, il ne participe pas à la
+      dépense : répartissez 100 % entre les autres. Dans EquiPay, ne mets simplement pas la
+      personne invitée parmi les participants.
+    keywords: [invite, 100, participants]
+    questions:
+      - Comment partager un dîner où on invite quelqu'un ?
+      - On invite notre ami pour son anniversaire, comment partager ?
+      - La personne fêtée ne paie pas, comment faire ?
+      - Comment exclure l'invité du partage ?
+      - Repas offert à un ami, qui paie quoi ?
+      - How do we split when we treat someone?
+      - Kifach n9essmo mli nkhelsso 3la chi wa7ed ?
+      - Anniversaire surprise, comment partager les frais ?
+
+  - id: enfants_parts
+    answer: >-
+      Avec des familles, on peut compter les enfants pour une part réduite, par exemple une
+      demi-part. Dans EquiPay, répartis les pourcentages par famille selon le nombre d'adultes
+      et d'enfants.
+    keywords: [enfants, demi-part, pourcentages]
+    questions:
+      - Comment partager avec des familles qui ont des enfants ?
+      - Les enfants comptent comme un adulte ?
+      - Vacances entre familles, comment partager ?
+      - Une famille de 4 et un couple, comment répartir ?
+      - Comment compter les enfants dans le partage ?
+      - How do we split costs with kids?
+      - Kifach n7esbo drari f l9isma ?
+      - Partage des frais avec des familles de tailles différentes
+
+  - id: couple_depenses
+    answer: >-
+      En couple, vous pouvez partager les dépenses communes à 50/50 ou selon vos revenus.
+      Créez une activité Quotidien dans EquiPay pour noter le loyer, les courses et les
+      sorties, et voir qui a avancé le plus.
+    keywords: [couple, 50, revenus, Quotidien]
+    questions:
+      - Comment gérer les dépenses en couple ?
+      - Comment partager les frais avec mon conjoint ?
+      - En couple, faut-il tout partager à 50/50 ?
+      - Comment suivre qui paie quoi dans notre couple ?
+      - Dépenses communes avec ma copine, comment faire ?
+      - How should couples split expenses?
+      - Kifach n9essmo lmasrouf ana w mrati ?
+      - Compte commun ou suivi des dépenses en couple ?
+
+  - id: pret_ami
+    answer: >-
+      Pour un prêt entre amis, crée une activité de type Crédit et note la somme prêtée comme
+      une dépense payée par le prêteur à 100 % pour l'emprunteur. Chaque remboursement
+      s'ajoute ensuite, et le solde montre ce qu'il reste à rendre.
+    keywords: [Crédit, prêteur, 100, solde]
+    questions:
+      - Comment suivre un prêt à un ami ?
+      - J'ai prêté 500 euros, comment le noter ?
+      - Comment gérer une dette entre amis ?
+      - Comment savoir combien il me reste à recevoir ?
+      - Suivre un remboursement en plusieurs fois
+      - How do I track money I lent a friend?
+      - Sellefet sa7bi flouss, kifach nsejjel ?
+      - Mon frère me rembourse petit à petit, comment suivre ?
+      - Comment ne pas oublier qui me doit de l'argent ?
+
+  - id: eviter_conflits
+    answer: >-
+      Pour éviter les conflits d'argent : mettez-vous d'accord sur les règles avant de
+      dépenser, notez chaque dépense tout de suite et faites les comptes régulièrement. Avec
+      EquiPay, tout le groupe voit les mêmes dépenses et les mêmes soldes.
+    keywords: [règles, notez, soldes]
+    questions:
+      - Comment éviter les disputes d'argent entre amis ?
+      - Comment ne pas se fâcher pour l'argent en voyage ?
+      - Conseils pour partager les frais sans conflit
+      - Comment parler d'argent avec ses amis ?
+      - Mon ami ne rembourse jamais, comment aborder le sujet ?
+      - How to avoid money fights with friends?
+      - Kifach mantkhasmouch 3la flouss ?
+      - Comment rester transparent sur les dépenses du groupe ?
+      - L'argent crée des tensions dans notre coloc
+
+  - id: noter_tout_de_suite
+    answer: >-
+      Le mieux est de noter chaque dépense dès qu'elle est payée, avec la photo du reçu si
+      possible. On évite ainsi les oublis et les discussions à la fin du séjour.
+    keywords: [dès, reçu, oublis]
+    questions:
+      - Quand faut-il noter les dépenses ?
+      - Je note tout à la fin ou au fur et à mesure ?
+      - Comment ne pas oublier de dépenses ?
+      - Conseil pour bien suivre les dépenses d'un groupe ?
+      - Faut-il garder les tickets de caisse ?
+      - When should I log expenses?
+      - Imta nsejjel les dépenses ?
+      - Comment ne rien oublier pendant le voyage ?
+
+  - id: quand_rembourser
+    answer: >-
+      On peut rembourser à la fin du voyage ou régulièrement, par exemple chaque mois en
+      colocation. Le plus simple est de regarder les soldes dans EquiPay : ceux en négatif
+      remboursent ceux en positif.
+    keywords: [fin du voyage, chaque mois, soldes]
+    questions:
+      - Quand faut-il rembourser ?
+      - On rembourse à la fin du voyage ou tout de suite ?
+      - À quel moment faire les comptes ?
+      - Il faut solder les comptes chaque mois en coloc ?
+      - Quel est le bon moment pour régler les dettes ?
+      - When should we settle up?
+      - Imta nkhelsso b3dyatna ?
+      - Faut-il rembourser après chaque dépense ?
+
+  - id: simplifier_remboursements
+    answer: >-
+      Pour limiter les virements, chaque personne en négatif rembourse les personnes en
+      positif jusqu'à ce que tous les soldes reviennent à 0. Il n'est pas nécessaire de
+      rembourser chaque dépense séparément.
+    keywords: [négatif, positif, 0]
+    questions:
+      - Comment réduire le nombre de remboursements ?
+      - Faut-il rembourser chaque dépense une par une ?
+      - Comment simplifier les comptes entre plusieurs amis ?
+      - Comment éviter de faire plein de petits virements ?
+      - Méthode la plus simple pour solder un voyage ?
+      - How can we minimize the number of payments?
+      - Kifach n9ellou les virements ?
+      - On est 6, comment faire les comptes facilement ?
+
+  - id: centimes_arrondis
+    answer: >-
+      Quand un montant ne se divise pas exactement, il reste quelques centimes. Par exemple
+      100 € à trois donne 33,33 € pour deux personnes et 33,34 € pour la troisième. Ces
+      différences sont négligeables, mais la somme des parts doit rester égale au total.
+    keywords: [centimes, 33,33, 33,34]
+    questions:
+      - Comment gérer les centimes quand on divise par trois ?
+      - 100 euros à trois, ça fait combien chacun ?
+      - Pourquoi les parts ne tombent pas juste ?
+      - Comment arrondir les parts ?
+      - Il reste un centime, qui le paie ?
+      - How do I deal with rounding cents?
+      - Kifach n9essmo 100 3la tlata ?
+      - Les arrondis faussent les soldes ?
+
+  - id: pourboire
+    answer: >-
+      Le pourboire fait partie de la dépense : ajoute-le au montant de l'addition avant de la
+      partager. Par exemple, 80 € plus 8 € de pourboire font une dépense de 88 €.
+    keywords: [pourboire, 80, 88]
+    questions:
+      - Comment partager le pourboire ?
+      - Le pourboire compte dans la dépense ?
+      - Comment ajouter le tip au restaurant ?
+      - Qui paie le pourboire dans un groupe ?
+      - How do we share the tip?
+      - Lbourbouar kifach n9essmouh ?
+      - Faut-il noter le pourboire séparément ?
+      - On a laissé 10 % de pourboire, comment l'inclure ?
+      - Le service n'est pas compris, on fait comment pour le partage ?
+
+  - id: depense_remboursee
+    answer: >-
+      Si une dépense est en partie remboursée, par exemple un billet annulé, le plus simple
+      est que son créateur modifie le montant de la dépense pour garder seulement ce qui a
+      réellement été payé.
+    keywords: [remboursée, créateur, montant]
+    questions:
+      - Un billet a été remboursé, comment le gérer ?
+      - Comment noter un remboursement partiel du magasin ?
+      - Une réservation a été annulée et remboursée
+      - On a récupéré la caution, comment l'enregistrer ?
+      - Comment gérer un avoir ?
+      - What if part of an expense is refunded?
+      - Rje3o lina chi flouss, kifach nsejjlo ?
+      - Le vol annulé a été remboursé en partie
+
+  - id: frais_etranger
+    answer: >-
+      À l'étranger, note le montant dans la devise payée et le taux de change appliqué, de
+      préférence celui de ta banque. Ainsi la dépense est convertie correctement dans la
+      devise de l'activité.
+    keywords: [devise payée, taux de change, banque]
+    questions:
+      - Quel taux de change utiliser pour mes dépenses à l'étranger ?
+      - J'ai payé par carte à l'étranger, quel montant noter ?
+      - Comment gérer les frais bancaires en voyage ?
+      - Ma banque a appliqué un autre taux, que faire ?
+      - Payer en devise locale ou en euros ?
+      - Which exchange rate should I use?
+      - Kifach n7seb sarf f l'kharij ?
+      - Le montant débité est différent du ticket
+
+  - id: evenement_groupe
+    answer: >-
+      Pour un grand événement comme un mariage, un EVJF ou un week-end d'association, crée une
+      activité Sortie, invite les participants avec le code et notez chaque dépense : le total
+      et les soldes restent clairs même à beaucoup.
+    keywords: [Sortie, code, total, soldes]
+    questions:
+      - Comment gérer les frais d'un enterrement de vie de jeune fille ?
+      - Comment organiser les dépenses d'un mariage entre amis ?
+      - Week-end d'association, comment partager les frais ?
+      - Comment gérer l'argent d'un événement à 20 personnes ?
+      - Organisation d'un EVG, comment partager ?
+      - How do we manage costs for a bachelor party?
+      - Kifach nnadmo lmasrouf dyal 3ers ?
+      - Sortie de promo à l'EMSI, comment gérer les frais ?
+      - Comment gérer les frais d'un séminaire entre collègues ?
+
+  - id: ftour_ramadan
+    answer: >-
+      Pour un ftour ou un repas de fête partagé, celui qui fait les courses ajoute la dépense
+      dans une activité Sortie ou Quotidien, et vous la partagez entre les familles ou les
+      amis présents.
+    keywords: [ftour, Sortie, Quotidien, partagez]
+    questions:
+      - Comment partager les frais d'un ftour entre amis ?
+      - On organise un repas de Ramadan à plusieurs, comment partager ?
+      - Comment gérer les courses d'un repas de fête commun ?
+      - Partage des frais pour l'Aïd entre familles
+      - Kifach n9essmo masrouf dyal ftour ?
+      - Repas de famille, qui paie quoi ?
+      - How do we share the cost of an iftar?
+      - Soirée de fête à plusieurs, comment répartir les courses ?
+
+  - id: voyage_etudiant
+    answer: >-
+      Pour un voyage étudiant, fixez un budget par personne, créez une activité Voyage dans la
+      devise du pays et notez chaque dépense commune : transport, logement, repas. Les soldes
+      évitent les avances oubliées.
+    keywords: [budget, Voyage, devise, soldes]
+    questions:
+      - Conseils pour un voyage étudiant pas cher entre amis ?
+      - Comment gérer les dépenses d'un voyage de classe ?
+      - Voyage d'étudiants à petit budget, comment partager ?
+      - Comment éviter les dettes entre étudiants en voyage ?
+      - Student trip, how do we share costs?
+      - Safar dyal tolab, kifach n9essmo ?
+      - Comment organiser les frais d'un voyage de fin d'études ?
+      - Voyage à Chefchaouen entre étudiants, comment gérer l'argent ?
+
+  - id: calcul_simple
+    answer: >-
+      Pour connaître la part de chacun, divise le montant par le nombre de personnes : 120 € à
+      quatre font 30 € chacun. Si une personne a payé les 120 €, son solde est de +90 € et les
+      trois autres doivent chacun 30 €.
+    keywords: [120, 30, 90]
+    questions:
+      - Comment calculer la part de chacun ?
+      - 120 euros à quatre, combien chacun ?
+      - Comment savoir combien chacun doit payer ?
+      - Formule pour partager une dépense ?
+      - Un ami a payé 120 pour quatre, qui doit combien ?
+      - How do I calculate each person's share?
+      - Kifach n7seb lpart dyal kol wa7ed ?
+      - Calcul rapide d'un partage entre amis ?
+
+  - id: plusieurs_payeurs
+    answer: >-
+      Si plusieurs personnes ont payé une même facture, ajoute une dépense par personne avec
+      le montant qu'elle a réellement payé. Les soldes additionnent ensuite tout correctement.
+    keywords: [une dépense par personne, montant, soldes]
+    questions:
+      - Deux personnes ont payé la même facture, comment faire ?
+      - On a payé l'hôtel à deux cartes, comment le noter ?
+      - Comment gérer une dépense payée par plusieurs personnes ?
+      - L'addition a été réglée par trois amis
+      - Paiement partagé à la caisse, comment l'enregistrer ?
+      - What if two people paid one bill?
+      - Jouj khellsou nfs l'facture
+      - Facture payée moitié par moi moitié par Sara
